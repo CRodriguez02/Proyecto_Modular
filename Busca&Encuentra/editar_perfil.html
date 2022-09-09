@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<title>Busca & Encuentra - HTML Template</title>
+
+ 		<!-- Google font -->
+ 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+ 		<!-- Bootstrap -->
+ 		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+
+ 		<!-- Slick -->
+ 		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
+ 		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
+
+ 		<!-- nouislider -->
+ 		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
+
+ 		<!-- Font Awesome Icon -->
+ 		<link rel="stylesheet" href="css/font-awesome.min.css">
+
+ 		<!-- Custom stlylesheet -->
+ 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+
+ 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+ 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+ 		<!--[if lt IE 9]>
+ 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+ 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+ 		<![endif]-->
+
+    </head>
+	<body>
+		<!-- HEADER -->
+		<header>
+			<!-- TOP HEADER -->
+			<!--<div id="top-header">
+				<div class="container">
+					<ul class="header-links pull-right">
+						<li><a href="inicio-registro.html"><i class="fa fa-sign-in"></i> Mi cuenta</a></li>
+					</ul>
+				</div>
+			</div>-->
+			<!-- /TOP HEADER -->
+
+			<!-- MAIN HEADER -->
+			<div id="header">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<!-- LOGO -->
+						<div class="col-md-3">
+							<div class="header-logo">
+								<a href="index.html" class="logo">
+									<img src="./img/logo.png" alt="">
+								</a>
+							</div>
+						</div>
+						<!-- /LOGO -->
+
+						<!-- SEARCH BAR -->
+						<div class="col-md-6">
+							<div class="header-search">
+								<form>
+									<select class="input-select">
+										<option value="0">Categorias</option>
+										<option value="1">Mascotas</option>
+										<option value="1">Joyeria</option>
+										<option value="1">Electronicos</option>
+										<option value="1">Ropa</option>
+									</select>
+									<input class="input" placeholder="Busca aqui">
+									<button class="search-btn">Buscar</button>
+								</form>
+							</div>
+						</div>
+						<!-- /SEARCH BAR -->
+
+						<!-- ACCOUNT -->
+						<div class="col-md-3 clearfix">
+							<div class="header-ctn">
+								
+								<!-- My Account -->
+								<div>
+									<a href="index.html">
+										<i class="fa fa-arrow-circle-right"></i>
+										<span><a href="index.html">Inicio</a></span>							
+									</a>
+								</div>
+								<!-- /My Account -->
+
+								<!-- Publicaciones -->
+								<div class="dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+										<a href="#">
+											<i class="fa fa-book"></i>
+											<span>Publicaciones</span>		
+										</a>
+								</div>
+								<!-- /Publicaciones -->
+
+								<!-- Mensajes 
+								<div class="dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="flase">
+										<a href="#">
+											<i class="fa fa-comments"></i>
+											<span>Mensajes</span>		
+										</a>
+									</a>
+								</div>
+								 /Mensajes -->
+
+								<!-- Menu Toogle -->
+								
+								<!-- /Menu Toogle -->
+							</div>
+						</div>
+						<!-- /ACCOUNT -->
+					</div>
+					<!-- row -->
+				</div>
+				<!-- container -->
+			</div>
+			<!-- /MAIN HEADER -->
+		</header>
+		<!-- /HEADER -->
+
+		<!-- BREADCRUMB -->
+		<div id="breadcrumb" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<h3 class="breadcrumb-header">Perfil</h3>
+						<ul class="breadcrumb-tree">
+                            <li><a href="mi-cuenta.html">Mi cuenta</a></li>
+                            <li><a href="publicaciones.html">Mis publicaciones</a></li>
+                            <li><a href="Nueva_Publicacion.html">Nueva publicacion</a></li>
+							<li class="active">Editar perfil</li>
+						</ul>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /BREADCRUMB -->
+        
+        <!-- SECTION -->
+        <div class="section">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <!-- datos -->
+                    <div class="form-group">
+                        <label for="username">Usuario:</label>
+                        <input type="text" name="username">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nombre">Nombre(s):</label>
+                        <input type="text" name="nombre">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="apellido_paterno">Apellido paterno:</label>
+                        <input type="text" name="apellido_paterno">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="apellido_materno">Apellido materno:</label>
+                        <input type="text" name="apellido_materno">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="correo">Correo:</label>
+                        <input type="text" name="correo">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="imagen">Cambiar foto de Perfil:</label>
+                        <input type="file" name="imagen">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contraseña">Contraseña:</label>
+                        <input type="password" name="contraseña">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contraseña">Confirmar Contraseña:</label>
+                        <input type="password" name="contraseña2" placeholder="********">
+                    </div>
+                    
+                    <div class="box-footer">
+                        <button type="submit" name="actualizar" class="btn btn-primary">Actualizar datos</button>
+                    </div>
+                    
+                    
+                    
+                    <!-- /datos -->
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /SECTION -->
+
+        <!-- NEWSLETTER -->
+        <div id="newsletter" class="section">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="newsletter">
+                            <!--Redes Sociales-->
+                            <!--<ul class="newsletter-follow">
+                                <li>
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                                </li>
+                            </ul>-->
+                        </div>
+                    </div>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /NEWSLETTER -->
+
+        <!-- FOOTER -->
+		<footer id="footer">
+			<!-- top footer -->
+			<div class="section">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Sobre nosotros</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+								<ul class="footer-links">
+									<li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
+									<li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
+									<li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Categorias</h3>
+								<ul class="footer-links">
+									<li><a href="#">Nuvas publicaciones</a></li>
+									<li><a href="#">Mascotas</a></li>
+									<li><a href="#">Joyeria</a></li>
+									<li><a href="#">Electronicos</a></li>
+									<li><a href="#">Ropa</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="clearfix visible-xs"></div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Informacion</h3>
+								<ul class="footer-links">
+									<li><a href="about-us.html">Sobre nosotros</a></li>
+									<li><a href="#">Contactanos</a></li>
+									<li><a href="#">Politicas de privacidad</a></li>
+									<li><a href="#">Ordenes y Restrinciones</a></li>
+									<li><a href="#">Terminos y condiciones</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Servicio</h3>
+								<ul class="footer-links">
+									<li><a href="#">Mi cuenta</a></li>
+									<li><a href="#">Ayuda</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- /row -->
+				</div>
+				<!-- /container -->
+			</div>
+			<!-- /top footer -->
+
+
+		</footer>
+		<!-- /FOOTER -->
+
+		<!-- jQuery Plugins -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/slick.min.js"></script>
+		<script src="js/nouislider.min.js"></script>
+		<script src="js/jquery.zoom.min.js"></script>
+		<script src="js/main.js"></script>
+
+	</body>
+</html>
