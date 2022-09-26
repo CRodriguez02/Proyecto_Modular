@@ -67,6 +67,8 @@
     
     <!-- Custom styles for this template -->
     <link href="assets/dist/css/headers.css" rel="stylesheet">
+
+
   </head>
 <body>
     
@@ -145,72 +147,98 @@
        <!--HEADER-->
 
        <!--Formulario para subir una publicación-->
-
-        <!--Formulario para objetos-->
-        <form>
-            <br>
-            <!--Para seleccionar las categorias-->
-            <select id="Categorias" name="Seleccionar-categoria">
-                <option value="0">Categorias</option>
-                <option value="Vehiculos">Vehiculos</option>
-                <option value="Electronicos">Electronicos</option>
-            </select>
-
-            <!--Desde aqui insertamos nuestros objetos-->
-            <input type="text" id="Marca" placeholder="Inserta la marca" name="txt_marca"/>
-            <input type="text" id="Modelo" placeholder="Inserta el modelo" name="txt_modelo"/>
-            <br>
-            <br>
-            <div class="form-group">
-	            <label for="textarea">Inserta una descripcion</label>
-	            <textarea class="form-control" id="Descripcion" name="txt_descripcion" rows="2" ></textarea>
-	        </div>
-            <br>
-
-            <h4>Por favor Sube una imagen de tu objeto</h4>
-            <br>
-            
-            <input type="file" accept="image/png, image/jpeg" />
-        
-            <br>
-
-            <h4>¿Quieres ofrecer recompensa?</h4><!--para acpetar si hay recompensa-->
-        
-            <label for="Recompensa">Si </label>
-            <input type="radio" name="recompensa" id="Recompensa_si" value="Si" />
-            <br>
-
-            <label for="Recompensa">No</label>
-            <input type="radio" name="recompensa" id="Recompensa_no" value="No"/>
-        </form>
-        <!--Formulario para objetos-->
-
-		<!--Formulario para mascotas-->
-        <form>
+       <main>
         <br>
-		<h3>Si es el caso de una mascota por favor llene lo siguiente</h3>
-		
-		<select id="Tipo_mascota">
-			<option value="0">Mascotas</option>
-			<option value="Perro">Perro</option>
-			<option value="Gato">Gato</option>
-			<option value="Ave">Ave</option>
-			<option value="x">Exotica</option>
-        </select>
-        
-        <input type="text" id="Raza" placeholder="Raza de su mascota" name="txt_Raza"/>
-        <div class="form-group">
-            <label for="textarea">Descripcion de tu mascota</label>
-            <textarea class="form-control" id="Descripcion_mascota" name="txt_descripcion" rows="2" name="txt_describemascota"></textarea>
+       <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Formulario para objetos</h5>
+              <p class="card-text">Proporciona los datos necesarios para buscar un objeto.</p>
+              <!--Formulario para objetos-->
+              <form>
+                <!--Para seleccionar las categorias-->
+                <select id="Categorias" name="Seleccionar-categoria">
+                    <option value="0">Categorias</option>
+                    <option value="Vehiculos">Vehiculos</option>
+                    <option value="Electronicos">Electronicos</option>
+                </select>
+
+                <!--Desde aqui insertamos nuestros objetos-->
+                <input type="text" id="Marca" placeholder="Inserta la marca" name="txt_marca"/>
+                <input type="text" id="Modelo" placeholder="Inserta el modelo" name="txt_modelo"/>
+                <br>
+                <br>
+                <div class="form-group">
+                  <label for="textarea">Inserta una descripcion</label>
+                  <textarea class="form-control" id="Descripcion" name="txt_descripcion" rows="2" ></textarea>
+              </div>
+                <br>
+                <h4>Por favor sube una imagen del objeto que buscas</h4>
+                <input type="file" accept="image/png, image/jpeg" />
+            
+                <br>
+
+                <h4>¿Quieres ofrecer recompensa?</h4><!--para acpetar si hay recompensa-->
+            
+                <label for="Recompensa">Si </label>
+                <input type="radio" name="recompensa" id="Recompensa_si" value="Si" />
+                <br>
+
+                <label for="Recompensa">No</label>
+                <input type="radio" name="recompensa" id="Recompensa_no" value="No"/>
+              </form>
+              <!--Formulario para objetos-->
+              <a href="#" class="btn btn-primary">Publica la busqueda</a>
+            </div>
+          </div>
         </div>
-		<br>
-		<h4>Por favor Sube una imagen de tu Mascota</h4>
-		<br>
-		 <input type="file" accept="image/png, image/jpeg"/>
-		 <br>
-		 <button>Aceptar</button> <!--Configurar buton para que funcione despues-->
-        </form>
-        <!--Formulario para mascotas-->
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Formulario para mascotas</h5>
+              <p class="card-text">¿Estas buscando una mascota perdida? Ingresa su información aquí</p>
+              <!--Formulario para mascotas-->
+              <form>
+                <br>
+                <select id="Tipo_mascota">
+                  <option value="0">Mascotas</option>
+                  <option value="Perro">Perro</option>
+                  <option value="Gato">Gato</option>
+                  <option value="Ave">Ave</option>
+                  <option value="x">Exotica</option>
+                    </select>
+                    
+                    <input type="text" id="Raza" placeholder="Raza de su mascota" name="txt_Raza"/>
+                    <div class="form-group">
+                        <label for="textarea">Descripcion de tu mascota</label>
+                        <textarea class="form-control" id="Descripcion_mascota" name="txt_descripcion" rows="2" name="txt_describemascota"></textarea>
+                    </div>
+                <br>
+                <h4>Por favor Sube una imagen de tu Mascota</h4>
+                <br>
+                <input type="file" accept="image/png, image/jpeg"/>
+                <br>
+                <h4>¿Quieres ofrecer recompensa?</h4><!--para acpetar si hay recompensa-->
+            
+                <label for="Recompensa">Si </label>
+                <input type="radio" name="recompensa" id="Recompensa_si" value="Si" />
+                <br>
+
+                <label for="Recompensa">No</label>
+                <input type="radio" name="recompensa" id="Recompensa_no" value="No"/>
+                </form>
+              <!--Formulario para mascotas-->
+              <a href="#" class="btn btn-primary">Publica la busqueda</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+
+
 
        <!--Formulario para subir una publicación-->
 
@@ -252,9 +280,6 @@
 
     <!--<div class="b-example-divider"></div>-->
     </main>
-
-
     
-      
 </body>
 </html>
