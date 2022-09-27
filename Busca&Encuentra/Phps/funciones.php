@@ -30,14 +30,6 @@ function ObtenerServicios()
     }
 }
 
-function Pasar_de_singup()
-{
-    require "conectar.php";//llamamos a la funcion(archivo) para conectar la bd
-       
-
-}
-
-
 ObtenerServicios();
 
 ?>
