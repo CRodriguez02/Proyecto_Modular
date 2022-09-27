@@ -74,51 +74,52 @@
   <body class="text-center">
     
     <main class="form-signin w-100 m-auto">
-      <form>
+      
+      <form action="Phps/form_sing-up.php" method="get">
         <img class="mb-4" src="assets/brand/logo.png" alt="" width="110" height="57">
         <h1 class="h3 mb-3 fw-normal">Registrarse</h1>
         <div class="text-start">
             <div class="form-group">
                 <label class="form-control-label" for="labelNombre">Nombre(s)</label>
-                <input type="text" class="form-control" id="labelNombre" placeholder="Nombre(s)">
+                <input name="nombre" type="text" class="form-control" id="labelNombre" placeholder="Nombre(s)">
             </div>
         </div>
 
         <div class="text-start">
             <div class="form-group">
                 <label class="form-control-label" for="labelPaterno">Apellido Paterno</label>
-                <input type="text" class="form-control" id="labelPaterno" placeholder="Apellido Paterno">
+                <input name="apellido_Pa" type="text" class="form-control" id="labelPaterno" placeholder="Apellido Paterno">
             </div>
         </div>
 
         <div class="text-start">
             <div class="form-group">
                 <label class="form-control-label" for="labelMaterno">Apellido Materno</label>
-                <input type="text" class="form-control" id="labelMaterno" placeholder="Apellido Materno">
+                <input name="apellido_Ma" type="text" class="form-control" id="labelMaterno" placeholder="Apellido Materno">
             </div>
         </div>
         <div class="text-start">
             <div class="form-group">
                 <label class="form-control-label" for="labelCorreo">Correo electrónico</label>
-                <input type="text" class="form-control" id="labelCorreo" placeholder="Correo electrónico">
+                <input name="correo_elec" type="text" class="form-control" id="labelCorreo" placeholder="Correo electrónico">
             </div>
         </div>
         <div class="text-start">
             <div class="form-group">
                 <label class="form-control-label" for="labelUsuario">Usuario</label>
-                <input type="text" class="form-control" id="labelUsuario" placeholder="Usuario">
+                <input name="usuario" type="text" class="form-control" id="labelUsuario" placeholder="Usuario">
             </div>
         </div>
         <div class="text-start">
             <div class="form-group">
                 <label class="form-control-label" for="labelContraseña1">Contraseña</label>
-                <input type="text" class="form-control" id="labelContraseña1" placeholder="Contraseña">
+                <input name="contraseña" type="text" class="form-control" id="labelContraseña1" placeholder="Contraseña">
             </div>
         </div>
         <div class="text-start">
             <div class="form-group">
                 <label class="form-control-label" for="labelContraseña2">Confirmar Contraseña</label>
-                <input type="text" class="form-control" id="labelContraseña2" placeholder="Confirmar Contraseña">
+                <input name="confirma_contra" type="text" class="form-control" id="labelContraseña2" placeholder="Confirmar Contraseña">
             </div>
         </div>
         <br>
