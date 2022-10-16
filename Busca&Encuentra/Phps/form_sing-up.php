@@ -9,20 +9,22 @@ $contrasena=$_POST["contraseña"];
 $contrasena_confirma=$_POST["confirma_contra"];
 
 
-    $insert_sql="INSERT INTO usuarios (username,correo,nombre,apellido_paterno,apellido_materno,contrasena)  
-    VALUES ('$usuario','$correo_electronico','$nombres','$apellido_pa','$apellido_ma','$contrasena')";
-    $consulta=mysqli_query($db,$insert_sql);
 
 
-if($consulta)
-{
-    echo "correcto";
-}
+        /*$insert_sql="INSERT INTO usuarios (username,correo,nombre,apellido_paterno,apellido_materno,contrasena)  
+        VALUES ('$usuario','$correo_electronico','$nombres','$apellido_pa','$apellido_ma','$contrasena')";
+        $consulta=mysqli_query($db,$insert_sql);
 
-else
-{
-    echo "incorrecto";
-}
+
+    if($consulta)
+    {
+        echo "correcto";
+    }
+
+    else
+    {
+        echo "incorrecto";
+    }*/
 
 
 
