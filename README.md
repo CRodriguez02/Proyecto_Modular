@@ -1,2 +1,2 @@
 # Proyecto_Modular
-Aquí subiremos los archivos del desarrollo del proyecto del desarrollo web del sistema de busqueda de personas y objetos
+Busca&Encuentra es un proyecto desarrollado en una página web, el objetivo del proyecto es consentrar una gran cantidad de objetos y mascotas en una base de datos para que los usuarios puedan publicar o simplemente buscar en la página sus pertenencias. El contacto será por un sistema de chat donde los usuarios podrán ponerse de acuerdo en como y cuando regresar las pertenencias que no sean de ellos.
