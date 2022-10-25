@@ -30,6 +30,5 @@ function ObtenerServicios()
     }
 }
 
-ObtenerServicios();
 
 ?>
