@@ -75,16 +75,17 @@
     
     <main class="form-signin w-100 m-auto">
 
-      <form>
+      <!---Aqui inicia el form-->
+      <form action="Phps/sing-in.php" method="post">
         <img class="mb-4" src="assets/brand/logo.png" width="110" height="57">
         <h1 class="h3 mb-3 fw-normal">Por favor inicie sesión</h1>
 
         <div class="form-floating">
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="correo_elec">
           <label for="floatingInput">Correo electrónico</label>
         </div>
         <div class="form-floating">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
           <label for="floatingPassword">Contraseña</label>
         </div>
 

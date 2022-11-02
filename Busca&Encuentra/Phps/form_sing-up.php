@@ -13,11 +13,11 @@
     //Consulta para verificar que el registro no exista
     $validar = "SELECT * FROM usuarios where username='$usuario'";
     $validando=$db->query($validar);
-    if($validando->num_rows>0)
+    if(($validando->num_rows>0 && $contrasena!=$contrasena_confirma) || ($validando->num_rows>0 && $contrasena==$contrasena_confirma) || ($validando->num_rows<=0 && $contrasena!=$contrasena_confirma))
     {
-        echo("el usuario esta repetido");
+        echo("Error de usuario o contraseña");
     }
-    else
+    else// este else abarca toda la colsulta
     {
             //$checar_usuario="if(username==$usuario)FROM usuarios"
 
@@ -27,7 +27,7 @@
 
         if($consulta)
         {
-            echo "correcto si estamos en este proyecto";
+            echo "correcto si estamos en este proyecto primer query";
         }
 
         else
@@ -35,7 +35,10 @@
             echo "incorrecto";
         }
 
+
     }
+    
+  
 
         
 
