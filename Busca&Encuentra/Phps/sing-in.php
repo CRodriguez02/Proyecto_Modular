@@ -9,7 +9,7 @@
 
 	if($valida_sesion->num_rows>0)
 	{
-		echo("secion iniciada");
+		header('Location: http://localhost/Proyecto_Modular/Busca&Encuentra/index.html');
 	}
 	else
 	{
