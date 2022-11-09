@@ -83,8 +83,18 @@
                 </div>
                 </div>
                 <br>
-                <div class="form-group">
-                    <label for="textarea">Describe el problema con la publicacion</label>
+                <label for="textarea">Describe el problema con la publicacion</label>
+                  <!--Para seleccionar los Motivos de un reprte-->
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="Seleccionar-motivo">
+                      <option selected>Motivo por el que se reporta</option>
+                      <option value="1">-Contenido inadecuado-</option>
+                      <option value="2">-Publicación duplicada-</option>
+                      <option value="3">-Es de mi propiedad y ya fue recuperado-</option>
+                      <option value="4">-Estafa-</option>
+                      <option value="5">-Otro-</option>
+                    </select>
+                  <br>
+                  <br>
                     <textarea class="form-control" id="Descripcion" name="txt_descripcion" rows="3" placeholder="Agrega una descripción del porqué reportas la publicación"></textarea>
                 </div>
                 <br>
