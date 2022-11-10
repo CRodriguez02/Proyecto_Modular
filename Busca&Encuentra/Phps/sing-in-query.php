@@ -7,7 +7,7 @@
 	$iniciar_sesion="SELECT * FROM usuarios WHERE correo='$correo_elec' and contrasena='$password'";
 
 	$valida_sesion=$db->query($iniciar_sesion);
-	$usuario=mysqli_fetch_assoc($valida_sesion);// traigo los valores de a tabla como arreglo
+	$usuario=mysqli_fetch_assoc($valida_sesion);// traigo los valores de a tabla como arreglo / esta es la tabla
 		
 
 	if($valida_sesion->num_rows>0)
@@ -15,12 +15,9 @@
 		//el ususario esta autenticado
 		session_start();
 
-
 		$_SESSION['usuario']=$usuario['username'];
+		$_SESSION['login']=true;
 
-		echo "<pre>";
-		var_dump($_SESSION);
-		echo "</pre>";
 
 		print("sesion iniciada");
 		//header('Location: http://localhost/Proyecto_Modular/Busca&Encuentra/index.html');

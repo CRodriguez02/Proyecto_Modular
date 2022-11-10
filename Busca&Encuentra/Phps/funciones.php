@@ -21,14 +21,24 @@ function ObtenerServicios()
         }
 
        
-       
-
     } 
     catch (\Throwable $th) 
     {
         var_dump($th);
     }
 }
+function autenticado() : bool
+{
+    session_start();
+    $autenticacion=$_SESSION['login'];
+    if($autenticacion)
+    {
+        return true;
+
+    }
+    return false;
+}
+
 
 
 ?>
