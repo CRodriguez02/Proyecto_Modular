@@ -127,7 +127,7 @@
         <!--<p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>-->
       </form>
       <br><br><br>
-      <a class="mt-5 mb-3 text-muted" href="index.html">Volver al inicio</a>
+      <a class="mt-5 mb-3 text-muted" href="index.php">Volver al inicio</a>
     </main>
 
 

@@ -110,37 +110,37 @@
         <div class="px-3 py-2 text-bg-dark">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="index.html" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+            <a href="index.php" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
                 <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#logo"/></svg>
             </a>
 
             <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                 <li>
-                <a href="index.html" class="nav-link text-secondary">
+                <a href="index.php" class="nav-link text-secondary">
                     <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
                     Inicio
                 </a>
                 </li>
                 <li>
-                <a href="system-chat.html" class="nav-link text-white">
+                <a href="system-chat.php" class="nav-link text-white">
                     <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#chat"/></svg>
                     Mensajes
                 </a>
                 </li>
                 <li>
-                <a href="list-publications.html" class="nav-link text-white">
+                <a href="list-publications.php" class="nav-link text-white">
                     <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
                     Publicaciones
                 </a>
                 </li>
                 <li>
-                <a href="publicacion.html" class="nav-link text-white">
+                <a href="publicacion.php" class="nav-link text-white">
                     <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
                     Nuevas Publicaciones
                 </a>
                 </li>
                 <li>
-                <a href="my-account.html" class="nav-link text-white">
+                <a href="my-account.php" class="nav-link text-white">
                     <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
                     Cuenta
                 </a>
@@ -152,12 +152,12 @@
         <div class="px-3 py-2 border-bottom mb-3">
         <div class="container d-flex flex-wrap justify-content-center">
             <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
-            <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
+            <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search" href=search.php>
             </form>
 
             <div class="text-end">
-            <a href="sing-in.html" class="btn btn-light text-dark me-2">Iniciar sesión</a>
-            <a href="sing-up.html"  class="btn btn-primary">Registrarse</a>
+            <a href="sing-in.php" class="btn btn-light text-dark me-2">Iniciar sesión</a>
+            <a href="sing-up.php"  class="btn btn-primary">Registrarse</a>
             </div>
         </div>
         </div>
