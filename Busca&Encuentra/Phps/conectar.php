@@ -6,3 +6,4 @@
         exit;
     }
    //echo ("Conexion correcta");
+?>
