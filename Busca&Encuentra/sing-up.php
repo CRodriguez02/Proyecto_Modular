@@ -81,21 +81,21 @@
         <div class="text-start">
             <div class="form-group">
                 <label class="form-control-label" for="labelNombre">Nombre(s)</label>
-                <input name="nombre" type="text" class="form-control" id="labelNombre" placeholder="Nombre(s)" maxlength="100">
+                <input name="nombre" type="text" class="form-control" id="labelNombre" placeholder="Nombre(s)" maxlength="100" pattern="[a-z-A-Z-á-ú]+">
             </div>
         </div>
 
         <div class="text-start">
             <div class="form-group">
                 <label class="form-control-label" for="labelPaterno">Apellido Paterno</label>
-                <input name="apellido_Pa" type="text" class="form-control" id="labelPaterno" placeholder="Apellido Paterno" maxlength="100">
+                <input name="apellido_Pa" type="text" class="form-control" id="labelPaterno" placeholder="Apellido Paterno" maxlength="100" pattern="[a-z-A-Z-á-ú]+">
             </div>
         </div>
 
         <div class="text-start">
             <div class="form-group">
                 <label class="form-control-label" for="labelMaterno">Apellido Materno</label>
-                <input name="apellido_Ma" type="text" class="form-control" id="labelMaterno" placeholder="Apellido Materno" maxlength="100">
+                <input name="apellido_Ma" type="text" class="form-control" id="labelMaterno" placeholder="Apellido Materno" maxlength="100" pattern="[a-z-A-Z-á-ú]+">
             </div>
         </div>
         <div class="text-start">
@@ -124,13 +124,11 @@
         </div>
         <br>
         <input class="w-100 btn btn-lg btn-primary" type="submit" value="Registrarse">
-        <!--<p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>-->
+
       </form>
       <br><br><br>
       <a class="mt-5 mb-3 text-muted" href="index.php">Volver al inicio</a>
     </main>
-
-
 
   </body>
 </html>
