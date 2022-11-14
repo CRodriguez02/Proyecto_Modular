@@ -81,7 +81,7 @@
         <div class="text-start">
             <div class="form-group">
                 <label class="form-control-label" for="labelNombre">Nombre(s)</label>
-                <input name="nombre" type="text" class="form-control" id="labelNombre" placeholder="Nombre(s)" maxlength="100" pattern="[a-z-A-Z-á-ú]+">
+                <input name="nombre" type="text" class="form-control" id="labelNombre" placeholder="Nombre(s)" maxlength="100" pattern="[a-z-A-Z-á-ú-' ']+">
             </div>
         </div>
 

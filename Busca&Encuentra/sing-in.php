@@ -76,8 +76,9 @@
     <main class="form-signin w-100 m-auto">
 
       <!---Aqui inicia el form-->
-      <form class="row needs-validation" novalidate>
+      
       <form action="Phps/sing-in-query.php" method="post">
+
         <img class="mb-4" src="assets/brand/logo1.jpg" width="150" height="150">
         <h1 class="h3 mb-3 fw-normal">Por favor inicie sesión</h1>
 
@@ -98,33 +99,12 @@
         </div>
         
         <input class="w-100 btn btn-lg btn-primary" type="submit" value="Inicie sesión">
-      </form>
+
       </form>
       <br><br><br><br>
       <a class="mt-5 mb-3 text-muted" href="index.php">Volver al inicio</a>
     </main>
-    <script>
-      // Example starter JavaScript for disabling form submissions if there are invalid fields
-      (function () {
-        'use strict'
-
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.querySelectorAll('.needs-validation')
-
-        // Loop over them and prevent submission
-        Array.prototype.slice.call(forms)
-          .forEach(function (form) {
-            form.addEventListener('submit', function (event) {
-              if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-              }
-
-              form.classList.add('was-validated')
-            }, false)
-          })
-      })()
-    </script>
+    
 
   </body>
 </html>
