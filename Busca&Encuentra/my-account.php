@@ -165,6 +165,7 @@
                   <input type="email" class="form-control" name="correo">
                 </div>
                 <div class="col-md-4">
+                <br>
                   <label class="form-label"for="imagen">Cambiar foto de Perfil:</label>
                   <input type="file" accept="image/png, image/jpeg" />
                 </div>

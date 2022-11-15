@@ -20,7 +20,7 @@
 
 
 		print("sesion iniciada");
-		//header('Location: http://localhost/Proyecto_Modular/Busca&Encuentra/index.html');
+		header('Location: https://localhost/Proyecto_Modular/Busca&Encuentra/sesion-start.php');
 	}
 	else
 	{

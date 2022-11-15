@@ -79,7 +79,7 @@
       
       <form action="Phps/sing-in-query.php" method="post">
 
-        <img class="mb-4" src="assets/brand/logo1.jpg" width="150" height="150">
+        <img class="mb-4" src="assets/brand/logo-02.png" width="200" height="200">
         <h1 class="h3 mb-3 fw-normal">Por favor inicie sesión</h1>
 
         <div class="form-floating">
