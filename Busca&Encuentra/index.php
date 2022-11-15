@@ -14,7 +14,7 @@
     <meta name="author" content="Carlos Rodriguez, Ozmar Andrade, Marlene Rios">
 
     <title>Plantilla</title>
-    <link rel="icon" type="image/x-icon" href="assets/brand/icon-B&E.svg" />
+    <link rel="icon" type="image/x-icon" href="assets/brand/B&E-logo.svg" />
 
     
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
