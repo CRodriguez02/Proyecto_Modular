@@ -77,7 +77,7 @@
     <link href="assets/dist/css/headers.css" rel="stylesheet">
   </head>
 <body>
-    
+    <!--LOGOS-->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
 
     <symbol id="home" viewBox="0 0 16 16">
@@ -100,6 +100,7 @@
         <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
     </symbol>
     </svg>
+    <!--LOGOS-->
 
     <main>
       <!--HEADER-->
@@ -108,7 +109,7 @@
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="index.php" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                <img class="bi me-2" width="90" height="80" role="img" aria-label="Bootstrap" src="assets/brand/logo-02.png">
+                <img class="bi me-2" width="100" height="90" role="img" aria-label="" src="assets/brand/logo-02.png" title="Busca&Encuentra">
             </a>
 
             <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
@@ -149,7 +150,7 @@
         <div class="px-3 py-2 border-bottom mb-3">
         <div class="container d-flex flex-wrap justify-content-center">
             <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
-            <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search" href=search.php>
+            <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
             </form>
 
             <div class="text-end">
@@ -318,10 +319,10 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Publicaciones</a>
+                <a class="nav-link" href="list-publications.php">Mis Publicaciones</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>

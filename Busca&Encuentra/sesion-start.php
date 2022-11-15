@@ -23,8 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Carlos Rodriguez, Ozmar Andrade, Marlene Rios">
 
-    <title>Plantilla</title>
-    <link rel="icon" type="image/x-icon" href="assets/brand/bootstrap-logo.svg" />
+    <title>Inicio</title>
 
     
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">

@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.101.0">
+    <meta name="author" content="Carlos Rodriguez, Ozmar Andrade, Marlene Rios">
     <title>Actualizar perfil</title>
 
     
@@ -99,43 +98,50 @@
         <div class="px-3 py-2 text-bg-dark">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="index.html" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#logo"/></svg>
+            <a href="index.php" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                <img class="bi me-2" width="100" height="90" role="img" aria-label="" src="assets/brand/logo-02.png" title="Busca&Encuentra">
             </a>
 
             <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                 <li>
-                <a href="index.html" class="nav-link text-white">
+                <a href="index.php" class="nav-link text-white">
                     <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
                     Inicio
                 </a>
                 </li>
                 <li>
-                <a href="system-chat.html" class="nav-link text-white">
+                <a href="system-chat.php" class="nav-link text-white">
                     <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#chat"/></svg>
                     Mensajes
                 </a>
                 </li>
                 <li>
-                <a href="#" class="nav-link text-white">
+                <a href="list-publications.php" class="nav-link text-white">
                     <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
                     Publicaciones
                 </a>
                 </li>
                 <li>
-                <a href="publicacion.html" class="nav-link text-white">
+                <a href="publicacion.php" class="nav-link text-white">
                     <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
-                    Nueva Publicación
+                    Nuevas Publicaciones
                 </a>
                 </li>
                 <li>
-                <a href="my-account.html" class="nav-link text-secondary">
+                <a href="my-account.php" class="nav-link text-secondary">
                     <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
                     Cuenta
                 </a>
                 </li>
             </ul>
             </div>
+        </div>
+        </div>
+        <div class="px-3 py-2 border-bottom mb-3">
+        <div class="container d-flex flex-wrap justify-content-center">
+            <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
+            <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
+            </form>
         </div>
         </div>
     </header>
@@ -195,12 +201,12 @@
 
                 <div class="col-md-6">
                     <label class="form-label">Contraseña nueva</label>
-                    <input type="password" class="form-control" name="contraseña-nueva1">
+                    <input type="password" class="form-control" name="contraseña-nueva1" placeholder="*********">
                 </div>
 
                 <div class="col-md-6">
                     <label class="form-label">Confirmar contraseña nueva</label>
-                    <input type="password" class="form-control" name="contraseña-nueva2">
+                    <input type="password" class="form-control" name="contraseña-nueva2" placeholder="*********">
                 </div>
 
                 <div class="col-md-12">
