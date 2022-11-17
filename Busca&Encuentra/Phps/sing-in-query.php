@@ -16,11 +16,15 @@
 		session_start();
 
 		$_SESSION['usuario']=$usuario['username'];
+		//$_SESSION['apellido_paterno']=$usuario['apellido_paterno'];//asi se llama la propiedad del $_SESSIon
+		//$_SESSION['apellido_materno']=$usuario['apellido_materno'];
+		//$_SESSION['Correo']=$usuario['correo'];
+
 		$_SESSION['login']=true;
 
 
 		print("sesion iniciada");
-		header('Location: https://localhost/Proyecto_Modular/Busca&Encuentra/sesion-start.php');
+		//header('Location: https://localhost/Proyecto_Modular/Busca&Encuentra/sesion-start.php');
 	}
 	else
 	{
