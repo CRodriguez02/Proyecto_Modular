@@ -1,6 +1,10 @@
 
 <?php
-  
+  require "Phps/funciones.php";
+   $autentidicacion=autenticado();
+
+   $imprime=$_SESSION["login"];
+   var_dump($imprime);
 
 ?>
 
@@ -152,7 +156,7 @@
             <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
             <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
             </form>
-
+          <!----Cambiar esto si inicia sesion a que no se vea--->
             <div class="text-end">
             <a href="sing-in.php" class="btn btn-light text-dark me-2">Iniciar sesión</a>
             <a href="sing-up.php"  class="btn btn-primary">Registrarse</a>
