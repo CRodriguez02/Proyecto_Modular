@@ -23,8 +23,8 @@
 		$_SESSION['login']=true;
 
 
-		print("sesion iniciada");
-		//header('Location: https://localhost/Proyecto_Modular/Busca&Encuentra/sesion-start.php');
+		
+		header('Location: http://localhost/Proyecto_Modular/Busca&Encuentra/index.php');
 	}
 	else
 	{
