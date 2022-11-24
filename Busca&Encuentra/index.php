@@ -3,9 +3,6 @@ error_reporting(0);
 session_start();
 $imprime=$_SESSION["login"];
    var_dump($imprime);
-  
-
-
 ?>
 <!doctype html>
 <html lang="es">
@@ -155,7 +152,6 @@ $imprime=$_SESSION["login"];
             </form>
           <!----Cambiar esto si inicia sesion a que no se vea--->
 
-
           <?php
          require "Phps/funciones.php";
          $autentidicacion=autenticado();
@@ -165,10 +161,7 @@ $imprime=$_SESSION["login"];
             <a href="sing-in.php" class="btn btn-light text-dark me-2">Iniciar sesión</a>
             <a href="sing-up.php"  class="btn btn-primary">Registrarse</a>
             </div>;');
-          }
-          
-          
-           
+          } 
           ?>
         </div>
         </div>

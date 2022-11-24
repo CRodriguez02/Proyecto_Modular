@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -148,6 +157,7 @@
     <!--HEADER-->
     <br>
     <br>
+    <!----podemos aqui empezar a poner la info de la base de datos--->
     <div class="card text-center">
         <div class="card-header">
           Datos Personales
@@ -155,20 +165,33 @@
         <div class="card-body">
             <form class="row">
                 <div class="col-md-4">
-                  <label class="form-label">Nombre(s)</label>
-                  <input type="text" class="form-control" name="nombre">
+                 <?php
+                 $propiedad= $_SESSION['nombre'];
+                 echo('<label class="form-label">Nombre(s)</label>');
+                 echo('<input type="text" class="form-control" name="nombre" value='.$propiedad.'>');
+                 ?>
                 </div>
                 <div class="col-md-4">
-                  <label class="form-label">Apellido paterno</label>
-                  <input type="text" class="form-control" name="apellido_paterno">
+                <?php
+                 $propiedad= $_SESSION['apellido_paterno'];
+                 echo(' <label class="form-label">Apellido paterno</label>');
+                 echo('<input type="text" class="form-control" name="apellido_paterno" value='.$propiedad.'>');
+                 ?>
+                  
                 </div>
                 <div class="col-md-4">
-                    <label class="form-label">Apellido materno</label>
-                    <input type="text" class="form-control" name="apellido_materno">
-                  </div>
+                <?php
+                 $propiedad= $_SESSION['apellido_materno'];
+                 echo(' <label class="form-label">Apellido materno</label>');
+                 echo('<input type="text" class="form-control" name="apellido_paterno" value='.$propiedad.'>');
+                 ?>
+                </div>
                 <div class="col-md-6">
-                  <label class="form-label">Correo</label>
-                  <input type="email" class="form-control" name="correo">
+                <?php
+                 $propiedad= $_SESSION['Correo'];
+                 echo(' <label class="form-label">Correo</label>');
+                 echo('<input type="text" class="form-control" name="apellido_paterno" value='.$propiedad.'>');
+                 ?>
                 </div>
                 <div class="col-md-4">
                 <br>
