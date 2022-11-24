@@ -157,6 +157,7 @@
             <a href="sing-in.php" class="btn btn-light text-dark me-2">Iniciar sesión</a>
             <a href="sing-up.php"  class="btn btn-primary">Registrarse</a>
             </div>
+            
         </div>
         </div>
       </header>
