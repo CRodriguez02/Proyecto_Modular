@@ -1,9 +1,11 @@
+
 <?php
-error_reporting(0);
-session_start();
-$imprime=$_SESSION["login"];
-   var_dump($imprime);
+  
+
 ?>
+
+
+
 <!doctype html>
 <html lang="es">
   <head>
@@ -150,19 +152,11 @@ $imprime=$_SESSION["login"];
             <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
             <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
             </form>
-          <!----Cambiar esto si inicia sesion a que no se vea--->
 
-          <?php
-         require "Phps/funciones.php";
-         $autentidicacion=autenticado();
-          if(!$autentidicacion)
-          {
-            echo (' <div class="text-end">
+            <div class="text-end">
             <a href="sing-in.php" class="btn btn-light text-dark me-2">Iniciar sesión</a>
             <a href="sing-up.php"  class="btn btn-primary">Registrarse</a>
-            </div>;');
-          } 
-          ?>
+            </div>
         </div>
         </div>
       </header>

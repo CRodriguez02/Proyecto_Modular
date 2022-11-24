@@ -1,16 +1,21 @@
 <?php
   require "Phps/funciones.php";
-   $autentificacion=autenticado();
+   $autentidicacion=autenticado();
 
    $imprime=$_SESSION["login"];
    var_dump($imprime);
   
-   if(!$autentificacion)
+   if(!$autentidicacion)
    {
     header("Location: index.php");
    }
 
 ?>
+
+
+
+
+
 <!doctype html>
 <html lang="es">
   <head>
