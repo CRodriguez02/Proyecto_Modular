@@ -163,14 +163,16 @@ session_start();
           Datos Personales
         </div>
         <div class="card-body">
-            <form class="row">
+            <form action="phps/query_cuenta.php" class="row">  <!---poner eñ update de lo que le metamos---->
                 <div class="col-md-4">
                  <?php
                  $propiedad= $_SESSION['nombre'];
                  echo('<label class="form-label">Nombre(s)</label>');
                  echo('<input type="text" class="form-control" name="nombre" value='.$propiedad.'>');
                  ?>
+               
                 </div>
+                
                 <div class="col-md-4">
                 <?php
                  $propiedad= $_SESSION['apellido_paterno'];
@@ -183,14 +185,14 @@ session_start();
                 <?php
                  $propiedad= $_SESSION['apellido_materno'];
                  echo(' <label class="form-label">Apellido materno</label>');
-                 echo('<input type="text" class="form-control" name="apellido_paterno" value='.$propiedad.'>');
+                 echo('<input type="text" class="form-control" name="apellido_materno" value='.$propiedad.'>');
                  ?>
                 </div>
                 <div class="col-md-6">
                 <?php
                  $propiedad= $_SESSION['Correo'];
                  echo(' <label class="form-label">Correo</label>');
-                 echo('<input type="text" class="form-control" name="apellido_paterno" value='.$propiedad.'>');
+                 echo('<input type="text" class="form-control" name="correo_electronico" value='.$propiedad.'>');
                  ?>
                 </div>
                 <div class="col-md-4">
