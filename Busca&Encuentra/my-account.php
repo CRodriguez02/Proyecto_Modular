@@ -165,35 +165,26 @@ session_start();
         <div class="card-body">
             <form action="phps/query_cuenta.php" class="row">  <!---poner eñ update de lo que le metamos---->
                 <div class="col-md-4">
-                 <?php
-                 $propiedad= $_SESSION['nombre'];
-                 echo('<label class="form-label">Nombre(s)</label>');
-                 echo('<input type="text" class="form-control" name="nombre" value='.$propiedad.'>');
-                 ?>
+                 '<label class="form-label">Nombre(s)</label>
+                 <input type="text" class="form-control" name="nombre" value=>
+                
                
                 </div>
                 
                 <div class="col-md-4">
-                <?php
-                 $propiedad= $_SESSION['apellido_paterno'];
-                 echo(' <label class="form-label">Apellido paterno</label>');
-                 echo('<input type="text" class="form-control" name="apellido_paterno" value='.$propiedad.'>');
-                 ?>
+                <label class="form-label">Apellido paterno</label>
+                <input type="text" class="form-control" name="apellido_paterno" >
                   
                 </div>
                 <div class="col-md-4">
-                <?php
-                 $propiedad= $_SESSION['apellido_materno'];
-                 echo(' <label class="form-label">Apellido materno</label>');
-                 echo('<input type="text" class="form-control" name="apellido_materno" value='.$propiedad.'>');
-                 ?>
+                <label class="form-label">Apellido materno</label>
+                <input type="text" class="form-control" name="apellido_materno" >
+
                 </div>
                 <div class="col-md-6">
-                <?php
-                 $propiedad= $_SESSION['Correo'];
-                 echo(' <label class="form-label">Correo</label>');
-                 echo('<input type="text" class="form-control" name="correo_electronico" value='.$propiedad.'>');
-                 ?>
+                <label class="form-label">Correo</label>
+                <input type="text" class="form-control" name="correo_electronico" >
+                
                 </div>
                 <div class="col-md-4">
                 <br>
