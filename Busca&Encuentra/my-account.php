@@ -1,5 +1,17 @@
 <?php
 session_start();
+require("Phps/conectar.php");
+if(isset($_SESSION['usuario']))
+{
+  header('Locarion : index.php');
+}
+$nombre_usuario=$_SESSION['usuario'];
+
+
+$Consulta_datos('SELECT * from usuarios WHERE username="$nombre_usuario"');
+$consulta_db=$db->query($Consulta_datos);
+$row=$consulta_db->fetch_assoc($consulta_db);
+
 
 ?>
 
