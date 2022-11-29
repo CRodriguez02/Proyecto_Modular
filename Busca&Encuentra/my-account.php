@@ -184,34 +184,21 @@ $row=mysqli_fetch_assoc($consulta_db);
     <!----podemos aqui empezar a poner la info de la base de datos--->
       <div class="container">
         <div class="row">
-          <div class="col-3">
-            <div class="card text-center">
-              <div class="card-header">
-                Datos Actuales  <!---Cambiar los datos aqui--->
-              </div>
-              <div class="card-body">
-              <label class="form-label">Usuario</label>
-              <input type="text" class="form-control" name="" disabled="disabled" placeholder="<?php echo utf8_decode($row['username']);?>">
-                  <label class="form-label">Nombre(s)</label>
-                  <input type="text" class="form-control" name="" disabled="disabled" readonly="readonly" placeholder="<?php echo utf8_decode($row['nombre']);?>">
-                  <label class="form-label">Apellido paterno</label>
-                  <input type="text" class="form-control" name=""  disabled="disabled" readonly="readonly" placeholder="<?php echo utf8_decode($row['apellido_paterno']);?>">
-                  <label class="form-label">Apellido materno</label>
-                  <input type="text" class="form-control" name="" disabled="disabled" readonly="readonly" placeholder="<?php echo utf8_decode($row['apellido_materno']);?>">
-                  <label class="form-label">Correo</label>
-                  <input type="text" class="form-control" name="" disabled="disabled" readonly="readonly" placeholder="<?php echo utf8_decode($row['correo']);?>">
-              </div>
-              <div class="card-footer text-muted">Estos datos son con los que te identificas actualmente.</div>
-            </div>
-          </div>
-          <div class="col-9">
+          <div class="col-12">
             <div class="card text-center">
                 <div class="card-header">
                   Nuevos Datos Personales
                 </div>
                 <div class="card-body">
                   <p class="card-text">En este espacio podrás ingresar los nuevos datos que desees cambiar de tu información personal.</p>
-                    <form action="phps/query_cuenta.php" class="row" method="POST">  <!---poner eñ update de lo que le metamos REVISA BIEN ESTE FORM @OZMAR---->
+                    <form action="phps/query_cuenta.php" class="row" method="POST">
+                    <div class="row"> 
+                        <div class="col-md-2">
+                        <label class="form-label">Usuario</label>
+                        <input type="text" class="form-control" name="" disabled="disabled" placeholder="<?php echo utf8_decode($row['username']);?>">
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-4">
                         <label class="form-label">Nombre(s)</label>
                         <input type="text" class="form-control" name="nombre" value="<?php echo utf8_decode($row['nombre']);?>">
@@ -242,14 +229,16 @@ $row=mysqli_fetch_assoc($consulta_db);
                           <br>
                           <button class="btn btn-primary form-control">Actualizar datos</button>
                         </div>
+                      </div>
                     </form>
                 </div>
-                <div class="card-footer text-muted">Una vez actualizados tus datos se verán reflejados en el contenedor de la derecha.</div>
+                <div class="card-footer text-muted">Una vez actualizados tus datos se verán reflejados en el contenedor.</div>
             </div>
           </div>
         </div>
       </div>
-      <div class="b-example-divider"></div>
+      <br>
+      <br>
       <div class="container">
       <div class="card text-center">
         <div class="card-header">
