@@ -1,18 +1,29 @@
 <?php
-session_start();
 require("Phps/conectar.php");
-if(isset($_SESSION['usuario']))
+session_start();
+if(!isset($_SESSION['usuario']))
 {
-  header('Locarion : index.php');
+  header('Location :index.php');
 }
+
 $nombre_usuario=$_SESSION['usuario'];
 
+$Consulta_datos="SELECT * from usuarios WHERE username='$nombre_usuario'";
+$consulta_db=$db->query($Consulta_datos);//ejecutar quiery
 
-$Consulta_datos('SELECT * from usuarios WHERE username="$nombre_usuario"');
-$consulta_db=$db->query($Consulta_datos);
-$row=$consulta_db->fetch_assoc($consulta_db);
+if($consulta_db->num_rows>0)
+{
+  echo("Si agarra datos");
+}
+else
+{
+  echo("No agarra datos");
+}
+$row=mysqli_fetch_assoc($consulta_db);
 
 
+
+//<?php echo utf8_decode($row['nombre']);
 ?>
 
 
@@ -176,19 +187,19 @@ $row=$consulta_db->fetch_assoc($consulta_db);
           <div class="col-3">
             <div class="card text-center">
               <div class="card-header">
-                Datos Actuales
+                Datos Actuales  <!---Cambiar los datos aqui--->
               </div>
               <div class="card-body">
               <label class="form-label">Usuario</label>
-              <input type="text" class="form-control" name="" disabled="disabled">
+              <input type="text" class="form-control" name="" disabled="disabled" placeholder="<?php echo utf8_decode($row['username']);?>">
                   <label class="form-label">Nombre(s)</label>
-                  <input type="text" class="form-control" name="" readonly="readonly">
+                  <input type="text" class="form-control" name="" disabled="disabled" readonly="readonly" placeholder="<?php echo utf8_decode($row['nombre']);?>">
                   <label class="form-label">Apellido paterno</label>
-                  <input type="text" class="form-control" name="" readonly="readonly">
+                  <input type="text" class="form-control" name=""  disabled="disabled" readonly="readonly" placeholder="<?php echo utf8_decode($row['apellido_paterno']);?>">
                   <label class="form-label">Apellido materno</label>
-                  <input type="text" class="form-control" name="" readonly="readonly">
+                  <input type="text" class="form-control" name="" disabled="disabled" readonly="readonly" placeholder="<?php echo utf8_decode($row['apellido_materno']);?>">
                   <label class="form-label">Correo</label>
-                  <input type="text" class="form-control" name="" readonly="readonly">
+                  <input type="text" class="form-control" name="" disabled="disabled" readonly="readonly" placeholder="<?php echo utf8_decode($row['correo']);?>">
               </div>
               <div class="card-footer text-muted">Estos datos son con los que te identificas actualmente.</div>
             </div>
@@ -200,25 +211,25 @@ $row=$consulta_db->fetch_assoc($consulta_db);
                 </div>
                 <div class="card-body">
                   <p class="card-text">En este espacio podrás ingresar los nuevos datos que desees cambiar de tu información personal.</p>
-                    <form action="phps/query_cuenta.php" class="row">  <!---poner eñ update de lo que le metamos REVISA BIEN ESTE FORM @OZMAR---->
+                    <form action="phps/query_cuenta.php" class="row" method="POST">  <!---poner eñ update de lo que le metamos REVISA BIEN ESTE FORM @OZMAR---->
                         <div class="col-md-4">
                         <label class="form-label">Nombre(s)</label>
-                        <input type="text" class="form-control" name="nombre" value=>
+                        <input type="text" class="form-control" name="nombre" value="<?php echo utf8_decode($row['nombre']);?>">
                         </div>
                         
                         <div class="col-md-4">
                         <label class="form-label">Apellido paterno</label>
-                        <input type="text" class="form-control" name="apellido_paterno" >
+                        <input type="text" class="form-control" name="apellido_paterno"  value="<?php echo utf8_decode($row['apellido_paterno']);?>">
                           
                         </div>
                         <div class="col-md-4">
                         <label class="form-label">Apellido materno</label>
-                        <input type="text" class="form-control" name="apellido_materno" >
+                        <input type="text" class="form-control" name="apellido_materno" value="<?php echo utf8_decode($row['apellido_materno']);?>">
 
                         </div>
                         <div class="col-md-6">
                         <label class="form-label">Correo</label>
-                        <input type="text" class="form-control" name="correo_electronico" >
+                        <input type="text" class="form-control" name="correo_electronico" value="<?php echo utf8_decode($row['correo']);?>" >
                         
                         </div>
                         <div class="col-md-4">
