@@ -165,7 +165,7 @@
               <form>
                 <!--Para seleccionar las categorias-->
                 <select id="Categorias" name="Seleccionar-categoria">
-                    <option value="0">Categorias</option>
+                    <option value="0">--Categorias--</option>
                     <option value="Vehiculos">Vehiculos</option>
                     <option value="Electronicos">Computadoras</option>
                     <option value="Electronicos">Joyeria</option>
@@ -187,12 +187,19 @@
                 <input type="file" accept="image/png, image/jpeg" />
             
                 <br>
+                <br>
+                <h4>Es un objeto que...</h4><!--para saber si lo busca o lo encontró-->
+            
+                <label for="Motivo">Estoy buscando </label>
+                <input type="radio" name="recompensa" id="Motivo_Bus" value=""/>
+                <br>
+                <label for="Motivo">Lo he encontrado</label>
+                <input type="radio" name="recompensa" id="Motivo_Enc" value=""/>
 
-                <h4>¿Quieres ofrecer recompensa?</h4><!--para acpetar si hay recompensa-->
+                <h4>¿Quieres ofrecer recompensa?</h4><!--para aceptar si hay recompensa-->
             
                 <label for="Recompensa">Si </label>
                 <input type="radio" name="recompensa" id="Recompensa_si" value="Si" />
-                <br>
 
                 <label for="Recompensa">No</label>
                 <input type="radio" name="recompensa" id="Recompensa_no" value="No"/>
@@ -211,7 +218,7 @@
               <!--Formulario para mascotas-->
               <form>
                 <select id="Tipo_mascota">
-                  <option value="0">Mascotas</option>
+                  <option value="0">--Mascotas--</option>
                   <option value="Perro">Perro</option>
                   <option value="Gato">Gato</option>
                   <option value="Ave">Ave</option>
@@ -228,6 +235,13 @@
                 <input type="file" accept="image/png, image/jpeg"/>
                 <br>
                 <br>
+                <h4>Es una mascota que...</h4><!--para saber si lo busca o lo encontró-->
+            
+                <label for="Motivo">Estoy buscando </label>
+                <input type="radio" name="recompensa" id="Motivo_Bus" value=""/>
+                <br>
+                <label for="Motivo">La he encontrado</label>
+                <input type="radio" name="recompensa" id="Motivo_Enc" value=""/>
                 <h4>¿Quieres ofrecer recompensa?</h4><!--para acpetar si hay recompensa-->
             
                 <label for="Recompensa">Si </label>

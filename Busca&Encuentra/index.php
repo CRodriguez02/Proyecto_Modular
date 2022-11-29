@@ -11,7 +11,7 @@ $imprime=$_SESSION["login"];
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Carlos Rodriguez, Ozmar Andrade, Marlene Rios">
 
-    <title>Plantilla</title>
+    <title>Busca&Encuentra - Inicio</title>
     <link rel="icon" type="image/x-icon" href="assets/brand/B&E-logo.svg" />
 
     
@@ -150,7 +150,7 @@ $imprime=$_SESSION["login"];
             <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
             <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
             </form>
-          <!----Cambiar esto si inicia sesion a que no se vea--->
+
 
           <?php
          require "Phps/funciones.php";
@@ -167,7 +167,9 @@ $imprime=$_SESSION["login"];
         </div>
       </header>
       <!--HEADER-->
-
+      <!--BANER-->
+      
+      <!--BANER-->
 
       <!--Contenido-->
       <section class="py-5">
@@ -331,22 +333,17 @@ $imprime=$_SESSION["login"];
                 <a class="nav-link" href="list-publications.php">Mis Publicaciones</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
+                <a class="nav-link" href="my-account.php">Mi cuenta</a>
               </li>
-              <li class="nav-item dropup">
-                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
+              <li class="nav-item">
+                <a class="nav-link" href="about-us.html">Acerca de nosotros</a>
               </li>
+              
       
             </ul>
           </div>
         </div>
         </nav>
-        <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
        <!--Buttom-->
 
     <!--<div class="b-example-divider"></div>-->

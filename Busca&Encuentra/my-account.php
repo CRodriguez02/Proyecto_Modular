@@ -27,6 +27,7 @@ $row=$consulta_db->fetch_assoc($consulta_db);
     <meta name="description" content="">
     <meta name="author" content="Carlos Rodriguez, Ozmar Andrade, Marlene Rios">
     <title>Actualizar perfil</title>
+    <link rel="icon" type="image/x-icon" href="assets/brand/B&E-logo.svg" />
 
     
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -170,51 +171,75 @@ $row=$consulta_db->fetch_assoc($consulta_db);
     <br>
     <br>
     <!----podemos aqui empezar a poner la info de la base de datos--->
-    <div class="card text-center">
-        <div class="card-header">
-          Datos Personales
-        </div>
-        <div class="card-body">
-            <form action="phps/query_cuenta.php" class="row">  <!---poner eñ update de lo que le metamos---->
-                <div class="col-md-4">
-                 '<label class="form-label">Nombre(s)</label>
-                 <input type="text" class="form-control" name="nombre" value=>
-                
-               
+      <div class="container">
+        <div class="row">
+          <div class="col-3">
+            <div class="card text-center">
+              <div class="card-header">
+                Datos Actuales
+              </div>
+              <div class="card-body">
+              <label class="form-label">Usuario</label>
+              <input type="text" class="form-control" name="" disabled="disabled">
+                  <label class="form-label">Nombre(s)</label>
+                  <input type="text" class="form-control" name="" readonly="readonly">
+                  <label class="form-label">Apellido paterno</label>
+                  <input type="text" class="form-control" name="" readonly="readonly">
+                  <label class="form-label">Apellido materno</label>
+                  <input type="text" class="form-control" name="" readonly="readonly">
+                  <label class="form-label">Correo</label>
+                  <input type="text" class="form-control" name="" readonly="readonly">
+              </div>
+              <div class="card-footer text-muted">Estos datos son con los que te identificas actualmente.</div>
+            </div>
+          </div>
+          <div class="col-9">
+            <div class="card text-center">
+                <div class="card-header">
+                  Nuevos Datos Personales
                 </div>
-                
-                <div class="col-md-4">
-                <label class="form-label">Apellido paterno</label>
-                <input type="text" class="form-control" name="apellido_paterno" >
-                  
-                </div>
-                <div class="col-md-4">
-                <label class="form-label">Apellido materno</label>
-                <input type="text" class="form-control" name="apellido_materno" >
+                <div class="card-body">
+                  <p class="card-text">En este espacio podrás ingresar los nuevos datos que desees cambiar de tu información personal.</p>
+                    <form action="phps/query_cuenta.php" class="row">  <!---poner eñ update de lo que le metamos REVISA BIEN ESTE FORM @OZMAR---->
+                        <div class="col-md-4">
+                        <label class="form-label">Nombre(s)</label>
+                        <input type="text" class="form-control" name="nombre" value=>
+                        </div>
+                        
+                        <div class="col-md-4">
+                        <label class="form-label">Apellido paterno</label>
+                        <input type="text" class="form-control" name="apellido_paterno" >
+                          
+                        </div>
+                        <div class="col-md-4">
+                        <label class="form-label">Apellido materno</label>
+                        <input type="text" class="form-control" name="apellido_materno" >
 
+                        </div>
+                        <div class="col-md-6">
+                        <label class="form-label">Correo</label>
+                        <input type="text" class="form-control" name="correo_electronico" >
+                        
+                        </div>
+                        <div class="col-md-4">
+                        <br>
+                          <label class="form-label"for="imagen">Cambiar foto de Perfil:</label>
+                          <input type="file" accept="image/png, image/jpeg" />
+                        </div>
+                        
+                        <div class="col-md-12">
+                          <br>
+                          <button class="btn btn-primary form-control">Actualizar datos</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="col-md-6">
-                <label class="form-label">Correo</label>
-                <input type="text" class="form-control" name="correo_electronico" >
-                
-                </div>
-                <div class="col-md-4">
-                <br>
-                  <label class="form-label"for="imagen">Cambiar foto de Perfil:</label>
-                  <input type="file" accept="image/png, image/jpeg" />
-                </div>
-                
-                <div class="col-md-12">
-                  <br>
-                  <button class="btn btn-primary form-control">Actualizar datos</button>
-                </div>
-            </form>
+                <div class="card-footer text-muted">Una vez actualizados tus datos se verán reflejados en el contenedor de la derecha.</div>
+            </div>
+          </div>
         </div>
-        <div class="card-footer text-muted"></div>
       </div>
-      <br>
-      <br>
-      
+      <div class="b-example-divider"></div>
+      <div class="container">
       <div class="card text-center">
         <div class="card-header">
             Actualiza tu contraseña.
@@ -247,6 +272,7 @@ $row=$consulta_db->fetch_assoc($consulta_db);
         </div>
         <div class="card-footer text-muted"></div>
       </div>
+    </div>
     
 </body>
 </html>
