@@ -77,7 +77,6 @@ $imprime=$_SESSION["login"];
 <body>
     <!--LOGOS-->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-
     <symbol id="home" viewBox="0 0 16 16">
         <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
     </symbol>
@@ -85,8 +84,6 @@ $imprime=$_SESSION["login"];
         <path d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"/>
 
     </symbol>
-    
-    
     <symbol id="table" viewBox="0 0 16 16">
         <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z"/>
     </symbol>
@@ -99,81 +96,104 @@ $imprime=$_SESSION["login"];
     </symbol>
     </svg>
     <!--LOGOS-->
-
     <main>
       <!--HEADER-->
       <header>
-        <div class="px-3 py-2 text-bg-dark">
-        <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="index.php" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                <img class="bi me-2" width="100" height="90" role="img" aria-label="" src="assets/brand/logo-02.png" title="Busca&Encuentra">
-            </a>
+          <div class="px-3 py-2 text-bg-dark">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="index.php" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                    <img class="bi me-2" width="100" height="90" role="img" aria-label="" src="assets/brand/logo-02.png" title="Busca&Encuentra">
+                </a>
 
-            <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-                <li>
-                <a href="index.php" class="nav-link text-secondary">
-                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
-                    Inicio
-                </a>
-                </li>
-                <li>
-                <a href="system-chat.php" class="nav-link text-white">
-                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#chat"/></svg>
-                    Mensajes
-                </a>
-                </li>
-                <li>
-                <a href="list-publications.php" class="nav-link text-white">
-                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
-                    Publicaciones
-                </a>
-                </li>
-                <li>
-                <a href="publicacion.php" class="nav-link text-white">
-                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
-                    Nuevas Publicaciones
-                </a>
-                </li>
-                <li>
-                <a href="my-account.php" class="nav-link text-white">
-                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
-                    Cuenta
-                </a>
-                </li>
-            </ul>
+                <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                    <li>
+                    <a href="index.php" class="nav-link text-secondary">
+                        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
+                        Inicio
+                    </a>
+                    </li>
+                    <li>
+                    <a href="system-chat.php" class="nav-link text-white">
+                        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#chat"/></svg>
+                        Mensajes
+                    </a>
+                    </li>
+                    <li>
+                    <a href="list-publications.php" class="nav-link text-white">
+                        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
+                        Publicaciones
+                    </a>
+                    </li>
+                    <li>
+                    <a href="publicacion.php" class="nav-link text-white">
+                        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
+                        Nuevas Publicaciones
+                    </a>
+                    </li>
+                    <li>
+                    <a href="my-account.php" class="nav-link text-white">
+                        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
+                        Cuenta
+                    </a>
+                    </li>
+                </ul>
+                </div>
             </div>
-        </div>
-        </div>
-        <div class="px-3 py-2 border-bottom mb-3">
-        <div class="container d-flex flex-wrap justify-content-center">
-            <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
-            <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
-            </form>
+            </div>
+            <div class="px-3 py-2 border-bottom mb-3">
+            <div class="container d-flex flex-wrap justify-content-center">
+                <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
+                <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
+                </form>
 
 
-          <?php
-         require "Phps/funciones.php";
-         $autentidicacion=autenticado();
-          if(!$autentidicacion)
-          {
-            echo (' <div class="text-end">
-            <a href="sing-in.php" class="btn btn-light text-dark me-2">Iniciar sesión</a>
-            <a href="sing-up.php"  class="btn btn-primary">Registrarse</a>
-            </div>;');
-          } 
-          ?>
-        </div>
-        </div>
+              <?php
+            require "Phps/funciones.php";
+            $autentidicacion=autenticado();
+              if(!$autentidicacion)
+              {
+                echo (' <div class="text-end">
+                <a href="sing-in.php" class="btn btn-light text-dark me-2">Iniciar sesión</a>
+                <a href="sing-up.php"  class="btn btn-primary">Registrarse</a>
+                </div>;');
+              } 
+              ?>
+            </div>
+          </div>
       </header>
       <!--HEADER-->
       <!--BANER-->
-      
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/img/Banner+idea.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/img/Banner+idea2.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="assets\img\84ff00&text=Banner+idea+3.png" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
       <!--BANER-->
 
       <!--Contenido-->
       <section class="py-5">
-        <div class="container px-4 px-lg-5 mt-5">
+        <div class="container-fluid">
+          <div class="p-3 mb-2 bg-danger text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+            Se buscan...
+          </div>
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 <div class="col mb-5">
                     <div class="card h-100">
@@ -312,6 +332,12 @@ $imprime=$_SESSION["login"];
                   </div>
                 </div>
             </div>
+          <div class="p-3 mb-2 bg-success text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill-exclamation" viewBox="0 0 16 16">
+            <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/><path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-3.5-2a.5.5 0 0 0-.5.5v1.5a.5.5 0 0 0 1 0V11a.5.5 0 0 0-.5-.5Zm0 4a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Z"/></svg>
+            ¡Encontrados!
+          </div>
+          <div class="p-3 mb-2 bg-info text-white">Recientes</div>
         </div>
       </section>
       <!--Contenido-->
@@ -350,7 +376,8 @@ $imprime=$_SESSION["login"];
     </main>
 
 
-    
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+
       
 </body>
 </html>

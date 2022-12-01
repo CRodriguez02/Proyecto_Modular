@@ -6,6 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Carlos Rodriguez, Ozmar Andrade, Marlene Rios">
     <title>Iniciar sesión</title>
+    <link rel="icon" type="image/x-icon" href="assets/brand/B&E-logo.svg" />
     
 
 <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -101,7 +102,7 @@
       <br><br><br><br>
       <a class="mt-5 mb-3 text-muted" href="index.php">Volver al inicio</a>
     </main>
-    
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
 
   </body>
 </html>

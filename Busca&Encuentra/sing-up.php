@@ -74,20 +74,26 @@
     
     <main class="form-signin w-100 m-auto">
       <!----Aqui empieza el form-->
-      <form action="Phps/form_sing-up.php" method="POST">
+      <form action="Phps/form_sing-up.php" class="row g-3 needs-validation" method="POST" novalidate>
         <img class="mb-4" src="assets/brand/logo-02.png" alt="" width="170" height="170">
         <h1 class="h3 mb-3 fw-normal">Registrarse</h1>
         <div class="text-start">
             <div class="form-group">
                 <label class="form-control-label" for="labelNombre">Nombre(s)</label>
-                <input name="nombre" type="text" class="form-control" id="labelNombre" placeholder="Nombre(s)" maxlength="100" pattern="[a-z-A-Z-á-ú-' ']+">
+                <input name="nombre" type="text" class="form-control" id="labelNombre" placeholder="Nombre(s)" maxlength="100" pattern="[a-z-A-Z-á-ú-' ']+" required>
+                <div class="invalid-feedback">
+                  Por favor ingrese su nombre.
+                </div>
             </div>
         </div>
 
         <div class="text-start">
             <div class="form-group">
                 <label class="form-control-label" for="labelPaterno">Apellido Paterno</label>
-                <input name="apellido_Pa" type="text" class="form-control" id="labelPaterno" placeholder="Apellido Paterno" maxlength="100" pattern="[a-z-A-Z-á-ú]+">
+                <input name="apellido_Pa" type="text" class="form-control" id="labelPaterno" placeholder="Apellido Paterno" maxlength="100" pattern="[a-z-A-Z-á-ú]+" required>
+                <div class="invalid-feedback">
+                  Por favor ingrese su apellido.
+                </div>
             </div>
         </div>
 
@@ -100,25 +106,37 @@
         <div class="text-start">
             <div class="form-group">
                 <label class="form-control-label" for="labelCorreo">Correo electrónico</label>
-                <input name="correo_elec" type="email" class="form-control" id="labelCorreo" placeholder="Correo electrónico" maxlength="255">
+                <input name="correo_elec" type="email" class="form-control" id="labelCorreo" placeholder="Correo electrónico" maxlength="255" required>
+                <div class="invalid-feedback">
+                  Por favor ingrese un correo valido.
+                </div>
             </div>
         </div>
         <div class="text-start">
             <div class="form-group">
                 <label class="form-control-label" for="labelUsuario">Usuario</label>
-                <input name="usuario" type="text" class="form-control" id="labelUsuario" placeholder="Usuario" maxlength="50">
+                <input name="usuario" type="text" class="form-control" id="labelUsuario" placeholder="Usuario" maxlength="50" required>
+                <div class="invalid-feedback">
+                  Por favor ingrese su nombre de usuario.
+                </div>
             </div>
         </div>
         <div class="text-start">
             <div class="form-group">
                 <label class="form-control-label" for="labelContraseña1">Contraseña</label>
-                <input name="contraseña" type="password" class="form-control" id="labelContraseña1" placeholder="Contraseña" maxlength="50">
+                <input name="contraseña" type="password" class="form-control" id="labelContraseña1" placeholder="Contraseña" maxlength="50" required>
+                <div class="invalid-feedback">
+                  Por favor ingrese su contraseña.
+                </div>
             </div>
         </div>
         <div class="text-start">
             <div class="form-group">
                 <label class="form-control-label" for="labelContraseña2">Confirmar Contraseña</label>
-                <input name="confirma_contra" type="password" class="form-control" id="labelContraseña2" placeholder="Confirmar Contraseña" maxlength="50">
+                <input name="confirma_contra" type="password" class="form-control" id="labelContraseña2" placeholder="Confirmar Contraseña" maxlength="50" required>
+                <div class="invalid-feedback">
+                  Por favor ingrese su contraseña.
+                </div>
             </div>
         </div>
         <br>
@@ -128,6 +146,27 @@
       <br><br><br>
       <a class="mt-5 mb-3 text-muted" href="index.php">Volver al inicio</a>
     </main>
+    <script>// Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function () {
+        'use strict'
 
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+          .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+              }
+
+              form.classList.add('was-validated')
+            }, false)
+          })
+      })()
+    </script>
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
