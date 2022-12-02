@@ -1,6 +1,6 @@
 <?php
     error_reporting(0);
-    require "conectar.php";
+    require "conectar.php";  
     $nombres=$_POST["nombre"];
     $apellido_pa=$_POST["apellido_Pa"];
     $apellido_ma=$_POST["apellido_Ma"];
@@ -13,6 +13,7 @@
     //Consulta para verificar que el registro no exista
     $validar = "SELECT * FROM usuarios where username='$usuario'";
     $validando=$db->query($validar);
+    
     if(($validando->num_rows>0 && $contrasena!=$contrasena_confirma) || ($validando->num_rows>0 && $contrasena==$contrasena_confirma) || ($validando->num_rows<=0 && $contrasena!=$contrasena_confirma))
     {
         echo("Error de usuario o contraseña");
@@ -27,8 +28,9 @@
 
         if($consulta)
         {
-            //echo "correcto si estamos en este proyecto primer query";
-            header('Location: http://localhost:3000/Busca&Encuentra/index.php');
+            header('location: http://localhost:3000/Busca&Encuentra/sing-in.php');
+            //
+
         }
 
         else

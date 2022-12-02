@@ -2,7 +2,9 @@
 error_reporting(0);
 session_start();
 $imprime=$_SESSION["login"];
+$imprime2=$_SESSION['usuario'];
    var_dump($imprime);
+   var_dump($imprime2);
 ?>
 <!doctype html>
 <html lang="es">
