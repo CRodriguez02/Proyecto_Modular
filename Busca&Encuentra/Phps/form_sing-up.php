@@ -27,7 +27,8 @@
 
         if($consulta)
         {
-            echo "correcto si estamos en este proyecto primer query";
+            //echo "correcto si estamos en este proyecto primer query";
+            header('Location: http://localhost:3000/Busca&Encuentra/index.php');
         }
 
         else
