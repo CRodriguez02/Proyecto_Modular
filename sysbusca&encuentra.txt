@@ -8,7 +8,7 @@ contrasena varchar (50) NOT NULL
 );
 
 CREATE TABLE usuarios (
-username varchar (50) PRIMARY KEY,
+username varchar (50) NOT NULL PRIMARY KEY,
 correo varchar (255) NOT NULL,
 nombre varchar (100) NOT NULL,
 apellido_paterno varchar (100) NOT NULL,
@@ -18,31 +18,27 @@ imagen mediumblob
 );
 
 CREATE TABLE mascotas (
+fk_username_Mascota varchar(50) NOT NULL,
 ID varchar (7) PRIMARY KEY,
 titulo varchar (100) NOT NULL,
 descripcion text,
 imagen mediumblob,
-estado tinyit NOT NULL,
+estado bool NOT NULL,
 especie varchar (100) NOT NULL,
 raza varchar (100) NOT NULL,
-CONSTRAINT fk_username FOREIGN KEY (usernameUsuario) REFERENCES usuarios (username),
-recompensa tinyit NOT NULL
+FOREIGN KEY (fk_username_Mascota ) REFERENCES usuarios (username),
+recompensa bool NOT NULL
 );
 
 CREATE TABLE objeto (
+fk_username_Objeto varchar(50) NOT NULL,
 ID varchar (7) PRIMARY KEY,
 titulo varchar (100) NOT NULL,
 descripcion text,
 imagen mediumblob,
-estado tinyit NOT NULL,
+estado bool NOT NULL,
 categoria varchar (100) NOT NULL,
-CONSTRAINT fk_username FOREIGN KEY (usernameUsuario) REFERENCES usuarios (username),
-recompensa tinyit NOT NULL
+FOREIGN KEY (fk_username_Objeto) REFERENCES usuarios (username),
+recompensa bool NOT NULL
 );
 
-*****CREATE TABLE reportes (
-folio varchar (12) PRIMARY KEY,
-descripcion text,
-CONSTRAINT fk_objeto FOREIGN KEY (ID_OBJ) REFERENCES objeto (ID),
-CONSTRAINT fk_username FOREIGN KEY (usernameUsuario) REFERENCES usuarios (username)
-);
