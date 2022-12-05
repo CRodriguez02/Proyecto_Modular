@@ -146,14 +146,14 @@
       <br><br><br>
       <a class="mt-5 mb-3 text-muted" href="index.php">Volver al inicio</a>
     </main>
-    <script>// Example starter JavaScript for disabling form submissions if there are invalid fields
+    <script>
       (function () {
         'use strict'
 
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        
         var forms = document.querySelectorAll('.needs-validation')
 
-        // Loop over them and prevent submission
+        
         Array.prototype.slice.call(forms)
           .forEach(function (form) {
             form.addEventListener('submit', function (event) {

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Carlos Rodriguez, Ozmar Andrade, Marlene Rios">
     <title>Mis publicaciones</title>
+    <link rel="icon" type="image/x-icon" href="assets/brand/B&E-logo.svg" />
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <style>

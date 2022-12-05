@@ -6,6 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Carlos Rodriguez, Ozmar Andrade, Marlene Rios">
     <title>Nueva Publicación</title>
+    <link rel="icon" type="image/x-icon" href="assets/brand/B&E-logo.svg" />
 
     
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -153,122 +154,218 @@
     <!--HEADER-->
 
        <!--Formulario para subir una publicación-->
-       <main>
-        <br>
-       <div class="row">
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Formulario para objetos</h5>
-              <p class="card-text">Proporciona los datos necesarios para buscar un objeto.</p>
-              <!--Formulario para objetos-->
-              <form>
-                <!--Para seleccionar las categorias-->
-                <select id="Categorias" name="Seleccionar-categoria">
-                    <option value="0">--Categorias--</option>
-                    <option value="Vehiculos">Vehiculos</option>
-                    <option value="Electronicos">Computadoras</option>
-                    <option value="Electronicos">Joyeria</option>
-                    <option value="Electronicos">Celulares</option>
-                    <option value="Electronicos">Electronicos</option>
-                </select>
 
-                <!--Desde aqui insertamos nuestros objetos-->
-                <input type="text" id="Marca" placeholder="Inserta la marca" name="txt_marca"/>
-                <input type="text" id="Modelo" placeholder="Inserta el modelo" name="txt_modelo"/>
-                <br>
-                <br>
-                <div class="form-group">
-                  <label for="textarea">Inserta una descripcion</label>
-                  <textarea class="form-control" id="Descripcion" name="txt_descripcion" rows="2" ></textarea>
-                </div>
-                <br>
-                <h4>Por favor sube una imagen del objeto que buscas</h4>
-                <input type="file" accept="image/png, image/jpeg" />
-            
-                <br>
-                <br>
-                <h4>Es un objeto que...</h4><!--para saber si lo busca o lo encontró-->
-            
-                <label for="Motivo">Estoy buscando </label>
-                <input type="radio" name="recompensa" id="Motivo_Bus" value=""/>
-                <br>
-                <label for="Motivo">Lo he encontrado</label>
-                <input type="radio" name="recompensa" id="Motivo_Enc" value=""/>
-
-                <h4>¿Quieres ofrecer recompensa?</h4><!--para aceptar si hay recompensa-->
-            
-                <label for="Recompensa">Si </label>
-                <input type="radio" name="recompensa" id="Recompensa_si" value="Si" />
-
-                <label for="Recompensa">No</label>
-                <input type="radio" name="recompensa" id="Recompensa_no" value="No"/>
-              </form>
-              <!--Formulario para objetos-->
-              <br>
-              <input class="btn btn-primary"  type="submit" onclick="alert('Su publicación ha sido guardada con exito.')" value="Publica la busqueda">
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Formulario para mascotas</h5>
-              <p class="card-text">¿Estas buscando una mascota perdida? Ingresa su información aquí</p>
-              <!--Formulario para mascotas-->
-              <form>
-                <select id="Tipo_mascota">
-                  <option value="0">--Mascotas--</option>
-                  <option value="Perro">Perro</option>
-                  <option value="Gato">Gato</option>
-                  <option value="Ave">Ave</option>
-                  <option value="x">Exotica</option>
-                    </select>
-                    <input type="text" id="Raza" placeholder="Raza de su mascota" name="txt_Raza"/>
-                    <div class="form-group">
-                      <br>
-                        <label for="textarea">Descripcion de tu mascota</label>
-                        <textarea class="form-control" id="Descripcion_mascota" name="txt_descripcion" rows="2" name="txt_describemascota"></textarea>
+  <section class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="col-sm-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Formulario para objetos</h5>
+                <p class="card-text">Proporciona los datos necesarios para buscar un objeto.</p>
+                <!--Formulario para objetos-->
+                  <!--Para seleccionar las categorias-->
+                  <form class="row g-3 needs-validation" novalidate>
+                    <div class="mb-3">
+                      <input type="file" class="form-control" aria-label="file example" accept="image/png, image/jpeg" required>
+                      <div class="invalid-feedback">Falta de imagen o formato no aceptado (solo se aceptan .png, .jpg)</div>
                     </div>
-                <br>
-                <h4>Por favor Sube una imagen de tu Mascota</h4>
-                <input type="file" accept="image/png, image/jpeg"/>
-                <br>
-                <br>
-                <h4>Es una mascota que...</h4><!--para saber si lo busca o lo encontró-->
-            
-                <label for="Motivo">Estoy buscando </label>
-                <input type="radio" name="recompensa" id="Motivo_Bus" value=""/>
-                <br>
-                <label for="Motivo">La he encontrado</label>
-                <input type="radio" name="recompensa" id="Motivo_Enc" value=""/>
-                <h4>¿Quieres ofrecer recompensa?</h4><!--para acpetar si hay recompensa-->
-            
-                <label for="Recompensa">Si </label>
-                <input type="radio" name="recompensa" id="Recompensa_si" value="Si" />
-
-                <label for="Recompensa">No</label>
-                <input type="radio" name="recompensa" id="Recompensa_no" value="No"/>
-                </form>
-                <br>
-              <!--Formulario para mascotas-->
-              <input class="btn btn-primary"  type="submit" onclick="alert('Su publicación ha sido guardada con exito.')" value="Publica la busqueda">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <label for="Categoria" class="form-label">Categorias</label>
+                        <select class="form-select" id="Categorias" required>
+                          <option selected disabled value="">--Categorias--</option>
+                          <option value="Vehiculos">Vehiculos</option>
+                          <option value="Computadoras">Computadoras</option>
+                          <option value="Joyeria">Joyeria</option>
+                          <option value="Celulares">Celulares</option>
+                          <option value="Electronicos">Electronicos</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Por favor seleccione una categoria.
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="Marca" class="form-label">Marca</label>
+                        <input type="text" class="form-control" id="Marca" placeholder="Inserta la marca" name="txt_marca" required/>
+                        <div class="invalid-feedback">
+                            Por favor escriba la marca.
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="Modelo2" class="form-label">Modelo</label>
+                        <input type="text" class="form-control" id="Modelo" placeholder="Inserta el modelo" name="txt_modelo" required/>
+                        <div class="invalid-feedback">
+                          Por favor escriba un modelo.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="validationTextarea" class="form-label">Inserta una descripcion</label>
+                      <textarea class="form-control" id="Descripcion" placeholder="¿Dónde, cómo y cuándo encontraste/perdiste el objeto?" name="txt_descripcion" required></textarea>
+                      <div class="invalid-feedback">
+                        Por favor ingrese una descripción.
+                      </div>
+                    </div>
+                    <h3>Es un objeto que...</h3><!--para saber si lo busca o lo encontró-->
+                    <div class="form-check">
+                      <input type="radio" class="form-check-input" id="Motivo_Bus" name="motivo" required>
+                      <label class="form-check-label" for="Motivo_Bus">Estoy buscando</label>
+                    </div>
+                    <div class="form-check mb-3">
+                      <input type="radio" class="form-check-input" id="Motivo_Enc" name="motivo" required>
+                      <label class="form-check-label" for="Motivo_Enc">Lo he encontrado</label>
+                      <div class="invalid-feedback">Ayudanos a saber si tu publicación es de busqueda o encuentro.</div>
+                    </div>
+                    <h3>¿Ofreces recompensa?</h3><!--para aceptar si hay recompensa-->
+                    <div class="form-check">
+                      <input type="radio" class="form-check-input" id="Recompensa_si" name="recompensa" required>
+                      <label class="form-check-label" for="Recompensa_si">Sí</label>
+                    </div>
+                    <div class="form-check mb-3">
+                      <input type="radio" class="form-check-input" id="Recompensa_no" name="recompensa" required>
+                      <label class="form-check-label" for="Recompensa_no">No</label>
+                      <div class="invalid-feedback">Ayudanos a saber si ofreces recompensa.</div>
+                    </div>
+                    <input class="btn btn-primary"  type="submit" value="Publica la busqueda">
+                  </form>
+                <!--Formulario para objetos-->
+              </div>
             </div>
-          </div>
+            </div>
+        </div>
+
+
+
+        <div class="col">
+            <div class="col-sm-12">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Formulario para mascotas</h5>
+                  <p class="card-text">¿Estas buscando una mascota perdida? Ingresa su información aquí</p>
+                  <!--Formulario para mascotas-->
+                  <form class="row g-3 needs-validation" novalidate>
+                    <div class="mb-3">
+                      <input type="file" class="form-control" aria-label="file example" accept="image/png, image/jpeg" required>
+                      <div class="invalid-feedback">Falta de imagen o formato no aceptado (solo se aceptan .png, .jpg)</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <label for="Tipo_mascota" class="form-label">Tipo de Mascota</label>
+                        <select class="form-select" id="Tipo_mascota" required>
+                          <option selected disabled value="">--Mascotas--</option>
+                          <option value="Perro">Perro</option>
+                          <option value="Gato">Gato</option>
+                          <option value="Ave">Ave</option>
+                          <option value="Exotica">Exotica</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Por favor seleccione un tipo de mascota.
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="Raza" class="form-label">Raza</label>
+                        <input type="text" class="form-control" id="Raza" placeholder="Raza de su mascota" name="txt_Raza" required/>
+                        <div class="invalid-feedback">
+                            Por favor escriba la raza.
+                        </div>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                      <label for="validationTextarea" class="form-label">Inserta una descripcion</label>
+                      <textarea class="form-control" id="Descripcion" placeholder="¿Dónde, cómo y cuándo encontraste/perdiste la mascota?" name="txt_descripcion" required></textarea>
+                      <div class="invalid-feedback">
+                        Por favor ingrese una descripción.
+                      </div>
+                    </div>
+                    <h3>Es una mascota que...</h3><!--para saber si lo busca o lo encontró-->
+                    <div class="form-check">
+                      <input type="radio" class="form-check-input" id="Motivo_Bus" name="motivo" required>
+                      <label class="form-check-label" for="Motivo_Bus">Estoy buscando</label>
+                    </div>
+                    <div class="form-check mb-3">
+                      <input type="radio" class="form-check-input" id="Motivo_Enc" name="motivo" required>
+                      <label class="form-check-label" for="Motivo_Enc">La he encontrado</label>
+                      <div class="invalid-feedback">Ayudanos a saber si tu publicación es de busqueda o encuentro.</div>
+                    </div>
+                    <h3>¿Ofreces recompensa?</h3><!--para aceptar si hay recompensa-->
+                    <div class="form-check">
+                      <input type="radio" class="form-check-input" id="Recompensa_si" name="recompensa" required>
+                      <label class="form-check-label" for="Recompensa_si">Sí</label>
+                    </div>
+                    <div class="form-check mb-3">
+                      <input type="radio" class="form-check-input" id="Recompensa_no" name="recompensa" required>
+                      <label class="form-check-label" for="Recompensa_no">No</label>
+                      <div class="invalid-feedback">Ayudanos a saber si ofreces recompensa.</div>
+                    </div>
+                    <input class="btn btn-primary"  type="submit" value="Publica la busqueda">
+                  </form>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
-
-    </main>
-
-
-
-
+    </div>
+  </section>
+    <!--Buttom-->
+    <section class="py-5">
+    <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand">Busca&Encuentra</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="list-publications.php">Mis Publicaciones</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="my-account.php">Mi cuenta</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about-us.html">Acerca de nosotros</a>
+              </li>
+              
+      
+            </ul>
+          </div>
+        </div>
+        </nav>
+        </section>
+       <!--Buttom-->
        <!--Formulario para subir una publicación-->
 
-       
+      <script>
+        (function () {
+          'use strict'
 
-    <!--<div class="b-example-divider"></div>-->
+          
+          var forms = document.querySelectorAll('.needs-validation')
+
+          
+          Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+              form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                  event.preventDefault()
+                  event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+              }, false)
+            })
+        })()
+      </script>
+      <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+
     </main>
+    
     
 </body>
 </html>
