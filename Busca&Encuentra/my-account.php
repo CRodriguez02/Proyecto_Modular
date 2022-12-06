@@ -182,6 +182,7 @@ $row=mysqli_fetch_assoc($consulta_db);
     <br>
     <br>
     <!----podemos aqui empezar a poner la info de la base de datos--->
+    <section class="py-5">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -192,44 +193,44 @@ $row=mysqli_fetch_assoc($consulta_db);
                 <div class="card-body">
                   <p class="card-text">En este espacio podrás ingresar los nuevos datos que desees cambiar de tu información personal.</p>
                     <form action="phps/query_cuenta.php" class="row" method="POST">
-                    <div class="row"> 
-                        <div class="col-md-2">
-                        <label class="form-label">Usuario</label>
-                        <input type="text" class="form-control" name="" disabled="disabled" placeholder="<?php echo utf8_decode($row['username']);?>">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                        <label class="form-label">Nombre(s)</label>
-                        <input type="text" class="form-control" name="nombre" value="<?php echo utf8_decode($row['nombre']);?>">
-                        </div>
-                        
-                        <div class="col-md-4">
-                        <label class="form-label">Apellido paterno</label>
-                        <input type="text" class="form-control" name="apellido_paterno"  value="<?php echo utf8_decode($row['apellido_paterno']);?>">
-                          
-                        </div>
-                        <div class="col-md-4">
-                        <label class="form-label">Apellido materno</label>
-                        <input type="text" class="form-control" name="apellido_materno" value="<?php echo utf8_decode($row['apellido_materno']);?>">
-
-                        </div>
-                        <div class="col-md-6">
-                        <label class="form-label">Correo</label>
-                        <input type="text" class="form-control" name="correo_electronico" value="<?php echo utf8_decode($row['correo']);?>" >
-                        
-                        </div>
-                        <div class="col-md-4">
-                        <br>
-                          <label class="form-label"for="imagen">Cambiar foto de Perfil:</label>
-                          <input type="file" accept="image/png, image/jpeg" />
-                        </div>
-                        
-                        <div class="col-md-12">
-                          <br>
-                          <button class="btn btn-primary form-control">Actualizar datos</button>
-                        </div>
+                      <div class="row"> 
+                          <div class="col-md-2">
+                          <label class="form-label">Usuario</label>
+                          <input type="text" class="form-control" name="" disabled="disabled" placeholder="<?php echo utf8_decode($row['username']);?>">
+                          </div>
                       </div>
+                      <div class="row">
+                          <div class="col-md-4">
+                          <label class="form-label">Nombre(s)</label>
+                          <input type="text" class="form-control" name="nombre" value="<?php echo utf8_decode($row['nombre']);?>" required>
+                          </div>
+                          
+                          <div class="col-md-4">
+                          <label class="form-label">Apellido paterno</label>
+                          <input type="text" class="form-control" name="apellido_paterno"  value="<?php echo utf8_decode($row['apellido_paterno']);?>" required>
+                            
+                          </div>
+                          <div class="col-md-4">
+                          <label class="form-label">Apellido materno</label>
+                          <input type="text" class="form-control" name="apellido_materno" value="<?php echo utf8_decode($row['apellido_materno']);?>" required>
+
+                          </div>
+                          <div class="col-md-6">
+                          <label class="form-label">Correo</label>
+                          <input type="text" class="form-control" name="correo_electronico" value="<?php echo utf8_decode($row['correo']);?>" required>
+                          
+                          </div>
+                          <div class="col-md-4">
+                          <br>
+                            <label class="form-label"for="imagen">Cambiar foto de Perfil:</label>
+                            <input type="file" accept="image/png, image/jpeg" />
+                          </div>
+                          
+                          <div class="col-md-12">
+                            <br>
+                            <button class="btn btn-primary form-control">Actualizar datos</button>
+                          </div>
+                        </div>
                     </form>
                 </div>
                 <div class="card-footer text-muted">Una vez actualizados tus datos se verán reflejados en el contenedor.</div>
@@ -269,10 +270,40 @@ $row=mysqli_fetch_assoc($consulta_db);
             </form>
         </form>
 
+          </div>
+          <div class="card-footer text-muted"></div>
         </div>
-        <div class="card-footer text-muted"></div>
       </div>
-    </div>
-    
+    </section>
+     <!--Buttom-->
+    <section class="py-5">
+      <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand">Busca&Encuentra</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="list-publications.php">Mis Publicaciones</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="my-account.php">Mi cuenta</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about-us.html">Acerca de nosotros</a>
+                </li>
+                
+        
+              </ul>
+            </div>
+          </div>
+      </nav>
+    </section>
+       <!--Buttom-->
 </body>
 </html>

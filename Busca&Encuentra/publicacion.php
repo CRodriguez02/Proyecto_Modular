@@ -186,18 +186,11 @@
                           Por favor seleccione una categoria.
                         </div>
                       </div>
-                      <div class="col-md-4">
-                        <label for="Marca" class="form-label">Marca</label>
-                        <input type="text" class="form-control" id="Marca" placeholder="Inserta la marca" name="txt_marca" required/>
+                      <div class="col-md-8">
+                        <label for="Titulo" class="form-label">Título</label>
+                        <input type="text" class="form-control" id="Titulo" placeholder="Agrega un título a la publicación" name="txt_titulo" maxlength="100" required/>
                         <div class="invalid-feedback">
-                            Por favor escriba la marca.
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <label for="Modelo2" class="form-label">Modelo</label>
-                        <input type="text" class="form-control" id="Modelo" placeholder="Inserta el modelo" name="txt_modelo" required/>
-                        <div class="invalid-feedback">
-                          Por favor escriba un modelo.
+                            Por favor escriba un título para la publicación.
                         </div>
                       </div>
                     </div>
@@ -264,11 +257,11 @@
                           Por favor seleccione un tipo de mascota.
                         </div>
                       </div>
-                      <div class="col-md-4">
-                        <label for="Raza" class="form-label">Raza</label>
-                        <input type="text" class="form-control" id="Raza" placeholder="Raza de su mascota" name="txt_Raza" required/>
+                      <div class="col-md-8">
+                        <label for="Titulo" class="form-label">Título</label>
+                        <input type="text" class="form-control" id="Titulo" placeholder="Agrega un título a la publicación" name="txt_titulo" maxlength="100" required/>
                         <div class="invalid-feedback">
-                            Por favor escriba la raza.
+                            Por favor escriba un título para la publicación.
                         </div>
                       </div>
                     </div>
