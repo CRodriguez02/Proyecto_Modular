@@ -17,7 +17,7 @@ if($consulta_db->num_rows>0)
 }
 else
 {
-  echo("No agarra datos");
+  echo("No agarra datos");//mejor poner la página de error 404
 }
 $row=mysqli_fetch_assoc($consulta_db);
 
