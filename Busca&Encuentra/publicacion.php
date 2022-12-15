@@ -245,8 +245,8 @@
                     </div>
                     <div class="row">
                       <div class="col-md-4">
-                        <label for="Tipo_mascota" class="form-label">Tipo de Mascota</label>
-                        <select class="form-select" id="Tipo_mascota" required>
+                        <label for="Especie_mascota" class="form-label">Especie de Mascota</label>
+                        <select class="form-select" id="Especie_mascota" required>
                           <option selected disabled value="">--Mascotas--</option>
                           <option value="Perro">Perro</option>
                           <option value="Gato">Gato</option>
@@ -255,6 +255,19 @@
                         </select>
                         <div class="invalid-feedback">
                           Por favor seleccione un tipo de mascota.
+                        </div>
+                      </div>
+                      <div class="col-md-5">
+                        <label for="Raza_mascota" class="form-label">Raza de Mascota</label>
+                        <select class="form-select" id="Raza_mascota" required>
+                          <option selected disabled value="">--Razas de perros--</option>
+                          <option value="">raza1</option>
+                          <option value="">raza2</option>
+                          <option value="">raza3</option>
+                          <option value="otro">Otro</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Por favor seleccione una raza.
                         </div>
                       </div>
                       <div class="col-md-8">
@@ -335,27 +348,7 @@
        <!--Buttom-->
        <!--Formulario para subir una publicación-->
 
-      <script>
-        (function () {
-          'use strict'
-
-          
-          var forms = document.querySelectorAll('.needs-validation')
-
-          
-          Array.prototype.slice.call(forms)
-            .forEach(function (form) {
-              form.addEventListener('submit', function (event) {
-                if (!form.checkValidity()) {
-                  event.preventDefault()
-                  event.stopPropagation()
-                }
-
-                form.classList.add('was-validated')
-              }, false)
-            })
-        })()
-      </script>
+      <script src="assets/dist/js/validacion.js"></script>
       <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
 
     </main>

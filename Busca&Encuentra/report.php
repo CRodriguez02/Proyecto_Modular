@@ -8,7 +8,7 @@
     <title>Reporte</title>
     <link rel="icon" type="image/x-icon" href="assets/brand/B&E-logo.svg" />
 
-    <link rel="icon" type="image/x-icon" href="assets/brand/bootstrap-logo.svg" />
+
 
     
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -145,40 +145,43 @@
 </header>
 <!--HEADER-->
 <section class="py-5">
-            <form class="container">
+            <form class="container  needs-validation" novalidate>
                 <div class="text-center"> 
                     <h5 class="card-title">Levantar un reporte</h5>
                 <div class="row">
                     <div class="form-group col-md-2">
                         <label for="folio-reporte" class="col-form-label">Folio de Reporte</label>
-                        <input type="text" class="form-control" id="folio-reporte" placeholder="Folio de Reporte">
+                        <input type="text" class="form-control" disabled="disabled" id="folio-reporte" placeholder="Folio de Reporte">
                     </div>
                 <div class="form-group col-md-2">
                     <label for="id-ob-masc" class="col-form-label">ID-Objeto/Mascota</label>
-                    <input type="text" class="form-control" id="id-ob-masc" placeholder="ID">
+                    <input type="text" class="form-control" disabled="disabled" id="id-ob-masc" placeholder="ID">
                 </div>
                 <div class="form-group col-md-2">
                     <label for="User" class="col-form-label">Usuario</label>
-                    <input type="text" class="form-control" id="User" placeholder="Tu usuario">
+                    <input type="text" class="form-control" disabled="disabled" id="User" placeholder="Tu usuario">
                 </div>
                 </div>
                 <br>
                 <label for="textarea">Describe el problema con la publicacion</label>
                   <!--Para seleccionar los Motivos de un reprte-->
-                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="Seleccionar-motivo">
-                      <option selected>Motivo por el que se reporta</option>
-                      <option value="1">-Contenido inadecuado-</option>
-                      <option value="2">-Publicación duplicada-</option>
-                      <option value="3">-Es de mi propiedad y ya fue recuperado-</option>
-                      <option value="4">-Estafa-</option>
-                      <option value="5">-Otro-</option>
+                    <select class="form-select" aria-label=".form-select-sm example" name="Seleccionar-motivo" required>
+                      <option selected disabled value="">--Motivo por el que se reporta--</option>
+                      <option value="op1">Contenido inadecuado</option>
+                      <option value="op2">Publicación duplicada</option>
+                      <option value="op3">Es de mi propiedad y ya fue recuperado</option>
+                      <option value="op4">Estafa</option>
+                      <option value="op5">Otro</option>
                     </select>
+                    <div class="invalid-feedback">
+                          Por favor seleccione un motivo por el cual reporta.
+                    </div>
                   <br>
                   <br>
                     <textarea class="form-control" id="Descripcion" name="txt_descripcion" rows="3" placeholder="Agrega una descripción del porqué reportas la publicación"></textarea>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-primary" onclick="alert('Su reporte ha sido enviado con exito. Redireccionando...')">Enviar</button>
+                <button type="submit" class="btn btn-primary" >Enviar</button>
                 </div>
             </form>
 </section>
@@ -211,5 +214,7 @@
         </div>
       </nav>
       <!--Buttom-->
+      <script src="assets/dist/js/validacion.js"></script>
+
 </body>
 </html>

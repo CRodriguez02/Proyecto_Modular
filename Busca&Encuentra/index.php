@@ -196,6 +196,7 @@ $imprime2=$_SESSION['usuario'];
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
             Se buscan...
           </div>
+          <!--Separador y objetos-->
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 <div class="col mb-5">
                     <div class="card h-100">
@@ -231,115 +232,90 @@ $imprime2=$_SESSION['usuario'];
                       </div>
                     </div>
                 </div>
-                <div class="col mb-5">
-                  <div class="card h-100">
-                    <!-- etiqueta-->
-                    <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
-                    <!-- objeto imagen-->
-                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                    <!-- objeto detalles-->
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <h5 class="fw-bolder">Titulo del objeto</h5>
-                        </div>
-                    </div>
-                    <!--Acciones del objeto-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                      <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ver información detallada</a></div>
-                  </div>
-                  </div>
-                </div>
-                <div class="col mb-5">
-                  <div class="card h-100">
-                    <!-- objeto imagen-->
-                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                    <!-- objeto detalles-->
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <h5 class="fw-bolder">Titulo del objeto</h5>
-                        </div>
-                    </div>
-                    <!--Acciones del objeto-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ver información detallada</a></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col mb-5">
-                  <div class="card h-100">
-                    <!-- etiqueta-->
-                    <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
-                    <!-- objeto imagen-->
-                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                    <!-- objeto detalles-->
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <h5 class="fw-bolder">Titulo del objeto</h5>
-                        </div>
-                    </div>
-                    <!--Acciones del objeto-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                      <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ver información detallada</a></div>
-                  </div>
-                  </div>
-                </div>
-                <div class="col mb-5">
-                  <div class="card h-100">
-                    <!-- objeto imagen-->
-                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                    <!-- objeto detalles-->
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <h5 class="fw-bolder">Titulo del objeto</h5>
-                        </div>
-                    </div>
-                    <!--Acciones del objeto-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ver información detallada</a></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col mb-5">
-                  <div class="card h-100">
-                    <!-- etiqueta-->
-                    <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
-                    <!-- objeto imagen-->
-                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                    <!-- objeto detalles-->
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <h5 class="fw-bolder">Titulo del objeto</h5>
-                        </div>
-                    </div>
-                    <!--Acciones del objeto-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                      <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ver información detallada</a></div>
-                  </div>
-                  </div>
-                </div>
-                <div class="col mb-5">
-                  <div class="card h-100">
-                    <!-- objeto imagen-->
-                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                    <!-- objeto detalles-->
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <h5 class="fw-bolder">Titulo del objeto</h5>
-                        </div>
-                    </div>
-                    <!--Acciones del objeto-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ver información detallada</a></div>
-                    </div>
-                  </div>
-                </div>
             </div>
+          <!--Separador y objetos-->
           <div class="p-3 mb-2 bg-success text-white">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill-exclamation" viewBox="0 0 16 16">
             <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/><path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-3.5-2a.5.5 0 0 0-.5.5v1.5a.5.5 0 0 0 1 0V11a.5.5 0 0 0-.5-.5Zm0 4a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Z"/></svg>
             ¡Encontrados!
           </div>
+          <!--Separador y objetos-->
+          <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- objeto imagen-->
+                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <!-- objeto detalles-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">Titulo del objeto</h5>
+                            </div>
+                        </div>
+                        <!--Acciones del objeto-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ver información detallada</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- etiqueta-->
+                        <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                        <!-- objeto imagen-->
+                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <!-- objeto detalles-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">Titulo del objeto</h5>
+                            </div>
+                        </div>
+                        <!--Acciones del objeto-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                          <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ver información detallada</a></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          <!--Separador y objetos-->
           <div class="p-3 mb-2 bg-info text-white">Recientes</div>
+          <!--Separador y objetos-->
+          <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- objeto imagen-->
+                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <!-- objeto detalles-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">Titulo del objeto</h5>
+                            </div>
+                        </div>
+                        <!--Acciones del objeto-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ver información detallada</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- etiqueta-->
+                        <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                        <!-- objeto imagen-->
+                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <!-- objeto detalles-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">Titulo del objeto</h5>
+                            </div>
+                        </div>
+                        <!--Acciones del objeto-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                          <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ver información detallada</a></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          <!--Separador y objetos-->
         </div>
       </section>
       <!--Contenido-->

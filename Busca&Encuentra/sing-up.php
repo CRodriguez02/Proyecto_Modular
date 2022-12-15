@@ -147,28 +147,7 @@
       <br><br><br>
       <a class="mt-5 mb-3 text-muted" href="index.php">Volver al inicio</a>
     </main>
-    <script>
-      (function () {
-        'use strict'
-
-        
-        var forms = document.querySelectorAll('.needs-validation')
-
-        
-        Array.prototype.slice.call(forms)
-          .forEach(function (form) {
-            form.addEventListener('submit', function (event) {
-              if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-              }
-
-              form.classList.add('was-validated')
-            }, false)
-          })
-      })()
-
-    </script>
+    <script src="assets/dist/js/validacion.js"></script>
     <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
