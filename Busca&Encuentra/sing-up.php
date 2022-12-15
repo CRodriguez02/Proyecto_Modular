@@ -6,6 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Carlos Rodriguez, Ozmar Andrade, Marlene Rios">
     <title>Registrarse</title>
+    <link rel="icon" type="image/x-icon" href="assets/brand/B&E-logo.svg" />
     
 
     

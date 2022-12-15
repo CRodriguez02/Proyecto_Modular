@@ -366,8 +366,9 @@ $imprime2=$_SESSION['usuario'];
               <li class="nav-item">
                 <a class="nav-link" href="about-us.html">Acerca de nosotros</a>
               </li>
-              
-      
+              <li class="nav-item">
+                <a class="nav-link" href="auxbot.html">Asistente-BOB</a>
+              </li>
             </ul>
           </div>
         </div>

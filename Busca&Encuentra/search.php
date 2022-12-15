@@ -147,6 +147,7 @@
     <!--HEADER-->
     <br>
     <main>
+        <section class="py-5">
         <div class="container">
             <div class="row gx-10">
     
@@ -194,7 +195,7 @@
                                         </div>
                                         <!--Etiqueta-->
                                         <!--Imagen-->
-                                        <a href="object.html">
+                                        <a href="object.php">
                                             <img class="card-img-top" src="https://dummyimage.com/160x160/dee2e6/6c757d.jpg" alt="">
                                         </a>
                                         <!--Imagen-->
@@ -207,7 +208,7 @@
                                         <!--Categoria-->
                                         <!--Titulo-->
                                         <h2 class="fs-6">
-                                            <a class="text-inherit text-decoration-none" href="object.html">Titulo</a>
+                                            <a class="text-inherit text-decoration-none" href="object.php">Titulo</a>
                                         </h2>
                                         <!--Titulo-->
                                     </div>
@@ -236,7 +237,7 @@
                                         </div>-->
                                         <!--Etiqueta-->
                                         <!--Imagen-->
-                                        <a href="object.html">
+                                        <a href="object.php">
                                             <img class="card-img-top" src="https://dummyimage.com/160x160/dee2e6/6c757d.jpg" alt="">
                                         </a>
                                         <!--Imagen-->
@@ -249,7 +250,7 @@
                                         <!--Categoria-->
                                         <!--Titulo-->
                                         <h2 class="fs-6">
-                                            <a class="text-inherit text-decoration-none" href="object.html">Titulo</a>
+                                            <a class="text-inherit text-decoration-none" href="object.php">Titulo</a>
                                         </h2>
                                         <!--Titulo-->
                                     </div>
@@ -278,7 +279,7 @@
                                         </div>
                                         <!--Etiqueta-->
                                         <!--Imagen-->
-                                        <a href="object.html">
+                                        <a href="object.php">
                                             <img class="card-img-top" src="https://dummyimage.com/160x160/dee2e6/6c757d.jpg" alt="">
                                         </a>
                                         <!--Imagen-->
@@ -291,7 +292,7 @@
                                         <!--Categoria-->
                                         <!--Titulo-->
                                         <h2 class="fs-6">
-                                            <a class="text-inherit text-decoration-none" href="object.html">Titulo</a>
+                                            <a class="text-inherit text-decoration-none" href="object.php">Titulo</a>
                                         </h2>
                                         <!--Titulo-->
                                     </div>
@@ -320,7 +321,7 @@
                                         </div>
                                         <!--Etiqueta-->
                                         <!--Imagen-->
-                                        <a href="object.html">
+                                        <a href="object.php">
                                             <img class="card-img-top" src="https://dummyimage.com/160x160/dee2e6/6c757d.jpg" alt="">
                                         </a>
                                         <!--Imagen-->
@@ -333,7 +334,7 @@
                                         <!--Categoria-->
                                         <!--Titulo-->
                                         <h2 class="fs-6">
-                                            <a class="text-inherit text-decoration-none" href="object.html">Titulo</a>
+                                            <a class="text-inherit text-decoration-none" href="object.php">Titulo</a>
                                         </h2>
                                         <!--Titulo-->
                                     </div>
@@ -362,7 +363,7 @@
                                         </div>
                                         <!--Etiqueta-->
                                         <!--Imagen-->
-                                        <a href="object.html">
+                                        <a href="object.php">
                                             <img class="card-img-top" src="https://dummyimage.com/160x160/dee2e6/6c757d.jpg" alt="">
                                         </a>
                                         <!--Imagen-->
@@ -375,7 +376,7 @@
                                         <!--Categoria-->
                                         <!--Titulo-->
                                         <h2 class="fs-6">
-                                            <a class="text-inherit text-decoration-none" href="object.html">Titulo</a>
+                                            <a class="text-inherit text-decoration-none" href="object.php">Titulo</a>
                                         </h2>
                                         <!--Titulo-->
                                     </div>
@@ -409,15 +410,37 @@
                     
             </div>
         </div>
+        </section>
     </main>
-    
+    <!--Buttom-->
+    <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand">Busca&Encuentra</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="list-publications.php">Mis Publicaciones</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="my-account.php">Mi cuenta</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about-us.html">Acerca de nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="auxbot.html">Asistente-BOB</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        </nav>
+       <!--Buttom-->
 
-
-        
-        
-
-
-
-    
 </body>
 </html>
