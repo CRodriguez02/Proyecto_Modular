@@ -18,7 +18,7 @@ $imprime2=$_SESSION['usuario'];
 
     
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="assets/dist/css/index.css">
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -166,26 +166,18 @@ $imprime2=$_SESSION['usuario'];
       </header>
       <!--HEADER-->
       <!--BANER-->
-      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="assets/img/Banner+idea.png" class="d-block w-100" alt="...">
+            <img src="assets/img/Banner1.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="assets/img/Banner+idea2.png" class="d-block w-100" alt="...">
+            <img src="assets/img/Banner2.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="assets\img\84ff00&text=Banner+idea+3.png" class="d-block w-100" alt="...">
+            <img src="assets\img\Banner+idea.png" class="d-block w-100" alt="...">
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Siguiente</span>
-        </button>
       </div>
       <!--BANER-->
 
@@ -197,42 +189,119 @@ $imprime2=$_SESSION['usuario'];
             Se buscan...
           </div>
           <!--Separador y objetos-->
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- objeto imagen-->
-                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                        <!-- objeto detalles-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <h5 class="fw-bolder">Titulo del objeto</h5>
-                            </div>
+                <!--carousel-->
+                <div id="carouselExampleControlsSmallScreen1" class="carousel slide-dark " data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <div class="cards-wrapper">
+                        <!--Carta-->
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <div class="card-body">
+                            <h5 class="card-title">Titulo del objeto</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div>
                         </div>
-                        <!--Acciones del objeto-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ver información detallada</a></div>
+                        <!--Carta-->
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Titulo del objeto</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- etiqueta-->
-                        <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
-                        <!-- objeto imagen-->
-                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                        <!-- objeto detalles-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <h5 class="fw-bolder">Titulo del objeto</h5>
-                            </div>
+                        <!--Carta-->
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <div class="card-body">
+                            <h5 class="card-title">Titulo del objeto</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div>
                         </div>
-                        <!--Acciones del objeto-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                          <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ver información detallada</a></div>
+                        <!--Carta-->
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Titulo del objeto</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div>
+                        </div>
                       </div>
                     </div>
+                    <div class="carousel-item">
+                      <div class="cards-wrapper">
+                        <!--Carta-->
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Titulo del objeto</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div>
+                        </div>
+                        <!--Carta-->
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <div class="card-body">
+                            <h5 class="card-title">Titulo del objeto</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div>
+                        </div>
+                        <!--Carta-->
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Titulo del objeto</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div>
+                        </div>
+                        <!--Carta-->
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <div class="card-body">
+                            <h5 class="card-title">Titulo del objeto</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="cards-wrapper">
+                        <!--Carta-->
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Titulo del objeto</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsSmallScreen1" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsSmallScreen1" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
                 </div>
-            </div>
+                <!--carousel-->
+
           <!--Separador y objetos-->
           <div class="p-3 mb-2 bg-success text-white">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill-exclamation" viewBox="0 0 16 16">
@@ -240,42 +309,128 @@ $imprime2=$_SESSION['usuario'];
             ¡Encontrados!
           </div>
           <!--Separador y objetos-->
-          <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- objeto imagen-->
-                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                        <!-- objeto detalles-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <h5 class="fw-bolder">Titulo del objeto</h5>
-                            </div>
+          <!--carousel-->
+          <div id="carouselExampleControlsSmallScreen2" class="carousel slide-dark " data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <div class="cards-wrapper">
+                        <!--Carta-->
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <div class="card-body">
+                            <h5 class="card-title">Titulo del objeto</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div>
                         </div>
-                        <!--Acciones del objeto-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ver información detallada</a></div>
+                        <!--Carta-->
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Titulo del objeto</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- etiqueta-->
-                        <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
-                        <!-- objeto imagen-->
-                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                        <!-- objeto detalles-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <h5 class="fw-bolder">Titulo del objeto</h5>
-                            </div>
+                        <!--Carta-->
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <div class="card-body">
+                            <h5 class="card-title">Titulo del objeto</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div>
                         </div>
-                        <!--Acciones del objeto-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                          <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ver información detallada</a></div>
+                        <!--Carta-->
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Titulo del objeto</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div>
+                        </div>
+                        <!--Carta-->
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <div class="card-body">
+                            <h5 class="card-title">Titulo del objeto</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div>
+                        </div>
                       </div>
                     </div>
+                    <div class="carousel-item">
+                      <div class="cards-wrapper">
+                        <!--Carta-->
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Titulo del objeto</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div>
+                        </div>
+                        <!--Carta-->
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <div class="card-body">
+                            <h5 class="card-title">Titulo del objeto</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div>
+                        </div>
+                        <!--Carta-->
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Titulo del objeto</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div>
+                        </div>
+                        <!--Carta-->
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <div class="card-body">
+                            <h5 class="card-title">Titulo del objeto</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="cards-wrapper">
+                        <!--Carta-->
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Titulo del objeto</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsSmallScreen2" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsSmallScreen2" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
                 </div>
-            </div>
+                <!--carousel-->
           <!--Separador y objetos-->
           <div class="p-3 mb-2 bg-info text-white">Recientes</div>
           <!--Separador y objetos-->
