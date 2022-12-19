@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Carlos Rodriguez, Ozmar Andrade, Marlene Rios">
-    <title>Mis publicaciones</title>
+    <title>Admin - Reportes</title>
     <link rel="icon" type="image/x-icon" href="assets/brand/B&E-logo.svg" />
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
     
@@ -92,33 +92,15 @@
         <div class="px-3 py-2 text-bg-dark">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="index.php" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+            <a href="admin.php" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
                 <img class="bi me-2" width="100" height="90" role="img" aria-label="" src="assets/brand/logo-02.png" title="Busca&Encuentra">
             </a>
 
             <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                 <li>
-                <a href="index.php" class="nav-link text-white">
+                <a href="admin.php" class="nav-link text-white">
                     <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
                     Inicio
-                </a>
-                </li>
-                <li>
-                <a href="system-chat.php" class="nav-link text-white">
-                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#chat"/></svg>
-                    Mensajes
-                </a>
-                </li>
-                <li>
-                <a href="list-publications.php" class="nav-link text-secondary">
-                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
-                    Publicaciones
-                </a>
-                </li>
-                <li>
-                <a href="publicacion.php" class="nav-link text-white">
-                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
-                    Nuevas Publicaciones
                 </a>
                 </li>
                 <li>
@@ -131,17 +113,12 @@
             </div>
         </div>
         </div>
-        <div class="px-3 py-2 border-bottom mb-3">
-        <div class="container d-flex flex-wrap justify-content-center">
-            <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
-            <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
-            </form>
-        </div>
-        </div>
+        
     </header>
     <!--HEADER-->
     <section class="py-5">
         <div class="container">
+            <h1>Reportes</h1>
             <!--Elemento de la lista-->
             <div class="card">
                 <div class="row g-0">
@@ -155,11 +132,11 @@
                         <!--Boton editar-->
                         <div class="position-absolute bottom-0 end-1">
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                            <a class="btn btn-primary btn-sm" href="edit-publicacion.php">
+                            <a class="btn btn-success btn-sm" href="#.php">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                                     <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
                                 </svg>
-                                Editar  
+                                Ver publicación  
                             </a>
                             </div>
                         </div>
@@ -196,11 +173,11 @@
                         <!--Boton editar-->
                         <div class="position-absolute bottom-0 end-1">
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                            <a class="btn btn-primary btn-sm" href="edit-publicacion.php">
+                            <a class="btn btn-success btn-sm" href="edit-publicacion.php">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                                     <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
                                 </svg>
-                                Editar  
+                                Ver publicación  
                             </a>
                             </div>
                         </div>
@@ -236,19 +213,10 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="list-publications.php">Mis Publicaciones</a>
+                <a class="nav-link active" aria-current="page" href="admin.php">Inicio</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="my-account.php">Mi cuenta</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about-us.html">Acerca de nosotros</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="auxbot.html">Asistente-BOB</a>
               </li>
             </ul>
           </div>

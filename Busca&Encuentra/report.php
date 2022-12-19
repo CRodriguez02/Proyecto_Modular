@@ -171,6 +171,7 @@
                       <option value="op2">Publicación duplicada</option>
                       <option value="op3">Es de mi propiedad y ya fue recuperado</option>
                       <option value="op4">Estafa</option>
+                      <option value="op5">El contenido tiene que ver con drogas y/o armas</option>
                       <option value="op5">Otro</option>
                     </select>
                     <div class="invalid-feedback">
