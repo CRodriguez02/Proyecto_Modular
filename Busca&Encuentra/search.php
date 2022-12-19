@@ -156,9 +156,19 @@
                         <div class="card" style="width: 18rem;">
                             <div class="card-header"> Categorias </div>
                             <ul class="list-group list-group-flush">
-                              <li class="list-group-item"><a href="#">Categoria 01</a></li>
-                              <li class="list-group-item"><a href="#">Categoria 02</a></li>
-                              <li class="list-group-item"><a href="#">Categoria 03</a></li>
+                              <li class="list-group-item"><a href="#">Accesorios</a></li>
+                              <li class="list-group-item"><a href="#">Bicicletas</a></li>
+                              <li class="list-group-item"><a href="#">Bolsos</a></li>
+                              <li class="list-group-item"><a href="#">Celulares</a></li>
+                              <li class="list-group-item"><a href="#">Computadoras</a></li>
+                              <li class="list-group-item"><a href="#">Documentos escolares</a></li>
+                              <li class="list-group-item"><a href="#">Documentos personales</a></li>
+                              <li class="list-group-item"><a href="#">Motocicletas</a></li>
+                              <li class="list-group-item"><a href="#">Vehiculos</a></li>
+                              <li class="list-group-item"><a href="#">Perros</a></li>
+                              <li class="list-group-item"><a href="#">Gatos</a></li>
+                              <li class="list-group-item"><a href="#">Otros</a></li>
+                              
                             </ul>
                           </div>
                     </div>
@@ -169,7 +179,7 @@
                         <!--Titulo de la seccion-->
                         <div class="card mb-4 bg-light border-0">
                         <div class="card-body p-9">
-                            <h2 class="mb-0 fs-1">"Categoria de los pruductos"</h2>
+                            <h2 class="mb-0 fs-1">"Categoria de los productos"</h2>
                         </div>
                       </div>
                        <!--Titulo de la seccion-->

@@ -269,10 +269,13 @@ $row=mysqli_fetch_assoc($consulta_db);
                 </div>
             </form>
         </form>
-
           </div>
           <div class="card-footer text-muted"></div>
         </div>
+      </div>
+      <div class="container">
+        <br>
+        <button class="btn btn-danger form-control">Cerrar sesión</button>
       </div>
     </section>
      <!--Buttom-->

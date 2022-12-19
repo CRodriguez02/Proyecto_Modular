@@ -175,12 +175,21 @@
                       <div class="col-md-4">
                         <label for="Categoria" class="form-label">Categorias</label>
                         <select class="form-select" id="Categorias" required>
-                          <option selected disabled value="">--Categorias--</option>
-                          <option value="Vehiculos">Vehiculos</option>
-                          <option value="Computadoras">Computadoras</option>
-                          <option value="Joyeria">Joyeria</option>
+                          <option selected disabled>--Categorias--</option>
+                          <option value="Accesorios">Accesorios</option>
+                          <option value="Bicicletas">Bicicletas</option>
+                          <option value="Bolsos">Bolsos</option>
                           <option value="Celulares">Celulares</option>
+                          <option value="Computadoras">Computadoras</option>
+                          <option value="Documentos escolares">Documentos escolares</option>
+                          <option value="Documentos personales">Documentos personales</option>
                           <option value="Electronicos">Electronicos</option>
+                          <option value="Joyeria">Joyeria</option>
+                          <option value="Libros">Libros</option>
+                          <option value="Llaves">Llaves</option>
+                          <option value="Motocicletas">Motocicletas</option>
+                          <option value="Vehiculos">Vehiculos</option>
+                          <option value="Otros">Otros</option>
                         </select>
                         <div class="invalid-feedback">
                           Por favor seleccione una categoria.
@@ -260,10 +269,53 @@
                       <div class="col-md-5">
                         <label for="Raza_mascota" class="form-label">Raza de Mascota</label>
                         <select class="form-select" id="Raza_mascota" required>
-                          <option selected disabled value="">--Razas de perros--</option>
-                          <option value="">raza1</option>
-                          <option value="">raza2</option>
-                          <option value="">raza3</option>
+                          <option selected disabled>--Perros--</option>
+                          <option value="Akita">Akita</option>
+                          <option value="Bóxer">Bóxer</option>
+                          <option value="Boyero de Berna">Boyero de Berna</option>
+                          <option value="Bulldog americano">Bulldog americano</option>
+                          <option value="Bulldog francés">Bulldog francés</option>
+                          <option value="Cane Corso">Cane Corso</option>
+                          <option value="Chihuahua">Chihuahua</option>
+                          <option value="Collie">Collie</option>
+                          <option value="Doberman pinscher">Doberman pinscher</option>
+                          <option value="Dogo argentino">Dogo argentino</option>
+                          <option value="French Poodle">French Poodle</option>
+                          <option value="Golden retriever">Golden retriever</option>
+                          <option value="Husky Siberiano">Husky Siberiano</option>
+                          <option value="Labrador">Labrador</option>
+                          <option value="Labrador retriever">Labrador retriever</option>
+                          <option value="Lebrel afgano">Lebrel afgano</option>
+                          <option value="Pastor alemán">Pastor alemán</option>
+                          <option value="Pastor belga">Pastor belga</option>
+                          <option value="Pitbull">Pitbull</option>
+                          <option value="Rottweiler">Rottweiler</option>
+                          <option value="Schnauzer">Schnauzer</option>
+                          <option value="Weimaraner">Weimaraner</option>
+                          <option selected disabled>--Gatos--</option>
+                          <option value="Abisinio">Abisinio</option>
+                          <option value="Asiático">Asiático</option>
+                          <option value="Azul ruso">Azul ruso</option>
+                          <option value="Balinés">Balinés</option>
+                          <option value="Bengalí">Bengalí</option>
+                          <option value="Birmano">Birmano</option>
+                          <option value="Bobtail japonés">Bobtail japonés</option>
+                          <option value="Bombay">Bombay</option>
+                          <option value="Bosque de Noruega">Bosque de Noruega</option>
+                          <option value="Bosque de Siberia">Bosque de Siberia</option>
+                          <option value="Chinchilla">Chinchilla</option>
+                          <option value="Cornish rex">Cornish rex</option>
+                          <option value="Cymric">Cymric</option>
+                          <option value="Devon Rex">Devon Rex</option>
+                          <option value="Korat">Korat</option>
+                          <option value="Mau egipcio">Mau egipcio</option>
+                          <option value="Siamés">Siamés</option>
+                          <option value="Sphynx">Sphynx</option>
+                          <option value="Tiffanie">Tiffanie</option>
+                          <option value="Van turco">Van turco</option>
+                          <option selected disabled>--Aves--</option>
+                          <option value="Canario">Canario</option>
+                          <option value="Perico">Perico</option>
                           <option value="otro">Otro</option>
                         </select>
                         <div class="invalid-feedback">
