@@ -17,13 +17,14 @@ if($consulta_db->num_rows>0)
 }
 else
 {
-  echo("No agarra datos");//mejor poner la página de error 404
+  header('Location: error-404.html');
+  //echo("No agarra datos");//mejor poner la página de error 404
 }
 $row=mysqli_fetch_assoc($consulta_db);
 
 
 
-//<?php echo utf8_decode($row['nombre']);
+
 ?>
 
 
@@ -196,28 +197,28 @@ $row=mysqli_fetch_assoc($consulta_db);
                       <div class="row"> 
                           <div class="col-md-2">
                           <label class="form-label">Usuario</label>
-                          <input type="text" class="form-control" name="" disabled="disabled" placeholder="<?php echo utf8_decode($row['username']);?>">
+                          <input type="text" class="form-control" name="" disabled="disabled" placeholder="<?php echo ($row['username']);?>">
                           </div>
                       </div>
                       <div class="row">
                           <div class="col-md-4">
                           <label class="form-label">Nombre(s)</label>
-                          <input type="text" class="form-control" name="nombre" value="<?php echo utf8_decode($row['nombre']);?>" required>
+                          <input type="text" class="form-control" name="nombre" value="<?php echo ($row['nombre']);?>" required>
                           </div>
                           
                           <div class="col-md-4">
                           <label class="form-label">Apellido paterno</label>
-                          <input type="text" class="form-control" name="apellido_paterno"  value="<?php echo utf8_decode($row['apellido_paterno']);?>" required>
+                          <input type="text" class="form-control" name="apellido_paterno"  value="<?php echo ($row['apellido_paterno']);?>" required>
                             
                           </div>
                           <div class="col-md-4">
                           <label class="form-label">Apellido materno</label>
-                          <input type="text" class="form-control" name="apellido_materno" value="<?php echo utf8_decode($row['apellido_materno']);?>" required>
+                          <input type="text" class="form-control" name="apellido_materno" value="<?php echo ($row['apellido_materno']);?>" required>
 
                           </div>
                           <div class="col-md-6">
                           <label class="form-label">Correo</label>
-                          <input type="text" class="form-control" name="correo_electronico" value="<?php echo utf8_decode($row['correo']);?>" required>
+                          <input type="text" class="form-control" name="correo_electronico" value="<?php echo ($row['correo']);?>" required>
                           
                           </div>
                           <div class="col-md-4">
