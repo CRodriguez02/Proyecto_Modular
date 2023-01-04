@@ -151,14 +151,14 @@ $imprime2=$_SESSION['usuario'];
 
 
               <?php
-            require "Phps/funciones.php";
+            require "Phps/funciones.php";//autenticar
             $autentidicacion=autenticado();
               if(!$autentidicacion)
               {
                 echo (' <div class="text-end">
                 <a href="sing-in.php" class="btn btn-light text-dark me-2">Iniciar sesión</a>
                 <a href="sing-up.php"  class="btn btn-primary">Registrarse</a>
-                </div>;');
+                </div>');
               } 
               ?>
             </div>
