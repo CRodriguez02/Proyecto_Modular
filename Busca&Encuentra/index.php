@@ -1,4 +1,5 @@
 <?php
+require "Phps/funciones.php";
 error_reporting(0);
 session_start();
 $imprime=$_SESSION["login"];
@@ -101,57 +102,122 @@ $imprime2=$_SESSION['usuario'];
     <main>
       <!--HEADER-->
       <header>
+
+      
+                                 
           <div class="px-3 py-2 text-bg-dark">
-            <div class="container">
+            <div class="container"> <!----estebes el div chido-->
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <a href="index.php" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
                     <img class="bi me-2" width="100" height="90" role="img" aria-label="" src="assets/brand/logo-02.png" title="Busca&Encuentra">
                 </a>
-
+                
+                
                 <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                     <li>
+
                     <a href="index.php" class="nav-link text-secondary">
                         <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
                         Inicio
                     </a>
                     </li>
                     <li>
-                    <a href="system-chat.php" class="nav-link text-white">
-                        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#chat"/></svg>
-                        Mensajes
-                    </a>
+                    <?php
+                    $autentidicacion_1=autenticado();
+                    if(!$autentidicacion_1)
+                    {
+                      echo (' <a href="sing-in.php" class="nav-link text-white">
+                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#chat"/></svg>
+                      Mensajes<!----aqio poner identificador para si no ha iniciado sesion se vaya a sing-in--->
+                  </a>');
+                    } 
+                    else
+                    {
+                      echo (' <a href="system-chat.php" class="nav-link text-white">
+                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#chat"/></svg>
+                      Mensajes<!----aqio poner identificador para si no ha iniciado sesion se vaya a sing-in--->
+                  </a>');
+                      
+                    }
+                    ?>
+                      
+                    
                     </li>
                     <li>
-                    <a href="list-publications.php" class="nav-link text-white">
-                        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
-                        Publicaciones
-                    </a>
+                    <?php
+                    $autentidicacion_2=autenticado();
+                    if(!$autentidicacion_2)
+                    {
+                      echo (' <a href="sing-in.php" class="nav-link text-white">
+                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
+                      Publicaciones<!----aqio poner identificador para si no ha iniciado sesion se vaya a sing-in--->
+                  </a>');
+                    } 
+                    else
+                    {
+                      echo (' <a href="list-publications.php" class="nav-link text-white">
+                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
+                      Publicaciones<!----aqio poner identificador para si no ha iniciado sesion se vaya a sing-in--->
+                  </a>');
+                      
+                    }
+                    ?>
                     </li>
                     <li>
-                    <a href="publicacion.php" class="nav-link text-white">
-                        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
-                        Nuevas Publicaciones
-                    </a>
+                    <?php
+                    $autentidicacion_1=autenticado();
+                    if(!$autentidicacion_1)
+                    {
+                      echo (' <a href="sing-in.php" class="nav-link text-white">
+                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
+                      Nuevas publicaciones<!----aqio poner identificador para si no ha iniciado sesion se vaya a sing-in--->
+                  </a>');
+                    } 
+                    else
+                    {
+                      echo (' <a href="publicacion.php" class="nav-link text-white">
+                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
+                      Nuevas publicaciones<!----aqio poner identificador para si no ha iniciado sesion se vaya a sing-in--->
+                  </a>');
+                      
+                    }
+                    ?>
                     </li>
                     <li>
-                    <a href="my-account.php" class="nav-link text-white">
-                        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
-                        Cuenta
-                    </a>
+                    <?php
+                    $autentidicacion_1=autenticado();
+                    if(!$autentidicacion_1)
+                    {
+                      echo (' <a href="sing-in.php" class="nav-link text-white">
+                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
+                      Cuenta<!----aqio poner identificador para si no ha iniciado sesion se vaya a sing-in--->
+                  </a>');
+                    } 
+                    else
+                    {
+                      echo (' <a href="my-account.php" class="nav-link text-white">
+                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
+                      Cuenta<!----aqio poner identificador para si no ha iniciado sesion se vaya a sing-in--->
+                  </a>');
+                      
+                    }
+                    ?>
+                    
                     </li>
                 </ul>
                 </div>
-            </div>
+            </div><!------aqui acaba el div chido-->
             </div>
             <div class="px-3 py-2 border-bottom mb-3">
             <div class="container d-flex flex-wrap justify-content-center">
                 <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
                 <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
                 </form>
+                
 
 
               <?php
-            require "Phps/funciones.php";//autenticar
+            //autenticar
             $autentidicacion=autenticado();
               if(!$autentidicacion)
               {
@@ -163,7 +229,9 @@ $imprime2=$_SESSION['usuario'];
               ?>
             </div>
           </div>
-      </header>
+
+          
+                       
       <!--HEADER-->
       <!--BANER-->
       <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
