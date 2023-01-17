@@ -32,7 +32,7 @@ recompensa bool NOT NULL
 
 CREATE TABLE objeto (
 fk_username_Objeto varchar(50) NOT NULL,
-ID varchar (7) PRIMARY KEY,
+ID int auto_increment PRIMARY KEY,
 titulo varchar (100) NOT NULL,
 descripcion text,
 imagen mediumblob,
@@ -41,4 +41,11 @@ categoria varchar (100) NOT NULL,
 FOREIGN KEY (fk_username_Objeto) REFERENCES usuarios (username),
 recompensa bool NOT NULL
 );
+
+
+Borrar y alterar la tabla objeto para que se incremente de uno en uno
+
+ALTER TABLE objeto DROP COLUMN ID;
+ALTER TABLE objeto ADD ID int auto_increment primary key FIRST;
+
 

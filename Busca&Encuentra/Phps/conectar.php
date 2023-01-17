@@ -1,5 +1,5 @@
-<?php //Ozmar en un maquina la contraseña es 123456
-    $db = mysqli_connect('localhost','root','','sysbusca&encuentra');
+<?php //Ozmar en maquina windows maquina la contraseña es 123456
+    $db = mysqli_connect('localhost','root','123456','sysbusca&encuentra');
     if(!$db)
     {
         echo("Error de conexion");
