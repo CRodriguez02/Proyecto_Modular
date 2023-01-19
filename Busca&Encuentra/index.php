@@ -1,5 +1,5 @@
 <?php
-require "Phps/funciones.php";
+require "scripts_php/funciones.php";
 error_reporting(0);
 session_start();
 $imprime=$_SESSION["login"];
