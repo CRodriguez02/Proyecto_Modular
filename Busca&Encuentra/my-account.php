@@ -193,7 +193,7 @@ $row=mysqli_fetch_assoc($consulta_db);
                 </div>
                 <div class="card-body">
                   <p class="card-text">En este espacio podrás ingresar los nuevos datos que desees cambiar de tu información personal.</p>
-                    <form action="phps/query_cuenta.php" class="row" method="POST">
+                    <form action="scripts_php/query_cuenta.php" class="row" method="POST">
                       <div class="row"> 
                           <div class="col-md-2">
                           <label class="form-label">Usuario</label>

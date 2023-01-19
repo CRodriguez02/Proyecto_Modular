@@ -20,7 +20,7 @@
 
 
 		
-		header('Location: http://localhost/Proyecto_Modular/Busca&Encuentra/index.php');
+		header('Location: about-us.html');
 	}
 	else
 	{
