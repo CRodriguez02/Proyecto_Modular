@@ -18,13 +18,11 @@
 		$_SESSION['usuario']=$usuario['username'];
 		$_SESSION['login']=true;
 
-
-		
-		header('Location: about-us.html');
+		header('Location: http://localhost/Proyecto_Modular/Busca&Encuentra/index.php');
 	}
 	else
 	{
-		echo("Error");
+		header('Location: error-404.html');
 	}
 
 

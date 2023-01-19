@@ -1,5 +1,5 @@
 <?php
-require("Phps/conectar.php");
+require("scripts_php/conectar.php");
 session_start();
 if(!isset($_SESSION['usuario']))
 {

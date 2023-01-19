@@ -176,17 +176,17 @@
                 <p class="card-text">Proporciona los datos necesarios para buscar un objeto.</p>
                 <!--Formulario para objetos-->
                   <!--Para seleccionar las categorias-->
-                  <form class="row g-3 needs-validation" novalidate>
-                    <div class="mb-3">
-                      <input type="file" class="form-control" aria-label="file example" accept="image/png, image/jpeg" required>
+                  <form method="POST" action="scripts_php/insert_objeto.php"  class="row g-3 needs-validation" novalidate> <!------Aqui valiar form--->
+                    <div class="mb-3"><!---imagen-->
+                      <input name="imagen" type="file" class="form-control" aria-label="file example" accept="image/png, image/jpeg" required>
                       <div class="invalid-feedback">Falta de imagen o formato no aceptado (solo se aceptan .png, .jpg)</div>
                     </div>
                     <div class="row">
                       <div class="col-md-4">
                         <label for="Categoria" class="form-label">Categorias</label>
-                        <select class="form-select" id="Categorias" required>
+                        <select name="tipo_objeto" class="form-select" id="Categorias" required> <!------Tipo objeto-->
                           <option selected disabled>--Categorias--</option>
-                          <option value="Accesorios">Accesorios</option>
+                          <option  value="Accesorios">Accesorios</option>
                           <option value="Bicicletas">Bicicletas</option>
                           <option value="Bolsos">Bolsos</option>
                           <option value="Celulares">Celulares</option>
@@ -205,7 +205,7 @@
                           Por favor seleccione una categoria.
                         </div>
                       </div>
-                      <div class="col-md-8">
+                      <div class="col-md-8"><!-----insertar titulo-->
                         <label for="Titulo" class="form-label">Título</label>
                         <input type="text" class="form-control" id="Titulo" placeholder="Agrega un título a la publicación" name="txt_titulo" maxlength="100" required/>
                         <div class="invalid-feedback">
@@ -215,7 +215,7 @@
                     </div>
                     <div class="mb-3">
                       <label for="validationTextarea" class="form-label">Inserta una descripcion</label>
-                      <textarea class="form-control" id="Descripcion" placeholder="¿Dónde, cómo y cuándo encontraste/perdiste el objeto?" name="txt_descripcion" required></textarea>
+                      <textarea  class="form-control" id="Descripcion" placeholder="¿Dónde, cómo y cuándo encontraste/perdiste el objeto?" name="txt_descripcion" required></textarea>
                       <div class="invalid-feedback">
                         Por favor ingrese una descripción.
                       </div>
