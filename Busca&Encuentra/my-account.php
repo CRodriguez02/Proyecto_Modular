@@ -1,10 +1,7 @@
 <?php
 require("scripts_php/conectar.php");
 session_start();
-if(!isset($_SESSION['usuario']))
-{
-  header('Location :index.php');
-}
+
 
 $nombre_usuario=$_SESSION['usuario'];
 

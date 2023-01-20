@@ -5,7 +5,7 @@
         echo("Error de conexion");
         exit;
     }
-   echo ("Conexion correcta");
+   
 
 
 

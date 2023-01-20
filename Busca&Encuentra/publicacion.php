@@ -1,7 +1,10 @@
 <?php
-
-
-
+require "scripts_php/funciones.php";
+$entrar=autenticado();
+if(!$entrar)
+{
+  header("Location: http://localhost/Proyecto_Modular/Busca&Encuentra/sing-in.php");
+}
 
 
 ?>
@@ -176,7 +179,7 @@
                 <p class="card-text">Proporciona los datos necesarios para buscar un objeto.</p>
                 <!--Formulario para objetos-->
                   <!--Para seleccionar las categorias-->
-                  <form method="POST" action="scripts_php/insert_objeto.php"  class="row g-3 needs-validation" novalidate> <!------Aqui valiar form--->
+                  <form method="POST" action="scripts_php/insert_objeto.php" enctype="multipart/form-data"  class="row g-3 needs-validation" novalidate> <!------Aqui valiar form--->
                     <div class="mb-3"><!---imagen-->
                       <input name="imagen" type="file" class="form-control" aria-label="file example" accept="image/png, image/jpeg" required>
                       <div class="invalid-feedback">Falta de imagen o formato no aceptado (solo se aceptan .png, .jpg)</div>
@@ -222,21 +225,21 @@
                     </div>
                     <h3>Es un objeto que...</h3><!--para saber si lo busca o lo encontró-->
                     <div class="form-check">
-                      <input type="radio" class="form-check-input" id="Motivo_Bus" name="motivo" required>
+                      <input type="radio" class="form-check-input" id="Motivo_Bus" name="motivo_perdido" value="0" >
                       <label class="form-check-label" for="Motivo_Bus">Estoy buscando</label>
                     </div>
                     <div class="form-check mb-3">
-                      <input type="radio" class="form-check-input" id="Motivo_Enc" name="motivo" required>
+                      <input type="radio" class="form-check-input" id="Motivo_Enc" name="motivo_encontrado" value="1" >
                       <label class="form-check-label" for="Motivo_Enc">Lo he encontrado</label>
                       <div class="invalid-feedback">Ayudanos a saber si tu publicación es de busqueda o encuentro.</div>
                     </div>
                     <h3>¿Ofreces recompensa?</h3><!--para aceptar si hay recompensa-->
                     <div class="form-check">
-                      <input type="radio" class="form-check-input" id="Recompensa_si" name="recompensa" required>
+                      <input type="radio" class="form-check-input" id="Recompensa_si" name="recompensa_si" value="1"  >
                       <label class="form-check-label" for="Recompensa_si">Sí</label>
                     </div>
                     <div class="form-check mb-3">
-                      <input type="radio" class="form-check-input" id="Recompensa_no" name="recompensa" required>
+                      <input type="radio" class="form-check-input" id="Recompensa_no" name="recompensa_no" value="0"  >
                       <label class="form-check-label" for="Recompensa_no">No</label>
                       <div class="invalid-feedback">Ayudanos a saber si ofreces recompensa.</div>
                     </div>

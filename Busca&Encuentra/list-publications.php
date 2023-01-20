@@ -1,3 +1,14 @@
+<?php	
+require("scripts_php/funciones.php");
+$entrar=autenticado();
+if(!$entrar)
+{
+  header("Location: sing-in.php");
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
