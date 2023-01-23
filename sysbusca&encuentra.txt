@@ -19,7 +19,7 @@ imagen mediumblob
 
 CREATE TABLE mascotas (
 fk_username_Mascota varchar(50) NOT NULL,
-ID varchar (7) PRIMARY KEY,
+ID int auto_increment PRIMARY KEY,
 titulo varchar (100) NOT NULL,
 descripcion text,
 imagen mediumblob,

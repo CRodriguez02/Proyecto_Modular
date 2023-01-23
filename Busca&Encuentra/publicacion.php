@@ -225,21 +225,21 @@ if(!$entrar)
                     </div>
                     <h3>Es un objeto que...</h3><!--para saber si lo busca o lo encontró-->
                     <div class="form-check">
-                      <input type="radio" class="form-check-input" id="Motivo_Bus" name="motivo_perdido" value="0" >
+                      <input type="radio" class="form-check-input" id="Motivo_Bus" name="motivo" value="0" >
                       <label class="form-check-label" for="Motivo_Bus">Estoy buscando</label>
                     </div>
                     <div class="form-check mb-3">
-                      <input type="radio" class="form-check-input" id="Motivo_Enc" name="motivo_encontrado" value="1" >
+                      <input type="radio" class="form-check-input" id="Motivo_Enc" name="motivo" value="1" >
                       <label class="form-check-label" for="Motivo_Enc">Lo he encontrado</label>
                       <div class="invalid-feedback">Ayudanos a saber si tu publicación es de busqueda o encuentro.</div>
                     </div>
                     <h3>¿Ofreces recompensa?</h3><!--para aceptar si hay recompensa-->
                     <div class="form-check">
-                      <input type="radio" class="form-check-input" id="Recompensa_si" name="recompensa_si" value="1"  >
+                      <input type="radio" class="form-check-input" id="Recompensa_si" name="recompensa" value="1"  >
                       <label class="form-check-label" for="Recompensa_si">Sí</label>
                     </div>
                     <div class="form-check mb-3">
-                      <input type="radio" class="form-check-input" id="Recompensa_no" name="recompensa_no" value="0"  >
+                      <input type="radio" class="form-check-input" id="Recompensa_no" name="recompensa" value="0"  >
                       <label class="form-check-label" for="Recompensa_no">No</label>
                       <div class="invalid-feedback">Ayudanos a saber si ofreces recompensa.</div>
                     </div>
@@ -259,16 +259,16 @@ if(!$entrar)
                 <div class="card-body">
                   <h5 class="card-title">Formulario para mascotas</h5>
                   <p class="card-text">¿Estas buscando una mascota perdida? Ingresa su información aquí</p>
-                  <!--Formulario para mascotas-->
+                  <!--Formulario para mascotas----------------------------------------------------------------->
                   <form class="row g-3 needs-validation" novalidate>
                     <div class="mb-3">
-                      <input type="file" class="form-control" aria-label="file example" accept="image/png, image/jpeg" required>
+                      <input name="imagen" type="file" class="form-control" aria-label="file example" accept="image/png, image/jpeg" required>
                       <div class="invalid-feedback">Falta de imagen o formato no aceptado (solo se aceptan .png, .jpg)</div>
                     </div>
                     <div class="row">
                       <div class="col-md-4">
-                        <label for="Especie_mascota" class="form-label">Especie de Mascota</label>
-                        <select class="form-select" id="Especie_mascota" required>
+                        <label for="especie_mascota" class="form-label">Especie de Mascota</label>
+                        <select name="especie"  class="form-select" id="Especie_mascota" required>
                           <option selected disabled value="">--Mascotas--</option>
                           <option value="Perro">Perro</option>
                           <option value="Gato">Gato</option>
@@ -280,8 +280,8 @@ if(!$entrar)
                         </div>
                       </div>
                       <div class="col-md-5">
-                        <label for="Raza_mascota" class="form-label">Raza de Mascota</label>
-                        <select class="form-select" id="Raza_mascota" required>
+                        <label for="raza_mascota" class="form-label">Raza de Mascota</label>
+                        <select name="razas" class="form-select" id="Raza_mascota" required>
                           <option selected disabled>--Perros--</option>
                           <option value="Akita">Akita</option>
                           <option value="Bóxer">Bóxer</option>
