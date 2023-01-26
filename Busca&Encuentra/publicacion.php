@@ -260,7 +260,7 @@ if(!$entrar)
                   <h5 class="card-title">Formulario para mascotas</h5>
                   <p class="card-text">¿Estas buscando una mascota perdida? Ingresa su información aquí</p>
                   <!--Formulario para mascotas----------------------------------------------------------------->
-                  <form class="row g-3 needs-validation" novalidate>
+                  <form class="row g-3 needs-validation" enctype="multipart/form-data" action="scripts_php/insert_mascota.php" method="POST" novalidate>
                     <div class="mb-3">
                       <input name="imagen" type="file" class="form-control" aria-label="file example" accept="image/png, image/jpeg" required>
                       <div class="invalid-feedback">Falta de imagen o formato no aceptado (solo se aceptan .png, .jpg)</div>
@@ -353,26 +353,26 @@ if(!$entrar)
                     </div>
                     <h3>Es una mascota que...</h3><!--para saber si lo busca o lo encontró-->
                     <div class="form-check">
-                      <input type="radio" class="form-check-input" id="Motivo_Bus" name="motivo" required>
+                      <input type="radio" class="form-check-input" id="Motivo_Bus" name="motivo" value="0" required>
                       <label class="form-check-label" for="Motivo_Bus">Estoy buscando</label>
                     </div>
                     <div class="form-check mb-3">
-                      <input type="radio" class="form-check-input" id="Motivo_Enc" name="motivo" required>
+                      <input type="radio" class="form-check-input" id="Motivo_Enc" name="motivo" value="1"  required>
                       <label class="form-check-label" for="Motivo_Enc">La he encontrado</label>
                       <div class="invalid-feedback">Ayudanos a saber si tu publicación es de busqueda o encuentro.</div>
                     </div>
                     <h3>¿Ofreces recompensa?</h3><!--para aceptar si hay recompensa-->
                     <div class="form-check">
-                      <input type="radio" class="form-check-input" id="Recompensa_si" name="recompensa" required>
+                      <input type="radio" class="form-check-input" id="Recompensa_si" name="recompensa" value="1" required>
                       <label class="form-check-label" for="Recompensa_si">Sí</label>
                     </div>
                     <div class="form-check mb-3">
-                      <input type="radio" class="form-check-input" id="Recompensa_no" name="recompensa" required>
+                      <input type="radio" class="form-check-input" id="Recompensa_no" name="recompensa" value="0"  required>
                       <label class="form-check-label" for="Recompensa_no">No</label>
                       <div class="invalid-feedback">Ayudanos a saber si ofreces recompensa.</div>
                     </div>
                     <input class="btn btn-primary"  type="submit" value="Publica la busqueda">
-                  </form>
+                  </form><!--form mascotas-->
                 </div>
               </div>
             </div>
