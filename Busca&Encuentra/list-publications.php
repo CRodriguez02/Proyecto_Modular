@@ -1,10 +1,28 @@
-<?php	
+<?php
+
 require("scripts_php/funciones.php");
+require('scripts_php/conectar.php');
 $entrar=autenticado();
 if(!$entrar)
 {
   header("Location: sing-in.php");
 }
+
+$usuario=$_SESSION['usuario'];
+$consulta_objeto="SELECT * FROM objeto where id=15";
+$ejecutar_objeto=$db->query($consulta_objeto);
+if($ejecutar_objeto)
+{
+
+}
+else
+{
+    header('Location: error-404.html');
+}
+
+$row=mysqli_fetch_assoc($ejecutar_objeto);
+
+
 ?>
 
 
@@ -154,14 +172,14 @@ if(!$entrar)
     <section class="py-5">
         <div class="container">
             <!--Elemento de la lista-->
-            <div class="card">
+            <div class="card"><!---todo el rectangulo--->
                 <div class="row g-0">
-                    <div class="col-md-2">
-                        <img src="https://dummyimage.com/160x160/dee2e6/6c757d.jpg" class="img-fluid rounded-start" alt="...">
+                    <div class="col-md-2"><!---para poner la imagen-->
+                        <img src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']);?>" height="50px" class="img-fluid rounded-start" alt="...">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title"><?php echo($row['titulo']);?></h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         <!--Boton editar-->
                         <div class="position-absolute bottom-0 end-1">
@@ -195,7 +213,7 @@ if(!$entrar)
             <br>
             <!--Elemento de la lista-->
             <!--Elemento de la lista-->
-            <div class="card">
+            <div class="card"><!---todo el rectangulo--->
                 <div class="row g-0">
                     <div class="col-md-2">
                         <img src="https://dummyimage.com/160x160/dee2e6/6c757d.jpg" class="img-fluid rounded-start" alt="...">
