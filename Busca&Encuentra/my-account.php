@@ -273,7 +273,8 @@ $row=mysqli_fetch_assoc($consulta_db);
       </div>
       <div class="container">
         <br>
-        <button class="btn btn-danger form-control">Cerrar sesión</button>
+        <a href="scripts_php/cerrar_sesion.php"><button type="submit" class="btn btn-danger form-control">Cerrar sesión</button></a>
+        
       </div>
     </section>
      <!--Buttom-->
