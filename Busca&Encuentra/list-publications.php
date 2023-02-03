@@ -7,9 +7,10 @@ if(!$entrar)
 {
   header("Location: sing-in.php");
 }
+/*<img src="data:image/.jpg;base64,<?php echo base64_encode($row['imagen']);?>"class="img-fluid rounded-start" height="50">*/
 
 $usuario=$_SESSION['usuario'];
-$consulta_objeto="SELECT * FROM objeto where id=15";
+$consulta_objeto="SELECT  titulo,descripcion,imagen FROM objeto where fk_username_Objeto='$usuario'";
 $ejecutar_objeto=$db->query($consulta_objeto);
 if($ejecutar_objeto)
 {
@@ -172,15 +173,20 @@ $row=mysqli_fetch_assoc($ejecutar_objeto);
     <section class="py-5">
         <div class="container">
             <!--Elemento de la lista-->
+           
             <div class="card"><!---todo el rectangulo--->
-                <div class="row g-0">
+             
+                <div class="row g-0"><!---inicio php--->  
+                <?php foreach($ejecutar_objeto as $row)
+                    { ?>                                  
                     <div class="col-md-2"><!---para poner la imagen-->
-                        <img src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']);?>" height="50px" class="img-fluid rounded-start" alt="...">
+                    
+                    <img src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']);?>"class="img-fluid rounded-start" height="50">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
                         <h5 class="card-title"><?php echo($row['titulo']);?></h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><?php  echo($row['descripcion'])  ?></p>
                         <!--Boton editar-->
                         <div class="position-absolute bottom-0 end-1">
                             <div class="d-flex justify-content-between align-items-center mt-3">
@@ -207,8 +213,12 @@ $row=mysqli_fetch_assoc($ejecutar_objeto);
                         <!--Boton eliminar-->
                         
                         </div>
+                        <?php }?>
+                       <!----fin etiqueta--->
                     </div>
+                    
                 </div>
+                
             </div>
             <br>
             <!--Elemento de la lista-->
@@ -216,7 +226,7 @@ $row=mysqli_fetch_assoc($ejecutar_objeto);
             <div class="card"><!---todo el rectangulo--->
                 <div class="row g-0">
                     <div class="col-md-2">
-                        <img src="https://dummyimage.com/160x160/dee2e6/6c757d.jpg" class="img-fluid rounded-start" alt="...">
+                    <img src="https://dummyimage.com/160x160/dee2e6/6c757d.jpg" class="img-fluid rounded-start" alt="...">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">

@@ -75,7 +75,7 @@
     
     <main class="form-signin w-100 m-auto">
       <!----Aqui empieza el form-->
-      <form action="Phps/form_sing-up.php" class="row g-3 needs-validation" method="POST" novalidate>
+      <form action="scripts_php/form_sing-up.php" class="row g-3 needs-validation" method="POST" >
         <img class="mb-4" src="assets/brand/logo-02.png" alt="" width="170" height="170">
         <h1 class="h3 mb-3 fw-normal">Registrarse</h1>
         <div class="text-start">
