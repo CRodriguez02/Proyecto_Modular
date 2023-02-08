@@ -28,7 +28,7 @@
 
         if($consulta)
         {
-            header('Location: http://localhost/Proyecto_Modular/Busca&Encuentra/sing-in.php');;
+            header('Location: http://localhost/Proyecto_Modular/Busca&Encuentra/sing-in.php');
             //
 
         }

@@ -244,21 +244,20 @@ $row=mysqli_fetch_assoc($consulta_db);
             Actualiza tu contraseña.
         </div>
         <div class="card-body">
-            <form class="row">
-
+            <form class="row" method="post" action="scripts_php/cambiar_contrasena.php" ><!--actualiza contraseña-->
                 <div class="col-md-12">
                   <label class="form-label">Contraseña actual</label>
-                  <input type="password" class="form-control" name="contraseña-actual">
+                  <input type="text" class="form-control" name="contraseña-actual" disabled="disabled" value="<?php echo($row['contrasena']);   ?> ">
                 </div>
 
                 <div class="col-md-6">
                     <label class="form-label">Contraseña nueva</label>
-                    <input type="password" class="form-control" name="contraseña-nueva1" placeholder="*********">
+                    <input type="text" class="form-control" name="contraseña-nueva1" placeholder="*********">
                 </div>
 
                 <div class="col-md-6">
                     <label class="form-label">Confirmar contraseña nueva</label>
-                    <input type="password" class="form-control" name="contraseña-nueva2" placeholder="*********">
+                    <input type="text" class="form-control" name="contraseña-nueva2" placeholder="*********">
                 </div>
 
                 <div class="col-md-12">
@@ -266,7 +265,6 @@ $row=mysqli_fetch_assoc($consulta_db);
                   <button class="btn btn-primary form-control">Actualizar contraseña</button>
                 </div>
             </form>
-        </form>
           </div>
           <div class="card-footer text-muted"></div>
         </div>
