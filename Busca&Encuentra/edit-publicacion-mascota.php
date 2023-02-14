@@ -156,43 +156,86 @@
        <!--Formulario para subir una publicación-->
 
   <section class="py-5">
-    <div class="container"><!--este es el formulario para objetos-->
-      <div class="row">
-        <div class="col">
-          <div class="col-sm-12">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Formulario para objetos</h5>
-                <p class="card-text">Proporciona los datos necesarios para buscar un objeto.</p>
-                <!--Formulario para objetos-->
-                  <!--Para seleccionar las categorias-->
-                  <form class="row g-3 needs-validation" method="post"  enctype="multipart/form-data"  action="scripts_php/update_objeto.php">
+        <div class="col"><!--este es el formulario para mascotas-->
+            <div class="col-sm-12">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Formulario para mascotas</h5>
+                  <p class="card-text">¿Estas buscando una mascota perdida? Ingresa su información aquí</p>
+                  <!--Formulario para mascotas-->
+                  <form class="row g-3 needs-validation" novalidate>
                     <div class="mb-3">
                       <input type="file" class="form-control" aria-label="file example" accept="image/png, image/jpeg" required>
                       <div class="invalid-feedback">Falta de imagen o formato no aceptado (solo se aceptan .png, .jpg)</div>
                     </div>
                     <div class="row">
                       <div class="col-md-4">
-                        <label for="Categoria" class="form-label">Categorias</label>
-                        <select class="form-select" id="Categorias" required>
-                          <option selected disabled>--Categorias--</option>
-                          <option value="Accesorios">Accesorios</option>
-                          <option value="Bicicletas">Bicicletas</option>
-                          <option value="Bolsos">Bolsos</option>
-                          <option value="Celulares">Celulares</option>
-                          <option value="Computadoras">Computadoras</option>
-                          <option value="Documentos escolares">Documentos escolares</option>
-                          <option value="Documentos personales">Documentos personales</option>
-                          <option value="Electronicos">Electronicos</option>
-                          <option value="Joyeria">Joyeria</option>
-                          <option value="Libros">Libros</option>
-                          <option value="Llaves">Llaves</option>
-                          <option value="Motocicletas">Motocicletas</option>
-                          <option value="Vehiculos">Vehiculos</option>
-                          <option value="Otros">Otros</option>
+                        <label for="Especie_mascota" class="form-label">Especie de Mascota</label>
+                        <select class="form-select" id="Especie_mascota" required>
+                          <option selected disabled value="">--Mascotas--</option>
+                          <option value="Perro">Perro</option>
+                          <option value="Gato">Gato</option>
+                          <option value="Ave">Ave</option>
+                          <option value="Exotica">Exotica</option>
                         </select>
                         <div class="invalid-feedback">
-                          Por favor seleccione una categoria.
+                          Por favor seleccione un tipo de mascota.
+                        </div>
+                      </div>
+                      <div class="col-md-5">
+                        <label for="Raza_mascota" class="form-label">Raza de Mascota</label>
+                        <select class="form-select" id="Raza_mascota" required>
+                          <option selected disabled>--Perros--</option>
+                          <option value="Akita">Akita</option>
+                          <option value="Bóxer">Bóxer</option>
+                          <option value="Boyero de Berna">Boyero de Berna</option>
+                          <option value="Bulldog americano">Bulldog americano</option>
+                          <option value="Bulldog francés">Bulldog francés</option>
+                          <option value="Cane Corso">Cane Corso</option>
+                          <option value="Chihuahua">Chihuahua</option>
+                          <option value="Collie">Collie</option>
+                          <option value="Doberman pinscher">Doberman pinscher</option>
+                          <option value="Dogo argentino">Dogo argentino</option>
+                          <option value="French Poodle">French Poodle</option>
+                          <option value="Golden retriever">Golden retriever</option>
+                          <option value="Husky Siberiano">Husky Siberiano</option>
+                          <option value="Labrador">Labrador</option>
+                          <option value="Labrador retriever">Labrador retriever</option>
+                          <option value="Lebrel afgano">Lebrel afgano</option>
+                          <option value="Pastor alemán">Pastor alemán</option>
+                          <option value="Pastor belga">Pastor belga</option>
+                          <option value="Pitbull">Pitbull</option>
+                          <option value="Rottweiler">Rottweiler</option>
+                          <option value="Schnauzer">Schnauzer</option>
+                          <option value="Weimaraner">Weimaraner</option>
+                          <option selected disabled>--Gatos--</option>
+                          <option value="Abisinio">Abisinio</option>
+                          <option value="Asiático">Asiático</option>
+                          <option value="Azul ruso">Azul ruso</option>
+                          <option value="Balinés">Balinés</option>
+                          <option value="Bengalí">Bengalí</option>
+                          <option value="Birmano">Birmano</option>
+                          <option value="Bobtail japonés">Bobtail japonés</option>
+                          <option value="Bombay">Bombay</option>
+                          <option value="Bosque de Noruega">Bosque de Noruega</option>
+                          <option value="Bosque de Siberia">Bosque de Siberia</option>
+                          <option value="Chinchilla">Chinchilla</option>
+                          <option value="Cornish rex">Cornish rex</option>
+                          <option value="Cymric">Cymric</option>
+                          <option value="Devon Rex">Devon Rex</option>
+                          <option value="Korat">Korat</option>
+                          <option value="Mau egipcio">Mau egipcio</option>
+                          <option value="Siamés">Siamés</option>
+                          <option value="Sphynx">Sphynx</option>
+                          <option value="Tiffanie">Tiffanie</option>
+                          <option value="Van turco">Van turco</option>
+                          <option selected disabled>--Aves--</option>
+                          <option value="Canario">Canario</option>
+                          <option value="Perico">Perico</option>
+                          <option value="otro">Otro</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Por favor seleccione una raza.
                         </div>
                       </div>
                       <div class="col-md-8">
@@ -203,21 +246,22 @@
                         </div>
                       </div>
                     </div>
+                    <br>
                     <div class="mb-3">
                       <label for="validationTextarea" class="form-label">Inserta una descripcion</label>
-                      <textarea class="form-control" id="Descripcion" placeholder="¿Dónde, cómo y cuándo encontraste/perdiste el objeto?" name="txt_descripcion" required></textarea>
+                      <textarea class="form-control" id="Descripcion" placeholder="¿Dónde, cómo y cuándo encontraste/perdiste la mascota?" name="txt_descripcion" required></textarea>
                       <div class="invalid-feedback">
                         Por favor ingrese una descripción.
                       </div>
                     </div>
-                    <h3>Es un objeto que...</h3><!--para saber si lo busca o lo encontró-->
+                    <h3>Es una mascota que...</h3><!--para saber si lo busca o lo encontró-->
                     <div class="form-check">
                       <input type="radio" class="form-check-input" id="Motivo_Bus" name="motivo" required>
                       <label class="form-check-label" for="Motivo_Bus">Estoy buscando</label>
                     </div>
                     <div class="form-check mb-3">
                       <input type="radio" class="form-check-input" id="Motivo_Enc" name="motivo" required>
-                      <label class="form-check-label" for="Motivo_Enc">Lo he encontrado</label>
+                      <label class="form-check-label" for="Motivo_Enc">La he encontrado</label>
                       <div class="invalid-feedback">Ayudanos a saber si tu publicación es de busqueda o encuentro.</div>
                     </div>
                     <h3>¿Ofreces recompensa?</h3><!--para aceptar si hay recompensa-->
@@ -232,14 +276,10 @@
                     </div>
                     <input class="btn btn-primary"  type="submit" value="Editar la publicación">
                   </form>
-                <!--Formulario para objetos-->
+                </div>
               </div>
             </div>
-            </div>
-        </div>
-
-
-
+        </div><!--aqui acaba el de mascotas--->
       </div>
     </div>
   </section>

@@ -7,17 +7,10 @@ if(!$entrar)
 {
   header("Location: sing-in.php");
 }
-/*<img src="data:image/.jpg;base64,<?php echo base64_encode($row['imagen']);?>"class="img-fluid rounded-start" height="50">
 
-<?php foreach($ejecutar_objeto as $row)
-                    { ?>                                
-
-<?php }?>
-
-*/
 
 $usuario=$_SESSION['usuario'];
-$consulta_objeto="SELECT  titulo,descripcion,imagen FROM objeto where fk_username_Objeto='$usuario'";
+$consulta_objeto="SELECT id, titulo,descripcion,imagen FROM objeto where fk_username_Objeto='$usuario'";
 $ejecutar_objeto=$db->query($consulta_objeto);
 if($ejecutar_objeto)
 {
@@ -30,11 +23,11 @@ else
 
 $row=mysqli_fetch_assoc($ejecutar_objeto);
 
-$consulta_mascota="SELECT  titulo,descripcion,imagen FROM mascotas where fk_username_Mascota='$usuario'";
+$consulta_mascota="SELECT id, titulo,descripcion,imagen FROM mascotas where fk_username_Mascota='$usuario'";
 $ejecutar_mascota = $db->query($consulta_mascota);
 if($ejecutar_mascota)
 {
-
+    
 }
 else
 {
@@ -189,8 +182,18 @@ $row_2=mysqli_fetch_assoc($ejecutar_mascota);
     </header>
     <!--HEADER-->
     <section class="py-5">
+                    <?php 
+                    if($ejecutar_objeto->num_rows==0)
+                    {
+                        echo("<h3>Sin Registros<h3/> <br><br>");
+                    
+                    }  
+                    
+                    ?>  
+        
                     <?php foreach($ejecutar_objeto as $row)
-                    { ?>   
+                    { ?> 
+                   
         <div class="container">
             <!--Elemento de la lista-->           
             <div class="card"><!---todo el rectangulo--->                  
@@ -220,15 +223,15 @@ $row_2=mysqli_fetch_assoc($ejecutar_mascota);
                         <!--Boton eliminar-->
                         <div class="position-absolute bottom-0 end-0">
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                            <a class="btn btn-danger btn-sm" href="#">
+                            <a id="elimina_objeto" class="btn btn-danger btn-sm" href="scripts_php/elimina_objeto.php">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
                                     <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
                                 </svg>
-                                Eliminar  
+                                Eliminar 
                             </a>
                             </div>
                         </div>
-                        <!--Boton eliminar-->
+                        <!--Boton Eliminar eliminar-->
                         
                         </div>
                         <!--  -->
@@ -244,7 +247,17 @@ $row_2=mysqli_fetch_assoc($ejecutar_mascota);
             <!--Elemento de la lista-->
         </div>
         <?php }?>
-        <h2>Mascotas</h2> <br>
+        <h2>Mascotas</h2> <br><br>
+
+       <?php
+       if($ejecutar_mascota->num_rows==0)
+       {
+        echo("<h3>Sin Registros<h3/>");
+       }
+
+
+        ?>
+
         <?php foreach($ejecutar_mascota as $row_2)
                     { ?>   
         <div class="container">
@@ -263,7 +276,7 @@ $row_2=mysqli_fetch_assoc($ejecutar_mascota);
     
                         <div class="position-absolute bottom-0 end-1">
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                            <a class="btn btn-primary btn-sm" href="edit-publicacion.php">
+                            <a class="btn btn-primary btn-sm" href="edit-publicacion-mascota.php">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                                     <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
                                 </svg>
@@ -276,7 +289,7 @@ $row_2=mysqli_fetch_assoc($ejecutar_mascota);
                         <!--Boton eliminar-->
                         <div class="position-absolute bottom-0 end-0">
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                            <a class="btn btn-danger btn-sm" href="#">
+                            <a class="btn btn-danger btn-sm" href="scripts_php/elimina_mascota.php">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
                                     <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
                                 </svg>
