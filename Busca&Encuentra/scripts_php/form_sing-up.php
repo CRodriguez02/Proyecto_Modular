@@ -16,7 +16,7 @@
     
     if(($validando->num_rows>0 && $contrasena!=$contrasena_confirma) || ($validando->num_rows>0 && $contrasena==$contrasena_confirma) || ($validando->num_rows<=0 && $contrasena!=$contrasena_confirma))
     {
-        echo("Error de usuario o contraseña");
+        header('Location: ../alerta-registro.html');
     }
     else// este else abarca toda la colsulta
     {
@@ -35,6 +35,7 @@
 
         else
         {
+            header('Location: ../error-404.html');
             echo "incorrecto";
         }
 

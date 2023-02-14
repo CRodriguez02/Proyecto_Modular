@@ -213,16 +213,11 @@ $row=mysqli_fetch_assoc($consulta_db);
                           <input type="text" class="form-control" name="apellido_materno" value="<?php echo ($row['apellido_materno']);?>" required>
 
                           </div>
-                          <div class="col-md-6">
+                          <div class="col-md-12">
                           <label class="form-label">Correo</label>
                           <input type="text" class="form-control" name="correo_electronico" value="<?php echo ($row['correo']);?>" required>
                           
-                          </div>
-                          <div class="col-md-4">
-                          <br>
-                            <label class="form-label"for="imagen">Cambiar foto de Perfil:</label>
-                            <input type="file" accept="image/png, image/jpeg" />
-                          </div>
+                          </div>                         
                           
                           <div class="col-md-12">
                             <br>

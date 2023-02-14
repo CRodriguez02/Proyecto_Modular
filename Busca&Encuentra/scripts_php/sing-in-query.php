@@ -22,7 +22,7 @@
 	}
 	else
 	{
-		header('Location: ../error-404.html');
+		header('Location: ../alerta-inicio_de_sesion.html');
 	}
 
 
