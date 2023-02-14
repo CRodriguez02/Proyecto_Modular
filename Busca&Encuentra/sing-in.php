@@ -81,8 +81,8 @@
         <h1 class="h3 mb-3 fw-normal">Por favor inicie sesión</h1>
 
         <div class="form-floating">
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="correo_elec" required autofocus>
-          <label for="floatingInput">Correo electrónico</label>
+          <input type="" class="form-control" id="floatingInput" placeholder="" name="correo_elec" required autofocus>
+          <label for="floatingInput">Correo electrónico o Usuario</label>
         </div>
         <div class="form-floating">
           <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" required>
