@@ -19,7 +19,7 @@ values('$username','$titulo','$descripcion','$imagen',$estado,'$tipo_objeto',$re
 $valida_consulta=$db->query($sentencia_sql);
 if($valida_consulta)
 {
-   header("Location: ../publicacion.php");
+   header("Location: ../list-publications.php");
 }
 
 ?>
