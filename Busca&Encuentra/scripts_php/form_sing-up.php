@@ -1,5 +1,5 @@
 <?php
-    error_reporting(0);
+    //error_reporting(0);
     require "conectar.php";  
     $nombres=$_POST["nombre"];
     $apellido_pa=$_POST["apellido_Pa"];
@@ -13,12 +13,21 @@
     //Consulta para verificar que el registro no exista
     $validar = "SELECT * FROM usuarios where username='$usuario'";
     $validando=$db->query($validar);
+
+    //Consulta para verificar que el registro no exista
+    $validar_correo = "SELECT * FROM usuarios where correo='$correo_electronico'" ;
+    $validando_correo=$db->query($validar_correo);
     
-    if(($validando->num_rows>0 && $contrasena!=$contrasena_confirma) || ($validando->num_rows>0 && $contrasena==$contrasena_confirma) || ($validando->num_rows<=0 && $contrasena!=$contrasena_confirma))
+    if(($validando_correo->num_rows>0&& $validando->num_rows>0 && $contrasena!=$contrasena_confirma) || ($validando_correo->num_rows>0 && $validando->num_rows>0 && $contrasena==$contrasena_confirma) 
+    || ($validando_correo->num_rows<=0&& $validando->num_rows<=0 && $contrasena!=$contrasena_confirma)||($validando_correo->num_rows>0&& $validando->num_rows<=0 && $contrasena!=$contrasena_confirma)
+    ||($validando_correo->num_rows<=0&& $validando->num_rows>0 && $contrasena!=$contrasena_confirma)||($validando_correo->num_rows>0&& $validando->num_rows<=0 && $contrasena==$contrasena_confirma)
+   || $validando_correo->num_rows<=0&& $validando->num_rows>0 && $contrasena==$contrasena_confirma)
     {
+        
         header('Location: ../alerta-registro.html');
     }
-    else// este else abarca toda la colsulta
+    
+     else// este else abarca toda la colsulta
     {
             //$checar_usuario="if(username==$usuario)FROM usuarios"
 
@@ -28,7 +37,7 @@
 
         if($consulta)
         {
-            header('Location: http://localhost/Proyecto_Modular/Busca&Encuentra/sing-in.php');
+            header('Location: ../sing-in.php');
             //
 
         }
@@ -40,7 +49,7 @@
         }
 
 
-    }
+    } 
     
   
 
