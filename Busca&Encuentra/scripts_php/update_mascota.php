@@ -8,7 +8,7 @@ $estado=$_POST["motivo"];//OBJETO ENCONTRADO O NO
 $especie=$_POST["especie"];
 $raza=$_POST['razas'];
 $recompensa=$_POST["recompensa"];
-$id=$_GET['id'];
+$id=$_GET['id'];//aqui l cachamos con el get y 'id' es el nombre de nuestra variable, por asi decirlo el name que le ponemos
 //hacemos consulta de todo lo que tiene el usuario
 
   

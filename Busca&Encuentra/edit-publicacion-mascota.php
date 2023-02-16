@@ -1,5 +1,5 @@
 <?php
-
+//pasas variable a update_mascota.php que esta en carpeta de scripst y se hizo en el form con get en el action
 $editar=$_GET['edita'];
 echo $editar;
 
@@ -172,7 +172,7 @@ echo $editar;
                 <div class="card-body">
                   <h5 class="card-title">Formulario para mascotas</h5>
                   <p class="card-text">¿Estas buscando una mascota perdida? Ingresa su información aquí</p>
-                  <!--Formulario para mascotas-->
+                  <!--Formulario para mascotas-->                                         <!---aqui se la mandamos a update-mascota y la amndamos por url-->
                   <form class="row g-3 needs-validation"  enctype="multipart/form-data"  action="scripts_php/update_mascota.php?id=<?php echo $editar;  ?>" method="post" novalidate>
                     <div class="mb-3">
                       <input name="imagen" type="file" class="form-control" aria-label="file example" accept="image/png, image/jpeg" required>
