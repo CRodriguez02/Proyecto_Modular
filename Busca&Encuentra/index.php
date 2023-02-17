@@ -258,10 +258,11 @@ $imprime2=$_SESSION['usuario'];
           </div>
           <!--Separador y objetos-->
                 <!--carousel-->
+                <!--COMENTARIO PARA OZ: EL SIGUIENTE DIV ES EL QUE ENGLOBA TODOS Y TIENE 3 PAGINAS-->    
                 <div id="carouselExampleControlsSmallScreen1" class="carousel slide-dark " data-bs-ride="carousel">
                   <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <div class="cards-wrapper">
+                    <div class="carousel-item active"><!--COMENTARIO PARA OZ: ESTA SERIA LA PRIMER PAGINA-->
+                      <div class="cards-wrapper"> <!--COMENTARIO PARA OZ: ESTE DIV PODRIA DECIR QUE ES EL "CONTAINER DE LAS CARTAS Y CADA PAGINA TIENE UNA DE ESTAS-->
                         <!--Carta-->
                         <div class="card text-center" style="width: 18rem;">
                           <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
@@ -272,50 +273,14 @@ $imprime2=$_SESSION['usuario'];
                             <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div>
                         </div>
-                        <!--Carta-->
-                        <div class="card text-center" style="width: 18rem;">
-                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5 class="card-title">Titulo del objeto</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
-                          </div>
-                        </div>
-                        <!--Carta-->
-                        <div class="card text-center" style="width: 18rem;">
-                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
-                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
-                          <div class="card-body">
-                            <h5 class="card-title">Titulo del objeto</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
-                          </div>
-                        </div>
-                        <!--Carta-->
-                        <div class="card text-center" style="width: 18rem;">
-                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5 class="card-title">Titulo del objeto</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
-                          </div>
-                        </div>
+                        <!--COMENTARIO PARA OZ: EL "CAROUSEL" ESTA DISEÑADO PARA MOSTRAR 4 CARTAS O MAXIMO 5, ASÍ QUE POR FAVOR QUE SE MUESTEN AQUI-->
                       </div>
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item"><!--COMENTARIO PARA OZ: ESTA SERIA LA SEGUNDA PAGINA-->
                       <div class="cards-wrapper">
                         <!--Carta-->
                         <div class="card text-center" style="width: 18rem;">
                           <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5 class="card-title">Titulo del objeto</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
-                          </div>
-                        </div>
-                        <!--Carta-->
-                        <div class="card text-center" style="width: 18rem;">
-                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
                           <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
                           <div class="card-body">
                             <h5 class="card-title">Titulo del objeto</h5>
@@ -323,39 +288,23 @@ $imprime2=$_SESSION['usuario'];
                             <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div>
                         </div>
-                        <!--Carta-->
-                        <div class="card text-center" style="width: 18rem;">
-                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5 class="card-title">Titulo del objeto</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
-                          </div>
-                        </div>
-                        <!--Carta-->
-                        <div class="card text-center" style="width: 18rem;">
-                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
-                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
-                          <div class="card-body">
-                            <h5 class="card-title">Titulo del objeto</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
-                          </div>
-                        </div>
+                        <!--COMENTARIO PARA OZ: OTRAS 4 o 5 CARTAS AQUI PAPI-->
                         
                       </div>
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item"><!--COMENTARIO PARA OZ: ESTA SERIA LA TERCER PAGINA-->
                       <div class="cards-wrapper">
                         <!--Carta-->
                         <div class="card text-center" style="width: 18rem;">
                           <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
                           <div class="card-body">
                             <h5 class="card-title">Titulo del objeto</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div>
                         </div>
+                        <!--COMENTARIO PARA OZ: AQUI TAMBIEN 4 o 5-->
                       </div>
                     </div>
                   </div>
@@ -380,7 +329,7 @@ $imprime2=$_SESSION['usuario'];
           <!--carousel-->
           <div id="carouselExampleControlsSmallScreen2" class="carousel slide-dark " data-bs-ride="carousel">
                   <div class="carousel-inner">
-                    <div class="carousel-item active">
+                    <div class="carousel-item active"><!--COMENTARIO PARA OZ: ESTA SERIA LA PRIMER PAGINA-->
                       <div class="cards-wrapper">
                         <!--Carta-->
                         <div class="card text-center" style="width: 18rem;">
@@ -392,100 +341,39 @@ $imprime2=$_SESSION['usuario'];
                             <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div>
                         </div>
-                        <!--Carta-->
-                        <div class="card text-center" style="width: 18rem;">
-                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5 class="card-title">Titulo del objeto</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
-                          </div>
-                        </div>
-                        <!--Carta-->
-                        <div class="card text-center" style="width: 18rem;">
-                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
-                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
-                          <div class="card-body">
-                            <h5 class="card-title">Titulo del objeto</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
-                          </div>
-                        </div>
-                        <!--Carta-->
-                        <div class="card text-center" style="width: 18rem;">
-                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5 class="card-title">Titulo del objeto</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
-                          </div>
-                        </div>
-                        <!--Carta-->
-                        <div class="card text-center" style="width: 18rem;">
-                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
-                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
-                          <div class="card-body">
-                            <h5 class="card-title">Titulo del objeto</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="carousel-item">
-                      <div class="cards-wrapper">
-                        <!--Carta-->
-                        <div class="card text-center" style="width: 18rem;">
-                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5 class="card-title">Titulo del objeto</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
-                          </div>
-                        </div>
-                        <!--Carta-->
-                        <div class="card text-center" style="width: 18rem;">
-                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
-                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
-                          <div class="card-body">
-                            <h5 class="card-title">Titulo del objeto</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
-                          </div>
-                        </div>
-                        <!--Carta-->
-                        <div class="card text-center" style="width: 18rem;">
-                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5 class="card-title">Titulo del objeto</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
-                          </div>
-                        </div>
-                        <!--Carta-->
-                        <div class="card text-center" style="width: 18rem;">
-                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
-                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
-                          <div class="card-body">
-                            <h5 class="card-title">Titulo del objeto</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
-                          </div>
-                        </div>
+                        <!--COMENTARIO PARA OZ: MAS CARTAS AQUI-->
                         
                       </div>
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item"><!--COMENTARIO PARA OZ: ESTA SERIA LA SEGUNDA PAGINA-->
                       <div class="cards-wrapper">
                         <!--Carta-->
                         <div class="card text-center" style="width: 18rem;">
                           <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
                           <div class="card-body">
                             <h5 class="card-title">Titulo del objeto</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div>
                         </div>
+                        <!--COMENTARIO PARA OZ: MAS CARTAS AQUI-->
+
+                      </div>
+                    </div>
+                    <div class="carousel-item"><!--COMENTARIO PARA OZ: ESTA SERIA LA TERCER PAGINA-->
+                      <div class="cards-wrapper">
+                        <!--Carta-->
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <div class="card-body">
+                            <h5 class="card-title">Titulo del objeto</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div>
+                        </div>
+                        <!--COMENTARIO PARA OZ: MAS CARTAS AQUI-->
                       </div>
                     </div>
                   </div>
