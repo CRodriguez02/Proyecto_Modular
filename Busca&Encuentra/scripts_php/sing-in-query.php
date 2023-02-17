@@ -14,8 +14,7 @@
 	{
 		//el ususario esta autenticado
 		session_start();
-
-		$_SESSION['usuario']=$usuario['username'];
+		$_SESSION['usuario']=$usuario['username']; 
 		$_SESSION['login']=true;
 
 		header('Location: http://localhost/Proyecto_Modular/Busca&Encuentra/index.php');
