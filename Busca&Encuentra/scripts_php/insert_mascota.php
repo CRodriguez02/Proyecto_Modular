@@ -21,5 +21,5 @@ values('$username','$titulo','$descripcion','$imagen','$estado','$especie','$raz
 $ejecuta_query=$db->query($sentencia_sql);
 if($ejecuta_query)
 {
-    header("Location: ../publicacion.php");
+    header("Location: ../list-publications.php");
 }
