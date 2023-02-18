@@ -1,0 +1,11 @@
+<div class="carousel-item active"><!--COMENTARIO PARA OZ: ESTA SERIA LA PRIMER PAGINA-->
+                      <div class="cards-wrapper"> <!--COMENTARIO PARA OZ: ESTE DIV PODRIA DECIR QUE ES EL "CONTAINER DE LAS CARTAS Y CADA PAGINA TIENE UNA DE ESTAS-->
+                        <!--Carta maximo 5-->
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <div class="card-body">
+                            <h5 class="card-title">Titulo del objeto pagina1</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div><!---FIN CARTA PAGINA 1--->

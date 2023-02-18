@@ -1,13 +1,37 @@
 <?php
+require "scripts_php/conectar.php";
 require "scripts_php/funciones.php";
 session_start();
 error_reporting(0);
 
 
 
+$select_buscados_encontrados="SELECT imagen,titulo,descripcion FROM objeto where estado=1";
+$ejecuta_1=mysqli_query($db,$select_buscados_encontrados);
+
+$select2="SELECT imagen,titulo,descripcion FROM objeto where estado=1";
+$ejecuta_2=mysqli_query($db,$select2);
+
+
+$select3="SELECT imagen,titulo,descripcion FROM objeto where estado=1";
+$ejecuta_3=mysqli_query($db,$select2);
+
+/*$conta=0;
+for ($i=0; $i <=4; $i++) { 
+  
+  $fila=mysqli_fetch_assoc($ejecuta_1);
+  $conta++;
+  if($conta==3)
+  {
+    echo $fila['titulo'];
+  }
+  
+}*/
+//este codigo primeros 5, luego los otros 5 y luego otros 3
 
 
 ?>
+
 <!doctype html>
 <html lang="es">
   <head>
@@ -102,21 +126,15 @@ error_reporting(0);
     <!--LOGOS-->
     <main>
       <!--HEADER-->
-      <header>
-
-      
-                                 
+      <header>                      
           <div class="px-3 py-2 text-bg-dark">
             <div class="container"> <!----estebes el div chido-->
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <a href="index.php" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
                     <img class="bi me-2" width="100" height="90" role="img" aria-label="" src="assets/brand/logo-02.png" title="Busca&Encuentra">
                 </a>
-                
-                
                 <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                     <li>
-
                     <a href="index.php" class="nav-link text-secondary">
                         <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
                         Inicio
@@ -264,47 +282,75 @@ error_reporting(0);
                   <div class="carousel-inner">
                     <div class="carousel-item active"><!--COMENTARIO PARA OZ: ESTA SERIA LA PRIMER PAGINA-->
                       <div class="cards-wrapper"> <!--COMENTARIO PARA OZ: ESTE DIV PODRIA DECIR QUE ES EL "CONTAINER DE LAS CARTAS Y CADA PAGINA TIENE UNA DE ESTAS-->
-                        <!--Carta-->
+                        <!--Carta maximo 5-->
+                        <?php  
+                        $contador=0;
+                          foreach($ejecuta_1 as $row_1)
+                          {  $contador++;?>
                         <div class="card text-center" style="width: 18rem;">
-                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <img src="data:image/jpg;base64,<?php echo base64_encode($row_1['imagen']);?>" class="card-img-top" alt="..."><!---poner foto--->
                           <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
                           <div class="card-body">
-                            <h5 class="card-title">Titulo del objeto</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h5 class="card-title"><?php echo($row_1['titulo']);  ?>  </h5><!---titulo objeto--->
+                            <p class="card-text"><?php echo($row_1['descripcion']);  ?> </p><!---descripcion-->
                             <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
-                          </div>
-                        </div>
+                          </div><!---FIN CARTA PAGINA 1--->
+                        </div><!------aqui poner la llave de cierre abajo de este div--->
+                        <?php
+                        if($contador==5)
+                        break;  
+                      } ?>
                         <!--COMENTARIO PARA OZ: EL "CAROUSEL" ESTA DISEÑADO PARA MOSTRAR 4 CARTAS O MAXIMO 5, ASÍ QUE POR FAVOR QUE SE MUESTEN AQUI-->
                       </div>
                     </div>
                     <div class="carousel-item"><!--COMENTARIO PARA OZ: ESTA SERIA LA SEGUNDA PAGINA-->
                       <div class="cards-wrapper">
-                        <!--Carta-->
+                            <?php  
+                            $num=0;
+                            while($fila=$ejecuta_2->fetch_array())
+                            { $num++;
+                              
+                              if($num>=6 && $num<9)
+                              {
+                            ?>                      
                         <div class="card text-center" style="width: 18rem;">
-                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <img src="data:image/jpg;base64,<?php echo base64_encode($fila['imagen']);?>" class="card-img-top" alt="...">
                           <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
                           <div class="card-body">
-                            <h5 class="card-title">Titulo del objeto</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h5 class="card-title"> <?php echo( $fila['titulo']);  ?> </h5>
+                            <p class="card-text"><?php echo( $fila['descripcion']);  ?> </p>
                             <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
-                          </div>
-                        </div>
-                        <!--COMENTARIO PARA OZ: OTRAS 4 o 5 CARTAS AQUI PAPI-->
-                        
+                          </div><!---FIN CARTA PAGINA 2--->
+                        </div><!--COMENTARIO PARA OZ: OTRAS 4 o 5 CARTAS AQUI PAPI-->    <!------aqui poner la llave de cierre abajo de este div--->                                       
+                            <?php
+                  
+                              }
+                            }?>
                       </div>
                     </div>
                     <div class="carousel-item"><!--COMENTARIO PARA OZ: ESTA SERIA LA TERCER PAGINA-->
                       <div class="cards-wrapper">
                         <!--Carta-->
+                        <?php  
+                            $n=0;//variable de control para saver en que punto va a tratat de poner las imagenes
+                            while($fila2=$ejecuta_3->fetch_array())
+                            { 
+                              $n++;
+                              if($n>=11 && $n>21)
+                              {
+                            ?>    
                         <div class="card text-center" style="width: 18rem;">
-                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <img src="data:image/jpg;base64,<?php echo base64_encode($fila2['imagen']);?>" class="card-img-top" alt="...">
                           <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
                           <div class="card-body">
-                            <h5 class="card-title">Titulo del objeto</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h5 class="card-title"> <?php echo( $fila2['titulo']);  ?></h5>
+                            <p class="card-text"><?php echo( $fila2['descripcion']);  ?></p>
                             <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div>
-                        </div>
+                        </div><!---FIN CARTA PAGINA 3--->
+                        <?php
+                              }
+                            }?>
                         <!--COMENTARIO PARA OZ: AQUI TAMBIEN 4 o 5-->
                       </div>
                     </div>
@@ -312,7 +358,7 @@ error_reporting(0);
                   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsSmallScreen1" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
-                  </button>
+                  </button
                   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsSmallScreen1" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
@@ -332,7 +378,8 @@ error_reporting(0);
                   <div class="carousel-inner">
                     <div class="carousel-item active"><!--COMENTARIO PARA OZ: ESTA SERIA LA PRIMER PAGINA-->
                       <div class="cards-wrapper">
-                        <!--Carta-->
+                        <!--Carta--> 
+
                         <div class="card text-center" style="width: 18rem;">
                           <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
                           <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
@@ -341,7 +388,7 @@ error_reporting(0);
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div>
-                        </div>
+                        </div><!---aqui termina la carta-->
                         <!--COMENTARIO PARA OZ: MAS CARTAS AQUI-->
                         
                       </div>
