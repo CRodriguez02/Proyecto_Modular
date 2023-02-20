@@ -269,6 +269,181 @@ for ($i=0; $i <=4; $i++) {
       <!--BANER-->
 
       <!--Contenido--> <!----aqui van los que se buscan los objetos---->
+      <h2 class="alert-heading"> Objetos:  </h2>
+      <section class="py-5">
+        <div class="container-fluid"><!-----aqui esta el conteiner--->
+          <div class="p-3 mb-2 bg-danger text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+            Se buscan...
+          </div>
+          <!--Separador y objetos-->
+                <!--carousel-->
+                <!--COMENTARIO PARA OZ: EL SIGUIENTE DIV ES EL QUE ENGLOBA TODOS Y TIENE 3 PAGINAS-->    
+                <div id="carouselExampleControlsSmallScreen1" class="carousel slide-dark " data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active"><!--COMENTARIO PARA OZ: ESTA SERIA LA PRIMER PAGINA-->
+                      <div class="cards-wrapper"> <!--COMENTARIO PARA OZ: ESTE DIV PODRIA DECIR QUE ES EL "CONTAINER DE LAS CARTAS Y CADA PAGINA TIENE UNA DE ESTAS-->
+                        <!--Carta maximo 5-->
+                        <?php  
+                        $contador=0;
+                          foreach($ejecuta_1 as $row_1)
+                          {  $contador++;?>
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="data:image/jpg;base64,<?php echo base64_encode($row_1['imagen']);?>" class="card-img-top" alt="..."><!---poner foto--->
+                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <div class="card-body">
+                            <h5 class="card-title"><?php echo($row_1['titulo']);  ?>  </h5><!---titulo objeto--->
+                            <p class="card-text"><?php echo($row_1['descripcion']);  ?> </p><!---descripcion-->
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div><!---FIN CARTA PAGINA 1--->
+                        </div><!------aqui poner la llave de cierre abajo de este div--->
+                        <?php
+                        if($contador==5)
+                        break;  
+                      } ?>
+                        <!--COMENTARIO PARA OZ: EL "CAROUSEL" ESTA DISEÑADO PARA MOSTRAR 4 CARTAS O MAXIMO 5, ASÍ QUE POR FAVOR QUE SE MUESTEN AQUI-->
+                      </div>
+                    </div>
+                    <div class="carousel-item"><!--COMENTARIO PARA OZ: ESTA SERIA LA SEGUNDA PAGINA-->
+                      <div class="cards-wrapper">
+                            <?php  
+                            $num=0;
+                            while($fila=$ejecuta_2->fetch_array())
+                            { $num++;
+                              
+                              if($num>=6 && $num<9)
+                              {
+                            ?>                      
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="data:image/jpg;base64,<?php echo base64_encode($fila['imagen']);?>" class="card-img-top" alt="...">
+                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <div class="card-body">
+                            <h5 class="card-title"> <?php echo( $fila['titulo']);  ?> </h5>
+                            <p class="card-text"><?php echo( $fila['descripcion']);  ?> </p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div><!---FIN CARTA PAGINA 2--->
+                        </div><!--COMENTARIO PARA OZ: OTRAS 4 o 5 CARTAS AQUI PAPI-->    <!------aqui poner la llave de cierre abajo de este div--->                                       
+                            <?php
+                  
+                              }
+                            }?>
+                      </div>
+                    </div>
+                    <div class="carousel-item"><!--COMENTARIO PARA OZ: ESTA SERIA LA TERCER PAGINA-->
+                      <div class="cards-wrapper">
+                        <!--Carta-->
+                        <?php  
+                            $n=0;//variable de control para saver en que punto va a tratat de poner las imagenes
+                            while($fila2=$ejecuta_3->fetch_array())
+                            { 
+                              $n++;
+                              if($n>=11 && $n>21)
+                              {
+                            ?>    
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="data:image/jpg;base64,<?php echo base64_encode($fila2['imagen']);?>" class="card-img-top" alt="...">
+                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <div class="card-body">
+                            <h5 class="card-title"> <?php echo( $fila2['titulo']);  ?></h5>
+                            <p class="card-text"><?php echo( $fila2['descripcion']);  ?></p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div>
+                        </div><!---FIN CARTA PAGINA 3--->
+                        <?php
+                              }
+                            }?>
+                        <!--COMENTARIO PARA OZ: AQUI TAMBIEN 4 o 5-->
+                      </div>
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsSmallScreen1" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsSmallScreen1" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+                <!--carousel-->
+
+          <!--Separador y objetos-->
+          <div class="p-3 mb-2 bg-success text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill-exclamation" viewBox="0 0 16 16">
+            <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/><path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-3.5-2a.5.5 0 0 0-.5.5v1.5a.5.5 0 0 0 1 0V11a.5.5 0 0 0-.5-.5Zm0 4a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Z"/></svg>
+            ¡Encontrados!
+          </div>
+          <!--Separador y objetos-->
+          <!--carousel-->
+          <div id="carouselExampleControlsSmallScreen2" class="carousel slide-dark " data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active"><!--COMENTARIO PARA OZ: ESTA SERIA LA PRIMER PAGINA-->
+                      <div class="cards-wrapper">
+                        <!--Carta--> 
+
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <div class="card-body">
+                            <h5 class="card-title">Titulo del objeto</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div>
+                        </div><!---aqui termina la carta-->
+                        <!--COMENTARIO PARA OZ: MAS CARTAS AQUI-->
+                        
+                      </div>
+                    </div>
+                    <div class="carousel-item"><!--COMENTARIO PARA OZ: ESTA SERIA LA SEGUNDA PAGINA-->
+                      <div class="cards-wrapper">
+                        <!--Carta-->
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <div class="card-body">
+                            <h5 class="card-title">Titulo del objeto</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div>
+                        </div>
+                        <!--COMENTARIO PARA OZ: MAS CARTAS AQUI-->
+
+                      </div>
+                    </div>
+                    <div class="carousel-item"><!--COMENTARIO PARA OZ: ESTA SERIA LA TERCER PAGINA-->
+                      <div class="cards-wrapper">
+                        <!--Carta-->
+                        <div class="card text-center" style="width: 18rem;">
+                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <div class="card-body">
+                            <h5 class="card-title">Titulo del objeto</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div>
+                        </div>
+                        <!--COMENTARIO PARA OZ: MAS CARTAS AQUI-->
+                      </div>
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsSmallScreen2" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsSmallScreen2" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+                <!--carousel-->
+          
+        </div>
+      </section>
+      <!--Contenido-->
+
+      <!--Contenido--> <!----aqui van los que se buscan los objetos---->
+      <div class="position-absolute top-50 start-50 translate-middle"></div>
+      <h2 class="alert-heading"> Mascotas:  </h2>
       <section class="py-5">
         <div class="container-fluid"><!-----aqui esta el conteiner--->
           <div class="p-3 mb-2 bg-danger text-white">
