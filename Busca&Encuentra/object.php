@@ -1,3 +1,17 @@
+<?php
+
+$identificador=$_GET['id'];
+echo $identificador;
+
+$query_objeto="SELECT titulo,descripcion,imagen"
+
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="es">
     <head>

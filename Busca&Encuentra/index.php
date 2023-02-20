@@ -5,29 +5,37 @@ session_start();
 error_reporting(0);
 
 
-
-$select_buscados_encontrados="SELECT imagen,titulo,descripcion FROM objeto where estado=1";
+//estan al reves
+$select_buscados_encontrados="SELECT id,imagen,titulo,descripcion FROM objeto where estado=0";
 $ejecuta_1=mysqli_query($db,$select_buscados_encontrados);
-
-$select2="SELECT imagen,titulo,descripcion FROM objeto where estado=1";
+$select2="SELECT id,imagen,titulo,descripcion,id  FROM objeto where estado=0";
 $ejecuta_2=mysqli_query($db,$select2);
-
-
-$select3="SELECT imagen,titulo,descripcion FROM objeto where estado=1";
+$select3="SELECT id,imagen,titulo,descripcion,id  FROM objeto where estado=0";
 $ejecuta_3=mysqli_query($db,$select2);
 
-/*$conta=0;
-for ($i=0; $i <=4; $i++) { 
-  
-  $fila=mysqli_fetch_assoc($ejecuta_1);
-  $conta++;
-  if($conta==3)
-  {
-    echo $fila['titulo'];
-  }
-  
-}*/
-//este codigo primeros 5, luego los otros 5 y luego otros 3
+$select_buscados_noecnontrados="SELECT imagen,titulo,descripcion,ID  FROM objeto where estado=1";
+$ejecuta_1n=mysqli_query($db,$select_buscados_noecnontrados);
+$selectn2="SELECT imagen,titulo,descripcion,id  FROM objeto where estado=1";
+$ejecuta_n2=mysqli_query($db,$selectn2);
+$selectn3="SELECT imagen,titulo,descripcion,id  FROM objeto where estado=1";
+$ejecuta_n3=mysqli_query($db,$selectn3);
+//--------------------------------------------------------------------------------------------
+
+$select_m1="SELECT imagen,titulo,descripcion,id  FROM mascotas where estado=0";
+$ejecuta_1m=mysqli_query($db,$select_m1);
+$select_m2="SELECT imagen,titulo,descripcion,id  FROM mascotas where estado=0";
+$ejecuta_2m=mysqli_query($db,$select_m2);
+$select_m3="SELECT imagen,titulo,descripcion,id  FROM mascotas where estado=0";
+$ejecuta_3m=mysqli_query($db,$select_m3);
+
+$select_nm1="SELECT imagen,titulo,descripcion,id  FROM mascotas where estado=1";
+$ejecuta_nm1=mysqli_query($db,$select_nm1);
+$select_nm2="SELECT imagen,titulo,descripcion,id FROM mascotas where estado=1";
+$ejecuta_nm2=mysqli_query($db,$select_nm2);
+$select_nm3="SELECT imagen,titulo,descripcion,id FROM mascotas where estado=1";
+$ejecuta_nm3=mysqli_query($db,$select_nm3);
+
+
 
 
 ?>
@@ -294,7 +302,7 @@ for ($i=0; $i <=4; $i++) {
                           <div class="card-body">
                             <h5 class="card-title"><?php echo($row_1['titulo']);  ?>  </h5><!---titulo objeto--->
                             <p class="card-text"><?php echo($row_1['descripcion']);  ?> </p><!---descripcion-->
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                            <a href="object.php?id=<?php echo $row_1['id'];?>" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div><!---FIN CARTA PAGINA 1--->
                         </div><!------aqui poner la llave de cierre abajo de este div--->
                         <?php
@@ -320,7 +328,7 @@ for ($i=0; $i <=4; $i++) {
                           <div class="card-body">
                             <h5 class="card-title"> <?php echo( $fila['titulo']);  ?> </h5>
                             <p class="card-text"><?php echo( $fila['descripcion']);  ?> </p>
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                            <a href="object.php" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div><!---FIN CARTA PAGINA 2--->
                         </div><!--COMENTARIO PARA OZ: OTRAS 4 o 5 CARTAS AQUI PAPI-->    <!------aqui poner la llave de cierre abajo de este div--->                                       
                             <?php
@@ -346,7 +354,7 @@ for ($i=0; $i <=4; $i++) {
                           <div class="card-body">
                             <h5 class="card-title"> <?php echo( $fila2['titulo']);  ?></h5>
                             <p class="card-text"><?php echo( $fila2['descripcion']);  ?></p>
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                            <a href="object.php" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div>
                         </div><!---FIN CARTA PAGINA 3--->
                         <?php
@@ -359,7 +367,7 @@ for ($i=0; $i <=4; $i++) {
                   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsSmallScreen1" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
-                  </button
+                          </button>
                   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsSmallScreen1" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
@@ -371,7 +379,7 @@ for ($i=0; $i <=4; $i++) {
           <div class="p-3 mb-2 bg-success text-white">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill-exclamation" viewBox="0 0 16 16">
             <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/><path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-3.5-2a.5.5 0 0 0-.5.5v1.5a.5.5 0 0 0 1 0V11a.5.5 0 0 0-.5-.5Zm0 4a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Z"/></svg>
-            ¡Encontrados!
+            ¡Encontrados!<!-----------------Encontrados------------------------------------------->
           </div>
           <!--Separador y objetos-->
           <!--carousel-->
@@ -380,49 +388,74 @@ for ($i=0; $i <=4; $i++) {
                     <div class="carousel-item active"><!--COMENTARIO PARA OZ: ESTA SERIA LA PRIMER PAGINA-->
                       <div class="cards-wrapper">
                         <!--Carta--> 
-
+                        <?php  
+                        $contador_n=0;
+                          foreach($ejecuta_1n as $row_1)
+                          {  $contador_n++;?>
                         <div class="card text-center" style="width: 18rem;">
-                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <img src="data:image/jpg;base64,<?php echo base64_encode($row_1['imagen']);?>" class="card-img-top" alt="..."><!---poner foto--->
                           <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
                           <div class="card-body">
-                            <h5 class="card-title">Titulo del objeto</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
-                          </div>
-                        </div><!---aqui termina la carta-->
-                        <!--COMENTARIO PARA OZ: MAS CARTAS AQUI-->
-                        
+                            <h5 class="card-title"><?php echo($row_1['titulo']);  ?>  </h5><!---titulo objeto--->
+                            <p class="card-text"><?php echo($row_1['descripcion']);  ?> </p><!---descripcion-->
+                            <a href="object.php" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div><!---FIN CARTA PAGINA 1--->
+                        </div><!------aqui poner la llave de cierre abajo de este div--->
+                        <?php
+                        if($contador_n==5)
+                        break;  
+                      } ?>
                       </div>
                     </div>
                     <div class="carousel-item"><!--COMENTARIO PARA OZ: ESTA SERIA LA SEGUNDA PAGINA-->
                       <div class="cards-wrapper">
-                        <!--Carta-->
+                        <?php
+                            $num_n=0;
+                            while($fila=$ejecuta_n2->fetch_array())
+                            { $num_n++;
+                              
+                              if($num_n>=6 && $num_n<9)
+                              {
+                            ?>                      
                         <div class="card text-center" style="width: 18rem;">
-                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <img src="data:image/jpg;base64,<?php echo base64_encode($fila['imagen']);?>" class="card-img-top" alt="...">
                           <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
                           <div class="card-body">
-                            <h5 class="card-title">Titulo del objeto</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
-                          </div>
-                        </div>
-                        <!--COMENTARIO PARA OZ: MAS CARTAS AQUI-->
+                            <h5 class="card-title"> <?php echo( $fila['titulo']);  ?> </h5>
+                            <p class="card-text"><?php echo( $fila['descripcion']);  ?> </p>
+                            <a href="object.php" class="btn btn-outline-dark mt-auto">Ver información</a>
+                          </div><!---FIN CARTA PAGINA 2--->
+                        </div><!--COMENTARIO PARA OZ: OTRAS 4 o 5 CARTAS AQUI PAPI-->    <!------aqui poner la llave de cierre abajo de este div--->                                       
+                            <?php
+                  
+                              }
+                            }?>
 
                       </div>
                     </div>
                     <div class="carousel-item"><!--COMENTARIO PARA OZ: ESTA SERIA LA TERCER PAGINA-->
                       <div class="cards-wrapper">
-                        <!--Carta-->
+                      <?php  
+                            $n_n=0;//variable de control para saver en que punto va a tratat de poner las imagenes
+                            while($fila2=$ejecuta_n3->fetch_array())
+                            { 
+                              $n_n++;
+                              if($n_n>=11 && $n_n>21)
+                              {
+                            ?>    
                         <div class="card text-center" style="width: 18rem;">
-                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <img src="data:image/jpg;base64,<?php echo base64_encode($fila2['imagen']);?>" class="card-img-top" alt="...">
                           <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
                           <div class="card-body">
-                            <h5 class="card-title">Titulo del objeto</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                            <h5 class="card-title"> <?php echo( $fila2['titulo']);  ?></h5>
+                            <p class="card-text"><?php echo( $fila2['descripcion']);  ?></p>
+                            <a href="object.php" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div>
-                        </div>
-                        <!--COMENTARIO PARA OZ: MAS CARTAS AQUI-->
+                        </div><!---FIN CARTA PAGINA 3--->
+                        <?php
+                              }
+                            }?>
+                        <!--COMENTARIO PARA OZ: AQUI TAMBIEN 4 o 5-->
                       </div>
                     </div>
                   </div>
@@ -459,9 +492,9 @@ for ($i=0; $i <=4; $i++) {
                       <div class="cards-wrapper"> <!--COMENTARIO PARA OZ: ESTE DIV PODRIA DECIR QUE ES EL "CONTAINER DE LAS CARTAS Y CADA PAGINA TIENE UNA DE ESTAS-->
                         <!--Carta maximo 5-->
                         <?php  
-                        $contador=0;
-                          foreach($ejecuta_1 as $row_1)
-                          {  $contador++;?>
+                        $contador_m=0;
+                          foreach($ejecuta_1m as $row_1)
+                          {  $contador_m++;?>
                         <div class="card text-center" style="width: 18rem;">
                           <img src="data:image/jpg;base64,<?php echo base64_encode($row_1['imagen']);?>" class="card-img-top" alt="..."><!---poner foto--->
                           <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
@@ -472,7 +505,7 @@ for ($i=0; $i <=4; $i++) {
                           </div><!---FIN CARTA PAGINA 1--->
                         </div><!------aqui poner la llave de cierre abajo de este div--->
                         <?php
-                        if($contador==5)
+                        if($contador_m==5)
                         break;  
                       } ?>
                         <!--COMENTARIO PARA OZ: EL "CAROUSEL" ESTA DISEÑADO PARA MOSTRAR 4 CARTAS O MAXIMO 5, ASÍ QUE POR FAVOR QUE SE MUESTEN AQUI-->
@@ -481,11 +514,11 @@ for ($i=0; $i <=4; $i++) {
                     <div class="carousel-item"><!--COMENTARIO PARA OZ: ESTA SERIA LA SEGUNDA PAGINA-->
                       <div class="cards-wrapper">
                             <?php  
-                            $num=0;
-                            while($fila=$ejecuta_2->fetch_array())
-                            { $num++;
+                            $num_m=0;
+                            while($fila=$ejecuta_2m->fetch_array())
+                            { $num_m++;
                               
-                              if($num>=6 && $num<9)
+                              if($num_m>=6 && $num_m<11)
                               {
                             ?>                      
                         <div class="card text-center" style="width: 18rem;">
@@ -507,11 +540,11 @@ for ($i=0; $i <=4; $i++) {
                       <div class="cards-wrapper">
                         <!--Carta-->
                         <?php  
-                            $n=0;//variable de control para saver en que punto va a tratat de poner las imagenes
-                            while($fila2=$ejecuta_3->fetch_array())
+                            $n_m=0;//variable de control para saver en que punto va a tratat de poner las imagenes
+                            while($fila2=$ejecuta_3m->fetch_array())
                             { 
-                              $n++;
-                              if($n>=11 && $n>21)
+                              $n_m++;
+                              if($n_m>=11 && $n_m<16)
                               {
                             ?>    
                         <div class="card text-center" style="width: 18rem;">
@@ -533,7 +566,7 @@ for ($i=0; $i <=4; $i++) {
                   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsSmallScreen1" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
-                  </button
+                          </button>
                   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsSmallScreen1" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
@@ -555,48 +588,75 @@ for ($i=0; $i <=4; $i++) {
                       <div class="cards-wrapper">
                         <!--Carta--> 
 
+                        <?php  
+                        $contador_nm=0;
+                          foreach($ejecuta_nm1 as $row_1)
+                          {  $contador_nm++;?>
                         <div class="card text-center" style="width: 18rem;">
-                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <img src="data:image/jpg;base64,<?php echo base64_encode($row_1['imagen']);?>" class="card-img-top" alt="..."><!---poner foto--->
                           <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
                           <div class="card-body">
-                            <h5 class="card-title">Titulo del objeto</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h5 class="card-title"><?php echo($row_1['titulo']);  ?>  </h5><!---titulo objeto--->
+                            <p class="card-text"><?php echo($row_1['descripcion']);  ?> </p><!---descripcion-->
                             <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
-                          </div>
-                        </div><!---aqui termina la carta-->
-                        <!--COMENTARIO PARA OZ: MAS CARTAS AQUI-->
+                          </div><!---FIN CARTA PAGINA 1--->
+                        </div><!------aqui poner la llave de cierre abajo de este div--->
+                        <?php
+                        if($contador_nm==5)
+                        break;  
+                      } ?>
+                        <!--COMENTARIO PARA OZ:------>
                         
                       </div>
                     </div>
-                    <div class="carousel-item"><!--COMENTARIO PARA OZ: ESTA SERIA LA SEGUNDA PAGINA-->
+                    <div class="carousel-item"><!-COMENTARIO PARA OZ: ESTA SERIA LA SEGUNDA PAGINA------->
                       <div class="cards-wrapper">
-                        <!--Carta-->
+                      <?php  
+                            $num_nm=0;
+                            while($fila=$ejecuta_nm2->fetch_array())
+                            { $num_m++;
+                              
+                              if($num_nm>=6 && $num_nm<11)
+                              {
+                            ?>                      
                         <div class="card text-center" style="width: 18rem;">
-                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <img src="data:image/jpg;base64,<?php echo base64_encode($fila['imagen']);?>" class="card-img-top" alt="...">
                           <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
                           <div class="card-body">
-                            <h5 class="card-title">Titulo del objeto</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h5 class="card-title"> <?php echo( $fila['titulo']);  ?> </h5>
+                            <p class="card-text"><?php echo( $fila['descripcion']);  ?> </p>
                             <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
-                          </div>
-                        </div>
-                        <!--COMENTARIO PARA OZ: MAS CARTAS AQUI-->
+                          </div><!---FIN CARTA PAGINA 2--->
+                        </div><!--COMENTARIO PARA OZ: OTRAS 4 o 5 CARTAS AQUI PAPI-->    <!------aqui poner la llave de cierre abajo de este div--->                                       
+                            <?php
+                  
+                              }
+                            }?>
 
                       </div>
                     </div>
                     <div class="carousel-item"><!--COMENTARIO PARA OZ: ESTA SERIA LA TERCER PAGINA-->
                       <div class="cards-wrapper">
-                        <!--Carta-->
+                      <?php  
+                            $n_nm=0;//variable de control para saver en que punto va a tratat de poner las imagenes
+                            while($fila2=$ejecuta_nm3->fetch_array())
+                            { 
+                              $n_nm++;
+                              if($n_nm>=11 && $n_nm<16)
+                              {
+                            ?>    
                         <div class="card text-center" style="width: 18rem;">
-                          <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
+                          <img src="data:image/jpg;base64,<?php echo base64_encode($fila2['imagen']);?>" class="card-img-top" alt="...">
                           <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
                           <div class="card-body">
-                            <h5 class="card-title">Titulo del objeto</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                            <h5 class="card-title"> <?php echo( $fila2['titulo']);  ?></h5>
+                            <p class="card-text"><?php echo( $fila2['descripcion']);  ?></p>
+                            <a href="object.php" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div>
-                        </div>
-                        <!--COMENTARIO PARA OZ: MAS CARTAS AQUI-->
+                        </div><!---FIN CARTA PAGINA 3--->
+                        <?php
+                              }
+                            }?>
                       </div>
                     </div>
                   </div>
