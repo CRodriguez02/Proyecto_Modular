@@ -285,8 +285,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
             Se buscan...
           </div>
           <!--Separador y objetos-->
-                <!--carousel-->
-                <!--COMENTARIO PARA OZ: EL SIGUIENTE DIV ES EL QUE ENGLOBA TODOS Y TIENE 3 PAGINAS-->    
+                <!--carousel-->  
                 <div id="carouselExampleControlsSmallScreen1" class="carousel slide-dark " data-bs-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active"><!--COMENTARIO PARA OZ: ESTA SERIA LA PRIMER PAGINA-->
@@ -385,7 +384,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
           <!--carousel-->
           <div id="carouselExampleControlsSmallScreen2" class="carousel slide-dark " data-bs-ride="carousel">
                   <div class="carousel-inner">
-                    <div class="carousel-item active"><!--COMENTARIO PARA OZ: ESTA SERIA LA PRIMER PAGINA-->
+                    <div class="carousel-item active">
                       <div class="cards-wrapper">
                         <!--Carta--> 
                         <?php  
@@ -407,7 +406,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                       } ?>
                       </div>
                     </div>
-                    <div class="carousel-item"><!--COMENTARIO PARA OZ: ESTA SERIA LA SEGUNDA PAGINA-->
+                    <div class="carousel-item">
                       <div class="cards-wrapper">
                         <?php
                             $num_n=0;
@@ -425,7 +424,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                             <p class="card-text"><?php echo( $fila['descripcion']);  ?> </p>
                             <a href="object.php" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div><!---FIN CARTA PAGINA 2--->
-                        </div><!--COMENTARIO PARA OZ: OTRAS 4 o 5 CARTAS AQUI PAPI-->    <!------aqui poner la llave de cierre abajo de este div--->                                       
+                        </div> <!------aqui poner la llave de cierre abajo de este div--->                                       
                             <?php
                   
                               }
@@ -433,7 +432,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
 
                       </div>
                     </div>
-                    <div class="carousel-item"><!--COMENTARIO PARA OZ: ESTA SERIA LA TERCER PAGINA-->
+                    <div class="carousel-item">
                       <div class="cards-wrapper">
                       <?php  
                             $n_n=0;//variable de control para saver en que punto va a tratat de poner las imagenes
@@ -485,11 +484,11 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
           </div>
           <!--Separador y objetos-->
                 <!--carousel-->
-                <!--COMENTARIO PARA OZ: EL SIGUIENTE DIV ES EL QUE ENGLOBA TODOS Y TIENE 3 PAGINAS-->    
-                <div id="carouselExampleControlsSmallScreen1" class="carousel slide-dark " data-bs-ride="carousel">
+                   
+                <div id="carouselExampleControlsSmallScreen3" class="carousel slide-dark " data-bs-ride="carousel">
                   <div class="carousel-inner">
-                    <div class="carousel-item active"><!--COMENTARIO PARA OZ: ESTA SERIA LA PRIMER PAGINA-->
-                      <div class="cards-wrapper"> <!--COMENTARIO PARA OZ: ESTE DIV PODRIA DECIR QUE ES EL "CONTAINER DE LAS CARTAS Y CADA PAGINA TIENE UNA DE ESTAS-->
+                    <div class="carousel-item active">
+                      <div class="cards-wrapper"> 
                         <!--Carta maximo 5-->
                         <?php  
                         $contador_m=0;
@@ -508,10 +507,10 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                         if($contador_m==5)
                         break;  
                       } ?>
-                        <!--COMENTARIO PARA OZ: EL "CAROUSEL" ESTA DISEÑADO PARA MOSTRAR 4 CARTAS O MAXIMO 5, ASÍ QUE POR FAVOR QUE SE MUESTEN AQUI-->
+                        
                       </div>
                     </div>
-                    <div class="carousel-item"><!--COMENTARIO PARA OZ: ESTA SERIA LA SEGUNDA PAGINA-->
+                    <div class="carousel-item">
                       <div class="cards-wrapper">
                             <?php  
                             $num_m=0;
@@ -529,14 +528,14 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                             <p class="card-text"><?php echo( $fila['descripcion']);  ?> </p>
                             <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div><!---FIN CARTA PAGINA 2--->
-                        </div><!--COMENTARIO PARA OZ: OTRAS 4 o 5 CARTAS AQUI PAPI-->    <!------aqui poner la llave de cierre abajo de este div--->                                       
+                        </div>    <!------aqui poner la llave de cierre abajo de este div--->                                       
                             <?php
                   
                               }
                             }?>
                       </div>
                     </div>
-                    <div class="carousel-item"><!--COMENTARIO PARA OZ: ESTA SERIA LA TERCER PAGINA-->
+                    <div class="carousel-item">
                       <div class="cards-wrapper">
                         <!--Carta-->
                         <?php  
@@ -559,15 +558,15 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                         <?php
                               }
                             }?>
-                        <!--COMENTARIO PARA OZ: AQUI TAMBIEN 4 o 5-->
+                        
                       </div>
                     </div>
                   </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsSmallScreen1" data-bs-slide="prev">
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsSmallScreen3" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                           </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsSmallScreen1" data-bs-slide="next">
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsSmallScreen3" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                   </button>
@@ -582,9 +581,9 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
           </div>
           <!--Separador y objetos-->
           <!--carousel-->
-          <div id="carouselExampleControlsSmallScreen2" class="carousel slide-dark " data-bs-ride="carousel">
+          <div id="carouselExampleControlsSmallScreen4" class="carousel slide-dark " data-bs-ride="carousel">
                   <div class="carousel-inner">
-                    <div class="carousel-item active"><!--COMENTARIO PARA OZ: ESTA SERIA LA PRIMER PAGINA-->
+                    <div class="carousel-item active">
                       <div class="cards-wrapper">
                         <!--Carta--> 
 
@@ -605,11 +604,11 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                         if($contador_nm==5)
                         break;  
                       } ?>
-                        <!--COMENTARIO PARA OZ:------>
+                        
                         
                       </div>
                     </div>
-                    <div class="carousel-item"><!-COMENTARIO PARA OZ: ESTA SERIA LA SEGUNDA PAGINA------->
+                    <div class="carousel-item">
                       <div class="cards-wrapper">
                       <?php  
                             $num_nm=0;
@@ -627,7 +626,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                             <p class="card-text"><?php echo( $fila['descripcion']);  ?> </p>
                             <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div><!---FIN CARTA PAGINA 2--->
-                        </div><!--COMENTARIO PARA OZ: OTRAS 4 o 5 CARTAS AQUI PAPI-->    <!------aqui poner la llave de cierre abajo de este div--->                                       
+                        </div>                                      
                             <?php
                   
                               }
@@ -635,7 +634,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
 
                       </div>
                     </div>
-                    <div class="carousel-item"><!--COMENTARIO PARA OZ: ESTA SERIA LA TERCER PAGINA-->
+                    <div class="carousel-item">
                       <div class="cards-wrapper">
                       <?php  
                             $n_nm=0;//variable de control para saver en que punto va a tratat de poner las imagenes
@@ -660,11 +659,11 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                       </div>
                     </div>
                   </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsSmallScreen2" data-bs-slide="prev">
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsSmallScreen4" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                   </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsSmallScreen2" data-bs-slide="next">
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsSmallScreen4" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                   </button>
