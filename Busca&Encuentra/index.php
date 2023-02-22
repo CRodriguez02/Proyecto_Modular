@@ -386,7 +386,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                       <div class="cards-wrapper">
-                        <!--Carta--> 
+                        <!--Carta-->
                         <?php  
                         $contador_n=0;
                           foreach($ejecuta_1n as $row_1)
@@ -671,6 +671,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                 <!--carousel-->
           
         </div>
+        
       </section>
       <!--Contenido-->
 

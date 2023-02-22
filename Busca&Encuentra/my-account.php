@@ -240,11 +240,6 @@ $row=mysqli_fetch_assoc($consulta_db);
         </div>
         <div class="card-body">
             <form class="row" method="post" action="scripts_php/cambiar_contrasena.php" ><!--actualiza contraseña-->
-                <div class="col-md-12">
-                  <label class="form-label">Contraseña actual</label>
-                  <input type="text" class="form-control" name="contraseña-actual" disabled="disabled" value="<?php echo($row['contrasena']);   ?> ">
-                </div>
-
                 <div class="col-md-6">
                     <label class="form-label">Contraseña nueva</label>
                     <input type="text" class="form-control" name="contraseña-nueva1" placeholder="*********">

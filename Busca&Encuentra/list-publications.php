@@ -183,6 +183,7 @@ $row_2=mysqli_fetch_assoc($ejecutar_mascota);
     </header>
     <!--HEADER-->
     <section class="py-5">
+    <h2>Objetos</h2> <br><br>
                     <?php 
                     if($ejecutar_objeto->num_rows==0)
                     {
