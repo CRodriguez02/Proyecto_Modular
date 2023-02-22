@@ -1,5 +1,11 @@
 <?php
 require("scripts_php/conectar.php");
+require("scripts_php/funciones.php");
+$entrar=autenticado();
+if(!$entrar)
+{
+  header("Location: sing-in.php");
+}
 $identificador=$_GET['id'];
 $base_datos=$_GET['bd'];
 //$estado=$_GET['estado'];
