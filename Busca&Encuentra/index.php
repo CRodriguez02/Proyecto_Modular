@@ -6,33 +6,33 @@ error_reporting(0);
 
 
 //estan al reves
-$select_buscados_encontrados="SELECT id,imagen,titulo,descripcion FROM objeto where estado=0";
+$select_buscados_encontrados="SELECT id,imagen,titulo,descripcion,fk_username_Objeto FROM objeto where estado=0";
 $ejecuta_1=mysqli_query($db,$select_buscados_encontrados);
-$select2="SELECT id,imagen,titulo,descripcion,id  FROM objeto where estado=0";
+$select2="SELECT id,imagen,titulo,descripcion,fk_username_Objeto FROM objeto where estado=0";
 $ejecuta_2=mysqli_query($db,$select2);
-$select3="SELECT id,imagen,titulo,descripcion,id  FROM objeto where estado=0";
+$select3="SELECT id,imagen,titulo,descripcion,fk_username_Objeto  FROM objeto where estado=0";
 $ejecuta_3=mysqli_query($db,$select2);
 
-$select_buscados_noecnontrados="SELECT imagen,titulo,descripcion,ID  FROM objeto where estado=1";
+$select_buscados_noecnontrados="SELECT id,imagen,titulo,descripcion,fk_username_Objeto FROM objeto where estado=1";
 $ejecuta_1n=mysqli_query($db,$select_buscados_noecnontrados);
-$selectn2="SELECT imagen,titulo,descripcion,id  FROM objeto where estado=1";
+$selectn2="SELECT imagen,titulo,descripcion,id,fk_username_Objeto  FROM objeto where estado=1";
 $ejecuta_n2=mysqli_query($db,$selectn2);
-$selectn3="SELECT imagen,titulo,descripcion,id  FROM objeto where estado=1";
+$selectn3="SELECT imagen,titulo,descripcion,id,fk_username_Objeto  FROM objeto where estado=1";
 $ejecuta_n3=mysqli_query($db,$selectn3);
 //--------------------------------------------------------------------------------------------
 
-$select_m1="SELECT imagen,titulo,descripcion,id  FROM mascotas where estado=0";
+$select_m1="SELECT imagen,titulo,descripcion,id,fk_username_Mascota  FROM mascotas where estado=0";
 $ejecuta_1m=mysqli_query($db,$select_m1);
-$select_m2="SELECT imagen,titulo,descripcion,id  FROM mascotas where estado=0";
+$select_m2="SELECT imagen,titulo,descripcion,id,fk_username_Mascota   FROM mascotas where estado=0";
 $ejecuta_2m=mysqli_query($db,$select_m2);
-$select_m3="SELECT imagen,titulo,descripcion,id  FROM mascotas where estado=0";
+$select_m3="SELECT imagen,titulo,descripcion,id,fk_username_Mascota   FROM mascotas where estado=0";
 $ejecuta_3m=mysqli_query($db,$select_m3);
 
-$select_nm1="SELECT imagen,titulo,descripcion,id  FROM mascotas where estado=1";
+$select_nm1="SELECT imagen,titulo,descripcion,id,fk_username_Mascota   FROM mascotas where estado=1";
 $ejecuta_nm1=mysqli_query($db,$select_nm1);
-$select_nm2="SELECT imagen,titulo,descripcion,id FROM mascotas where estado=1";
+$select_nm2="SELECT imagen,titulo,descripcion,id,fk_username_Mascota  FROM mascotas where estado=1";
 $ejecuta_nm2=mysqli_query($db,$select_nm2);
-$select_nm3="SELECT imagen,titulo,descripcion,id FROM mascotas where estado=1";
+$select_nm3="SELECT imagen,titulo,descripcion,id,fk_username_Mascota  FROM mascotas where estado=1";
 $ejecuta_nm3=mysqli_query($db,$select_nm3);
 
 
@@ -301,7 +301,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                           <div class="card-body">
                             <h5 class="card-title"><?php echo($row_1['titulo']);  ?>  </h5><!---titulo objeto--->
                             <p class="card-text"><?php echo($row_1['descripcion']);  ?> </p><!---descripcion-->
-                            <a href="object.php?id=<?php echo $row_1['id'];?>" class="btn btn-outline-dark mt-auto">Ver información</a>
+                            <a href="object.php?id=<?php echo $row_1['id'];?>&bd=objeto&estado=0&user=<?php echo $row_1['fk_username_Objeto'];?>" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div><!---FIN CARTA PAGINA 1--->
                         </div><!------aqui poner la llave de cierre abajo de este div--->
                         <?php
@@ -327,7 +327,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                           <div class="card-body">
                             <h5 class="card-title"> <?php echo( $fila['titulo']);  ?> </h5>
                             <p class="card-text"><?php echo( $fila['descripcion']);  ?> </p>
-                            <a href="object.php" class="btn btn-outline-dark mt-auto">Ver información</a>
+                            <a href="object.php?id=<?php echo $fila['id'];?>&bd=objeto&estado=0&user=<?php echo $fila['fk_username_Objeto'];?>" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div><!---FIN CARTA PAGINA 2--->
                         </div><!--COMENTARIO PARA OZ: OTRAS 4 o 5 CARTAS AQUI PAPI-->    <!------aqui poner la llave de cierre abajo de este div--->                                       
                             <?php
@@ -353,7 +353,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                           <div class="card-body">
                             <h5 class="card-title"> <?php echo( $fila2['titulo']);  ?></h5>
                             <p class="card-text"><?php echo( $fila2['descripcion']);  ?></p>
-                            <a href="object.php" class="btn btn-outline-dark mt-auto">Ver información</a>
+                            <a href="object.php?id=<?php echo $fila2['id'];?>&bd=objeto&user=<?php echo $fila2['fk_username_Objeto'];?>" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div>
                         </div><!---FIN CARTA PAGINA 3--->
                         <?php
@@ -397,7 +397,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                           <div class="card-body">
                             <h5 class="card-title"><?php echo($row_1['titulo']);  ?>  </h5><!---titulo objeto--->
                             <p class="card-text"><?php echo($row_1['descripcion']);  ?> </p><!---descripcion-->
-                            <a href="object.php" class="btn btn-outline-dark mt-auto">Ver información</a>
+                            <a href="object.php?id=<?php echo($row_1['id']); ?>&bd=objeto&user=<?php echo $row_1['fk_username_Objeto'];?>" class="btn btn-outline-dark mt-auto">Ver información </a>
                           </div><!---FIN CARTA PAGINA 1--->
                         </div><!------aqui poner la llave de cierre abajo de este div--->
                         <?php
@@ -422,7 +422,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                           <div class="card-body">
                             <h5 class="card-title"> <?php echo( $fila['titulo']);  ?> </h5>
                             <p class="card-text"><?php echo( $fila['descripcion']);  ?> </p>
-                            <a href="object.php" class="btn btn-outline-dark mt-auto">Ver información</a>
+                            <a href="object.php?id=<?php echo $fila['id'];?>&bd=objeto&user=<?php echo $fila['fk_username_Objeto'];?>" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div><!---FIN CARTA PAGINA 2--->
                         </div> <!------aqui poner la llave de cierre abajo de este div--->                                       
                             <?php
@@ -448,7 +448,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                           <div class="card-body">
                             <h5 class="card-title"> <?php echo( $fila2['titulo']);  ?></h5>
                             <p class="card-text"><?php echo( $fila2['descripcion']);  ?></p>
-                            <a href="object.php" class="btn btn-outline-dark mt-auto">Ver información</a>
+                            <a href="object.php?id=<?php echo $fila2['id'];?>&bd=objeto&user=<?php echo $fila2['fk_username_Objeto'];?>" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div>
                         </div><!---FIN CARTA PAGINA 3--->
                         <?php
@@ -500,7 +500,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                           <div class="card-body">
                             <h5 class="card-title"><?php echo($row_1['titulo']);  ?>  </h5><!---titulo objeto--->
                             <p class="card-text"><?php echo($row_1['descripcion']);  ?> </p><!---descripcion-->
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                            <a href="object.php?id=<?php echo $row_1['id'];?>&bd=mascotas&user=<?php echo $row_1['fk_username_Mascota'];?>" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div><!---FIN CARTA PAGINA 1--->
                         </div><!------aqui poner la llave de cierre abajo de este div--->
                         <?php
@@ -526,7 +526,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                           <div class="card-body">
                             <h5 class="card-title"> <?php echo( $fila['titulo']);  ?> </h5>
                             <p class="card-text"><?php echo( $fila['descripcion']);  ?> </p>
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                            <a href="object.php?id=<?php echo $fila['id'];?>&bd=mascotas&user=<?php echo $row_1['fk_username_Mascota'];?>" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div><!---FIN CARTA PAGINA 2--->
                         </div>    <!------aqui poner la llave de cierre abajo de este div--->                                       
                             <?php
@@ -552,7 +552,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                           <div class="card-body">
                             <h5 class="card-title"> <?php echo( $fila2['titulo']);  ?></h5>
                             <p class="card-text"><?php echo( $fila2['descripcion']);  ?></p>
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                            <a href="object.php?id=<?php echo $fila2['id'];?>&bd=mascotas&user=<?php echo $row_1['fk_username_Mascota'];?>" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div>
                         </div><!---FIN CARTA PAGINA 3--->
                         <?php
@@ -597,7 +597,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                           <div class="card-body">
                             <h5 class="card-title"><?php echo($row_1['titulo']);  ?>  </h5><!---titulo objeto--->
                             <p class="card-text"><?php echo($row_1['descripcion']);  ?> </p><!---descripcion-->
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                            <a href="object.php?id=<?php echo $row_1['id'];?>&bd=mascotas&&user=<?php echo $row_1['fk_username_Mascota'];?>" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div><!---FIN CARTA PAGINA 1--->
                         </div><!------aqui poner la llave de cierre abajo de este div--->
                         <?php
@@ -624,7 +624,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                           <div class="card-body">
                             <h5 class="card-title"> <?php echo( $fila['titulo']);  ?> </h5>
                             <p class="card-text"><?php echo( $fila['descripcion']);  ?> </p>
-                            <a href="#" class="btn btn-outline-dark mt-auto">Ver información</a>
+                            <a href="object.php?id=<?php echo $fila['id'];?>&bd=mascotas&user=<?php echo $row_1['fk_username_Mascota'];?>" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div><!---FIN CARTA PAGINA 2--->
                         </div>                                      
                             <?php
@@ -650,7 +650,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                           <div class="card-body">
                             <h5 class="card-title"> <?php echo( $fila2['titulo']);  ?></h5>
                             <p class="card-text"><?php echo( $fila2['descripcion']);  ?></p>
-                            <a href="object.php" class="btn btn-outline-dark mt-auto">Ver información</a>
+                            <a href="object.php?id=<?php echo $fila2['id'];?>&bd=mascotas&user=<?php echo $row_1['fk_username_Mascota'];?>" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div>
                         </div><!---FIN CARTA PAGINA 3--->
                         <?php

@@ -1,17 +1,31 @@
 <?php
-
+require("scripts_php/conectar.php");
 $identificador=$_GET['id'];
-echo $identificador;
+$base_datos=$_GET['bd'];
+//$estado=$_GET['estado'];
+//$usuario_obj=$_GET['fk_username_Objeto'];
+//$usuario_mas=$_GET['fk_username_Mascota'];
+//echo "$identificador <br> $base_datos <br> $estado";
 
-$query_objeto="SELECT titulo,descripcion,imagen"
+
+if($base_datos=="mascotas")
+{
+  $query_mascota="SELECT titulo,descripcion,imagen,estado,especie,raza,id FROM mascotas WHERE id=$identificador";
+  $ejecuta_mascota=mysqli_query($db,$query_mascota);
+  $row=mysqli_fetch_assoc($ejecuta_mascota);
+  $tipo_db=false;
+  
+}
 
 
-
+else
+{
+  $query="SELECT titulo,descripcion,imagen,estado,categoria,id FROM objeto WHERE id=$identificador";
+  $ejecuta=mysqli_query($db,$query);
+  $row=mysqli_fetch_assoc($ejecuta);
+  $tipo_db=true;
+}
 ?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -163,20 +177,40 @@ $query_objeto="SELECT titulo,descripcion,imagen"
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
+                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']);?>" alt="..." /></div>
                     <div class="col-md-6">
-                        <div class="small mb-1">ID: BST-498</div>
-                        <h1 class="display-5 fw-bolder">Titulo</h1>
+                        <div class="small mb-1">ID:<?php echo($row["id"]); ?></div>
+                        <h1 class="display-5 fw-bolder"><?php echo($row["titulo"]); ?></h1>
                         <div class="fs-5 mb-5">
-                            <span>Categoria</span>
+                        
+                        <?php     
+                            if($base_datos=="mascotas")                            
+                            echo "<span>".$row["especie"]."</span>";
+                            else
+                            {
+                              echo(" <span>".$row["categoria"]."</span>");
+                            }
+                            ?>
+                           
                             <span>-</span>
-                            <span>raza/objeto</span>
+                            <?php     
+                            if($base_datos=="mascotas")                            
+                            echo "<span>".$row["raza"]."</span>";
+                            ?>
                             <br>
-                            <span class="badge text-bg-success">Encontrado</span>
-                            <span class="badge text-bg-danger">Se busca</span>
-
+                            <?php
+                            if($row['estado']==1)
+                            {
+                             echo ' <span class="badge text-bg-success">Encontrado</span>';
+                            }
+                            else
+                            {
+                              echo '<span class="badge text-bg-danger">Se busca</span>';
+                            }
+                            ?>
+                            
                         </div>
-                        <p class="lead">Descripción: Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
+                        <p class="lead"> <?php echo($row["descripcion"]); ?></p>
                         <div class="d-flex">
                             <a class="btn btn-primary" type="button">
                                 <i class="bi-cart-fill me-1"></i>
