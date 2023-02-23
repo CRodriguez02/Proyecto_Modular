@@ -10,7 +10,7 @@ if(!$entrar)
 
 //consiulta para objeto
 $usuario=$_SESSION['usuario'];
-$consulta_objeto="SELECT id, titulo,descripcion,imagen,estado FROM objeto where fk_username_Objeto='$usuario'";
+$consulta_objeto="SELECT id, titulo,descripcion,imagen,estado,recompensa FROM objeto where fk_username_Objeto='$usuario'";
 $ejecutar_objeto=$db->query($consulta_objeto);
 if($ejecutar_objeto)
 {
@@ -24,7 +24,7 @@ else
 $row=mysqli_fetch_assoc($ejecutar_objeto);
 
 //consulta para mascota
-$consulta_mascota="SELECT id, titulo,descripcion,imagen,estado FROM mascotas where fk_username_Mascota='$usuario'";
+$consulta_mascota="SELECT id, titulo,descripcion,imagen,estado,recompensa FROM mascotas where fk_username_Mascota='$usuario'";
 $ejecutar_mascota = $db->query($consulta_mascota);
 if($ejecutar_mascota)
 {
@@ -217,7 +217,10 @@ $row_2=mysqli_fetch_assoc($ejecutar_mascota);
                         {
                             echo('<p class="card-text">Estado:Perdido</p>');
                         }
+                        $recompensa=($row['recompensa']==1) ? "Rescompensa":"Sin recompensa";
+                        echo('<p class="card-text">'. $recompensa.'</p>');
                         ?>
+                        
                         <!--Boton editar-->
     
                         <div class="position-absolute bottom-0 end-1">
@@ -293,6 +296,8 @@ $row_2=mysqli_fetch_assoc($ejecutar_mascota);
                         {
                             echo('<p class="card-text">Estado:Perdido</p>');
                         }
+                        $recompensa_m=($row_2['recompensa']==1)? "Rescompensa":"Sin recompensa";
+                        echo('<p class="card-text">'. $recompensa_m.'</p>');
                         ?>
                         <!--Boton editar-->
     

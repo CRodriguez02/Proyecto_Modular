@@ -10,7 +10,7 @@ $consulta_db=$db->query($Consulta_datos);//ejecutar quiery
 
 if($consulta_db->num_rows>0)
 {
-  echo("Si agarra datos");
+  
 }
 else
 {

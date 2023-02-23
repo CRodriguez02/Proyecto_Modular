@@ -16,7 +16,7 @@ $base_datos=$_GET['bd'];
 
 if($base_datos=="mascotas")
 {
-  $query_mascota="SELECT titulo,descripcion,imagen,estado,especie,raza,id FROM mascotas WHERE id=$identificador";
+  $query_mascota="SELECT titulo,descripcion,imagen,estado,especie,raza,id,recompensa FROM mascotas WHERE id=$identificador";
   $ejecuta_mascota=mysqli_query($db,$query_mascota);
   $row=mysqli_fetch_assoc($ejecuta_mascota);
   $tipo_db=false;
@@ -26,7 +26,7 @@ if($base_datos=="mascotas")
 
 else
 {
-  $query="SELECT titulo,descripcion,imagen,estado,categoria,id FROM objeto WHERE id=$identificador";
+  $query="SELECT titulo,descripcion,imagen,estado,categoria,id,recompensa FROM objeto WHERE id=$identificador";
   $ejecuta=mysqli_query($db,$query);
   $row=mysqli_fetch_assoc($ejecuta);
   $tipo_db=true;
@@ -211,8 +211,11 @@ else
                             }
                             else
                             {
-                              echo '<span class="badge text-bg-danger">Se busca</span>';
+                              echo '<span class="badge text-bg-danger">Se busca</span> <br>';
                             }
+                            $recompensa=($row['recompensa']==1 ? "Recompensa":"Sin recompensa");
+
+                            echo '<span class="badge text-bg-danger">'.$recompensa.'</span>';
                             ?>
                             
                         </div>

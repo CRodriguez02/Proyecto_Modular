@@ -6,33 +6,33 @@ error_reporting(0);
 
 
 //estan al reves
-$select_buscados_encontrados="SELECT id,imagen,titulo,descripcion,fk_username_Objeto FROM objeto where estado=0";
+$select_buscados_encontrados="SELECT id,imagen,titulo,descripcion,fk_username_Objeto, recompensa FROM objeto where estado=0";
 $ejecuta_1=mysqli_query($db,$select_buscados_encontrados);
-$select2="SELECT id,imagen,titulo,descripcion,fk_username_Objeto FROM objeto where estado=0";
+$select2="SELECT id,imagen,titulo,descripcion,fk_username_Objeto, recompensa FROM objeto where estado=0";
 $ejecuta_2=mysqli_query($db,$select2);
-$select3="SELECT id,imagen,titulo,descripcion,fk_username_Objeto  FROM objeto where estado=0";
+$select3="SELECT id,imagen,titulo,descripcion,fk_username_Objeto, recompensa  FROM objeto where estado=0";
 $ejecuta_3=mysqli_query($db,$select2);
 
-$select_buscados_noecnontrados="SELECT id,imagen,titulo,descripcion,fk_username_Objeto FROM objeto where estado=1";
+$select_buscados_noecnontrados="SELECT id,imagen,titulo,descripcion,fk_username_Objeto, recompensa FROM objeto where estado=1";
 $ejecuta_1n=mysqli_query($db,$select_buscados_noecnontrados);
-$selectn2="SELECT imagen,titulo,descripcion,id,fk_username_Objeto  FROM objeto where estado=1";
+$selectn2="SELECT imagen,titulo,descripcion,id,fk_username_Objeto, recompensa  FROM objeto where estado=1";
 $ejecuta_n2=mysqli_query($db,$selectn2);
-$selectn3="SELECT imagen,titulo,descripcion,id,fk_username_Objeto  FROM objeto where estado=1";
+$selectn3="SELECT imagen,titulo,descripcion,id,fk_username_Objeto, recompensa  FROM objeto where estado=1";
 $ejecuta_n3=mysqli_query($db,$selectn3);
 //--------------------------------------------------------------------------------------------
 
-$select_m1="SELECT imagen,titulo,descripcion,id,fk_username_Mascota  FROM mascotas where estado=0";
+$select_m1="SELECT imagen,titulo,descripcion,id,fk_username_Mascota, recompensa  FROM mascotas where estado=0";
 $ejecuta_1m=mysqli_query($db,$select_m1);
-$select_m2="SELECT imagen,titulo,descripcion,id,fk_username_Mascota   FROM mascotas where estado=0";
+$select_m2="SELECT imagen,titulo,descripcion,id,fk_username_Mascota, recompensa   FROM mascotas where estado=0";
 $ejecuta_2m=mysqli_query($db,$select_m2);
-$select_m3="SELECT imagen,titulo,descripcion,id,fk_username_Mascota   FROM mascotas where estado=0";
+$select_m3="SELECT imagen,titulo,descripcion,id,fk_username_Mascota , recompensa  FROM mascotas where estado=0";
 $ejecuta_3m=mysqli_query($db,$select_m3);
 
-$select_nm1="SELECT imagen,titulo,descripcion,id,fk_username_Mascota   FROM mascotas where estado=1";
+$select_nm1="SELECT imagen,titulo,descripcion,id,fk_username_Mascota, recompensa   FROM mascotas where estado=1";
 $ejecuta_nm1=mysqli_query($db,$select_nm1);
-$select_nm2="SELECT imagen,titulo,descripcion,id,fk_username_Mascota  FROM mascotas where estado=1";
+$select_nm2="SELECT imagen,titulo,descripcion,id,fk_username_Mascota, recompensa  FROM mascotas where estado=1";
 $ejecuta_nm2=mysqli_query($db,$select_nm2);
-$select_nm3="SELECT imagen,titulo,descripcion,id,fk_username_Mascota  FROM mascotas where estado=1";
+$select_nm3="SELECT imagen,titulo,descripcion,id,fk_username_Mascota, recompensa  FROM mascotas where estado=1";
 $ejecuta_nm3=mysqli_query($db,$select_nm3);
 
 
@@ -297,7 +297,14 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                           {  $contador++;?>
                         <div class="card text-center" style="width: 18rem;">
                           <img src="data:image/jpg;base64,<?php echo base64_encode($row_1['imagen']);?>" class="card-img-top" alt="..."><!---poner foto--->
-                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <?php
+                           
+                          if($row_1['recompensa']==1)
+                          {
+                            echo (' <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>');
+                          }
+                          
+                          ?>
                           <div class="card-body">
                             <h5 class="card-title"><?php echo($row_1['titulo']);  ?>  </h5><!---titulo objeto--->
                             <p class="card-text"><?php echo($row_1['descripcion']);  ?> </p><!---descripcion-->
@@ -323,7 +330,13 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                             ?>                      
                         <div class="card text-center" style="width: 18rem;">
                           <img src="data:image/jpg;base64,<?php echo base64_encode($fila['imagen']);?>" class="card-img-top" alt="...">
-                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <?php
+                          if($fila['recompensa']==1)
+                          {
+                            echo (' <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>');
+                          }
+                          
+                          ?>
                           <div class="card-body">
                             <h5 class="card-title"> <?php echo( $fila['titulo']);  ?> </h5>
                             <p class="card-text"><?php echo( $fila['descripcion']);  ?> </p>
@@ -349,7 +362,12 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                             ?>    
                         <div class="card text-center" style="width: 18rem;">
                           <img src="data:image/jpg;base64,<?php echo base64_encode($fila2['imagen']);?>" class="card-img-top" alt="...">
-                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <?php
+                          if($fil2['estado']==1)
+                          {
+                            echo (' <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>');
+                          }
+                          ?>
                           <div class="card-body">
                             <h5 class="card-title"> <?php echo( $fila2['titulo']);  ?></h5>
                             <p class="card-text"><?php echo( $fila2['descripcion']);  ?></p>
@@ -393,7 +411,13 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                           {  $contador_n++;?>
                         <div class="card text-center" style="width: 18rem;">
                           <img src="data:image/jpg;base64,<?php echo base64_encode($row_1['imagen']);?>" class="card-img-top" alt="..."><!---poner foto--->
-                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <?php
+                          if($row_1['recompensa']==1)
+                          {
+                            
+                            echo (' <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>');
+                          }
+                          ?>
                           <div class="card-body">
                             <h5 class="card-title"><?php echo($row_1['titulo']);  ?>  </h5><!---titulo objeto--->
                             <p class="card-text"><?php echo($row_1['descripcion']);  ?> </p><!---descripcion-->
@@ -418,7 +442,12 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                             ?>                      
                         <div class="card text-center" style="width: 18rem;">
                           <img src="data:image/jpg;base64,<?php echo base64_encode($fila['imagen']);?>" class="card-img-top" alt="...">
-                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <?php
+                          if($fila['estado']==1)
+                          {
+                            echo (' <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>');
+                          }
+                          ?>
                           <div class="card-body">
                             <h5 class="card-title"> <?php echo( $fila['titulo']);  ?> </h5>
                             <p class="card-text"><?php echo( $fila['descripcion']);  ?> </p>
@@ -444,7 +473,12 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                             ?>    
                         <div class="card text-center" style="width: 18rem;">
                           <img src="data:image/jpg;base64,<?php echo base64_encode($fila2['imagen']);?>" class="card-img-top" alt="...">
-                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <?php
+                          if($fila2['estado']==1)
+                          {
+                            echo (' <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>');
+                          }
+                          ?>
                           <div class="card-body">
                             <h5 class="card-title"> <?php echo( $fila2['titulo']);  ?></h5>
                             <p class="card-text"><?php echo( $fila2['descripcion']);  ?></p>
@@ -496,7 +530,12 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                           {  $contador_m++;?>
                         <div class="card text-center" style="width: 18rem;">
                           <img src="data:image/jpg;base64,<?php echo base64_encode($row_1['imagen']);?>" class="card-img-top" alt="..."><!---poner foto--->
-                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <?php
+                          if($row_1['recompensa']==1)
+                          {
+                            echo (' <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>');
+                          }
+                          ?>
                           <div class="card-body">
                             <h5 class="card-title"><?php echo($row_1['titulo']);  ?>  </h5><!---titulo objeto--->
                             <p class="card-text"><?php echo($row_1['descripcion']);  ?> </p><!---descripcion-->
@@ -522,7 +561,12 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                             ?>                      
                         <div class="card text-center" style="width: 18rem;">
                           <img src="data:image/jpg;base64,<?php echo base64_encode($fila['imagen']);?>" class="card-img-top" alt="...">
-                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <?php
+                          if($fila['recompensa']==1)
+                          {
+                            echo (' <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>');
+                          }
+                          ?>
                           <div class="card-body">
                             <h5 class="card-title"> <?php echo( $fila['titulo']);  ?> </h5>
                             <p class="card-text"><?php echo( $fila['descripcion']);  ?> </p>
@@ -548,11 +592,16 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                             ?>    
                         <div class="card text-center" style="width: 18rem;">
                           <img src="data:image/jpg;base64,<?php echo base64_encode($fila2['imagen']);?>" class="card-img-top" alt="...">
-                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <?php
+                          if($fila2['recompensa']==1)
+                          {
+                            echo (' <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>');
+                          }
+                          ?>
                           <div class="card-body">
                             <h5 class="card-title"> <?php echo( $fila2['titulo']);  ?></h5>
                             <p class="card-text"><?php echo( $fila2['descripcion']);  ?></p>
-                            <a href="object.php?id=<?php echo $fila2['id'];?>&bd=mascotas&user=<?php echo $row_1['fk_username_Mascota'];?>" class="btn btn-outline-dark mt-auto">Ver información</a>
+                            <a href="object.php?id=<?php echo $fila2['id'];?>&bd=mascotas&user=<?php echo $fila2['fk_username_Mascota'];?>" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div>
                         </div><!---FIN CARTA PAGINA 3--->
                         <?php
@@ -593,7 +642,12 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                           {  $contador_nm++;?>
                         <div class="card text-center" style="width: 18rem;">
                           <img src="data:image/jpg;base64,<?php echo base64_encode($row_1['imagen']);?>" class="card-img-top" alt="..."><!---poner foto--->
-                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <?php
+                          if($row_1['recompensa']==1)
+                          {
+                            echo (' <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>');
+                          }
+                          ?>
                           <div class="card-body">
                             <h5 class="card-title"><?php echo($row_1['titulo']);  ?>  </h5><!---titulo objeto--->
                             <p class="card-text"><?php echo($row_1['descripcion']);  ?> </p><!---descripcion-->
@@ -620,11 +674,16 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                             ?>                      
                         <div class="card text-center" style="width: 18rem;">
                           <img src="data:image/jpg;base64,<?php echo base64_encode($fila['imagen']);?>" class="card-img-top" alt="...">
-                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <?php
+                          if($fila['recompensa']==1)
+                          {
+                            echo (' <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>');
+                          }
+                          ?>
                           <div class="card-body">
                             <h5 class="card-title"> <?php echo( $fila['titulo']);  ?> </h5>
                             <p class="card-text"><?php echo( $fila['descripcion']);  ?> </p>
-                            <a href="object.php?id=<?php echo $fila['id'];?>&bd=mascotas&user=<?php echo $row_1['fk_username_Mascota'];?>" class="btn btn-outline-dark mt-auto">Ver información</a>
+                            <a href="object.php?id=<?php echo $fila['id'];?>&bd=mascotas&user=<?php echo $fila['fk_username_Mascota'];?>" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div><!---FIN CARTA PAGINA 2--->
                         </div>                                      
                             <?php
@@ -646,11 +705,16 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                             ?>    
                         <div class="card text-center" style="width: 18rem;">
                           <img src="data:image/jpg;base64,<?php echo base64_encode($fila2['imagen']);?>" class="card-img-top" alt="...">
-                          <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>
+                          <?php
+                          if($fila2['recompensa']==1)
+                          {
+                            echo (' <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>');
+                          }
+                          ?>
                           <div class="card-body">
                             <h5 class="card-title"> <?php echo( $fila2['titulo']);  ?></h5>
                             <p class="card-text"><?php echo( $fila2['descripcion']);  ?></p>
-                            <a href="object.php?id=<?php echo $fila2['id'];?>&bd=mascotas&user=<?php echo $row_1['fk_username_Mascota'];?>" class="btn btn-outline-dark mt-auto">Ver información</a>
+                            <a href="object.php?id=<?php echo $fila2['id'];?>&bd=mascotas&user=<?php echo $fila2['fk_username_Mascota'];?>" class="btn btn-outline-dark mt-auto">Ver información</a>
                           </div>
                         </div><!---FIN CARTA PAGINA 3--->
                         <?php
