@@ -1,0 +1,23 @@
+create table mensaje (
+id_mensaje int primary key AUTO_INCREMENT not null,
+user_quienmanda varchar(60) not null,
+mensaje  varchar(250),
+fecha datetime
+);
+
+create table sala(
+id_sala int primary key AUTO_INCREMENT not null,
+id_user1 int not null,
+id_user2 int not null,
+foreign key (id_user1) references usuario(id_user),
+foreign key (id_user2) references usuario(id_user)
+);
+
+create table usuario(
+id_user int primary key AUTO_INCREMENT not null,
+username varchar(60) not null,
+nombre varhcar(45) not null,
+apellido varchar(45) not null,
+contraseña varchar(60)
+);
+
