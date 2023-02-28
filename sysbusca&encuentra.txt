@@ -7,6 +7,7 @@ apellido_materno varchar (100),
 contrasena varchar (50) NOT NULL
 );
 
+
 CREATE TABLE usuarios (
 username varchar (50) NOT NULL PRIMARY KEY,
 correo varchar (255) NOT NULL,
@@ -16,6 +17,7 @@ apellido_materno varchar (100),
 contrasena varchar (50) NOT NULL,
 imagen mediumblob
 );
+
 
 CREATE TABLE mascotas (
 fk_username_Mascota varchar(50) NOT NULL,
@@ -30,6 +32,7 @@ FOREIGN KEY (fk_username_Mascota ) REFERENCES usuarios (username),
 recompensa bool NOT NULL
 );
 
+
 CREATE TABLE objeto (
 fk_username_Objeto varchar(50) NOT NULL,
 ID int auto_increment PRIMARY KEY,
@@ -40,6 +43,19 @@ estado bool NOT NULL,
 categoria varchar (100) NOT NULL,
 FOREIGN KEY (fk_username_Objeto) REFERENCES usuarios (username),
 recompensa bool NOT NULL
+);
+
+
+create table reportes (
+folio int primary key AUTO_INCREMENT not null,
+motivo varchar (255) not null,
+descripcion varchar (255) not null,
+id_objeto int,
+id_mascota int,
+fk_username varchar(50),
+foreign key (fk_username) references usuarios(username),
+foreign key (id_objeto) references objeto(ID),
+foreign key (id_mascota) references mascotas(ID)
 );
 
 
