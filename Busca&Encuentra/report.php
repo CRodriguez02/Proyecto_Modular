@@ -1,10 +1,8 @@
 <?php
 require("scripts_php/conectar.php");
 $id=$_GET['id'];
-$user=$_GET['usuario'];
+$pasa_usuario=$_GET['usuario'];
 $base_datos=$_GET['base_datos'];
-echo $base_datos;
-
 ?>
 
 
@@ -157,17 +155,17 @@ echo $base_datos;
 </header>
 <!--HEADER-->
 <section class="py-5">
-            <form class="container  needs-validation" method="post" action="scripts_php/crear_reporte.php?id= <?php echo $id ?>&user= <?php echo $user ?>&base_datos=<?php echo($base_datos);?>">
+            <form class="container  needs-validation" method="post" action="scripts_php/crear_reporte.php?id=<?php echo $id ?>&user=<?php echo $pasa_usuario?>&base_datos=<?php echo($base_datos);?>">
                 <div class="text-center"> 
                     <h5 class="card-title">Levantar un reporte</h5>
                 <div class="row">
                 <div class="form-group col-md-2">
                     <label for="id-ob-masc" class="col-form-label">ID-Objeto/Mascota</label>
-                    <input type="text" class="form-control" disabled="disabled" id="id-ob-masc" placeholder=" <?php echo $id  ?>">
+                    <input type="text" class="form-control" disabled="disabled" id="id-ob-masc" placeholder=" <?php echo $id_2=$id  ?>">
                 </div>
                 <div class="form-group col-md-2">
                     <label for="User" class="col-form-label">Usuario</label>
-                    <input type="text" class="form-control" disabled="disabled" id="User" placeholder=" <?php echo $user  ?>">
+                    <input type="text" class="form-control" disabled="disabled" id="User" placeholder=" <?php echo $pasa_usuario2=$pasa_usuario  ?>">
                 </div>
                 </div>
                 <br>

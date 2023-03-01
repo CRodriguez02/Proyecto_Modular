@@ -26,7 +26,7 @@ if($base_datos=="mascotas")
 
 else
 {
-  $query="SELECT * FROM objeto WHERE id=$identificador";
+  $query="SELECT * FROM objeto WHERE id='$identificador'";
   $ejecuta=mysqli_query($db,$query);
   $row=mysqli_fetch_assoc($ejecuta);
   $tipo_db=true;
@@ -230,7 +230,8 @@ else
                                 </a>
                         </div>
                         <br>
-                        <?php $user=($base_datos=="mascotas")? $row['fk_username_Mascota']:$row['fk_username_Objeto']; ?>
+                        <?php $user=($base_datos=="mascotas")? $row['fk_username_Mascota']:$row['fk_username_Objeto']; 
+                        ?>
                         <a class="btn btn-outline-dark flex-shrink-0" type="button" href="report.php?id=<?php echo($identificador);?>&usuario=<?php echo($user);?>&base_datos=<?php echo($base_datos);?>">
                             Levantar reporte
                         </a>
