@@ -16,7 +16,7 @@ $base_datos=$_GET['bd'];
 
 if($base_datos=="mascotas")
 {
-  $query_mascota="SELECT titulo,descripcion,imagen,estado,especie,raza,id,recompensa FROM mascotas WHERE id=$identificador";
+  $query_mascota="SELECT * FROM mascotas WHERE id=$identificador";
   $ejecuta_mascota=mysqli_query($db,$query_mascota);
   $row=mysqli_fetch_assoc($ejecuta_mascota);
   $tipo_db=false;
@@ -26,7 +26,7 @@ if($base_datos=="mascotas")
 
 else
 {
-  $query="SELECT titulo,descripcion,imagen,estado,categoria,id,recompensa FROM objeto WHERE id=$identificador";
+  $query="SELECT * FROM objeto WHERE id=$identificador";
   $ejecuta=mysqli_query($db,$query);
   $row=mysqli_fetch_assoc($ejecuta);
   $tipo_db=true;
@@ -185,7 +185,7 @@ else
                 <div class="row gx-4 gx-lg-5 align-items-center">
                     <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']);?>" alt="..." /></div>
                     <div class="col-md-6">
-                        <div class="small mb-1">ID:<?php echo($row["id"]); ?></div>
+                        <div class="small mb-1">ID:<?php echo($row["ID"]); ?></div>
                         <h1 class="display-5 fw-bolder"><?php echo($row["titulo"]); ?></h1>
                         <div class="fs-5 mb-5">
                         
@@ -230,7 +230,8 @@ else
                                 </a>
                         </div>
                         <br>
-                        <a class="btn btn-outline-dark flex-shrink-0" type="button" href="report.php">
+                        <?php $user=($base_datos=="mascotas")? $row['fk_username_Mascota']:$row['fk_username_Objeto']; ?>
+                        <a class="btn btn-outline-dark flex-shrink-0" type="button" href="report.php?id=<?php echo($identificador);?>&usuario=<?php echo($user);?>&base_datos=<?php echo($base_datos);?>">
                             Levantar reporte
                         </a>
                     </div>

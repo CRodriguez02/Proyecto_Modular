@@ -1,3 +1,15 @@
+<?php
+require("scripts_php/conectar.php");
+$id=$_GET['id'];
+$user=$_GET['usuario'];
+$base_datos=$_GET['base_datos'];
+echo $base_datos;
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -145,21 +157,17 @@
 </header>
 <!--HEADER-->
 <section class="py-5">
-            <form class="container  needs-validation" novalidate>
+            <form class="container  needs-validation" method="post" action="scripts_php/crear_reporte.php?id= <?php echo $id ?>&user= <?php echo $user ?>&base_datos=<?php echo($base_datos);?>">
                 <div class="text-center"> 
                     <h5 class="card-title">Levantar un reporte</h5>
                 <div class="row">
-                    <div class="form-group col-md-2">
-                        <label for="folio-reporte" class="col-form-label">Folio de Reporte</label>
-                        <input type="text" class="form-control" disabled="disabled" id="folio-reporte" placeholder="Folio de Reporte">
-                    </div>
                 <div class="form-group col-md-2">
                     <label for="id-ob-masc" class="col-form-label">ID-Objeto/Mascota</label>
-                    <input type="text" class="form-control" disabled="disabled" id="id-ob-masc" placeholder="ID">
+                    <input type="text" class="form-control" disabled="disabled" id="id-ob-masc" placeholder=" <?php echo $id  ?>">
                 </div>
                 <div class="form-group col-md-2">
                     <label for="User" class="col-form-label">Usuario</label>
-                    <input type="text" class="form-control" disabled="disabled" id="User" placeholder="Tu usuario">
+                    <input type="text" class="form-control" disabled="disabled" id="User" placeholder=" <?php echo $user  ?>">
                 </div>
                 </div>
                 <br>
@@ -167,12 +175,12 @@
                   <!--Para seleccionar los Motivos de un reprte-->
                     <select class="form-select" aria-label=".form-select-sm example" name="Seleccionar-motivo" required>
                       <option selected disabled value="">--Motivo por el que se reporta--</option>
-                      <option value="op1">Contenido inadecuado</option>
-                      <option value="op2">Publicación duplicada</option>
-                      <option value="op3">Es de mi propiedad y ya fue recuperado</option>
-                      <option value="op4">Estafa</option>
-                      <option value="op5">El contenido tiene que ver con drogas y/o armas</option>
-                      <option value="op5">Otro</option>
+                      <option value="Contenido inadecuado">Contenido inadecuado</option>
+                      <option value="Publicación duplicada">Publicación duplicada</option>
+                      <option value="Es de mi propiedad y ya fue recuperado">Es de mi propiedad y ya fue recuperado</option>
+                      <option value="Estafa">Estafa</option>
+                      <option value="El contenido tiene que ver con drogas y/o armas">El contenido tiene que ver con drogas y/o armas</option>
+                      <option value="Otro">Otro</option>
                     </select>
                     <div class="invalid-feedback">
                           Por favor seleccione un motivo por el cual reporta.
