@@ -215,7 +215,7 @@ else
                             }
                             $recompensa=($row['recompensa']==1 ? "Recompensa":"Sin recompensa");
 
-                            echo '<span class="badge text-bg-danger">'.$recompensa.'</span>';
+                            echo '<span class="badge text-bg-success">'.$recompensa.'</span>';
                             ?>
                             
                         </div>

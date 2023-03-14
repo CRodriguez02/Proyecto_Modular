@@ -104,6 +104,23 @@ $row_2=mysqli_fetch_assoc($ejecutar_mascota);
         }
     </style>
 </head>
+
+<script >
+    function ConfirmarBorrado()
+    {
+        var respuesta = confirm("¿Estas seguro(a) de que quieres eliminar esta publicación?")
+
+        if(respuesta==true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+</script>
+
 <body>
     <!--LOGOS-->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -238,7 +255,7 @@ $row_2=mysqli_fetch_assoc($ejecutar_mascota);
                         <!--Boton eliminar-->
                         <div class="position-absolute bottom-0 end-0">
                             <div class="d-flex justify-content-between align-items-center mt-3">            <!---paso la variable del id que le pertenece a cada tupla gracias al foreach y lo mando al script correspondente-->
-                            <a id="elimina_objeto" class="btn btn-danger btn-sm" href="scripts_php/elimina_objeto.php?id=<?php echo($row['id']); ?>">
+                            <a id="elimina_objeto" class="btn btn-danger btn-sm" onclick="return ConfirmarBorrado()" href="scripts_php/elimina_objeto.php?id=<?php echo($row['id']); ?>">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
                                     <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
                                 </svg>
@@ -296,7 +313,7 @@ $row_2=mysqli_fetch_assoc($ejecutar_mascota);
                         {
                             echo('<p class="card-text">Estado:Perdido</p>');
                         }
-                        $recompensa_m=($row_2['recompensa']==1)? "Rescompensa":"Sin recompensa";
+                        $recompensa_m=($row_2['recompensa']==1)? "Recompensa":"Sin recompensa";
                         echo('<p class="card-text">'. $recompensa_m.'</p>');
                         ?>
                         <!--Boton editar-->
@@ -316,7 +333,7 @@ $row_2=mysqli_fetch_assoc($ejecutar_mascota);
                         <!--Boton eliminar-->
                         <div class="position-absolute bottom-0 end-0">
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                            <a class="btn btn-danger btn-sm" href="scripts_php/elimina_mascota.php?id=<?php echo($row_2['id']); ?>">
+                            <a class="btn btn-danger btn-sm" onclick="return ConfirmarBorrado()" href="scripts_php/elimina_mascota.php?id=<?php echo($row_2['id']); ?>">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
                                     <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
                                 </svg>
@@ -374,4 +391,5 @@ $row_2=mysqli_fetch_assoc($ejecutar_mascota);
 
     
 </body>
+
 </html>
