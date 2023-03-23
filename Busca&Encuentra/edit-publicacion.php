@@ -1,10 +1,12 @@
 <?php
-
+require("scripts_php/conectar.php");
 
 $identificador=$_GET['edita'];
-echo $identificador;
-
-//<?php  echo $identificador
+$consulta="SELECT * FROM objeto WHERE ID=$identificador";
+$ejecuta=mysqli_query($db,$consulta);
+$row=mysqli_fetch_assoc($ejecuta);
+echo $row['estado'];
+ 
  ?>
 
 
@@ -21,6 +23,36 @@ echo $identificador;
     <meta name="author" content="Carlos Rodriguez, Ozmar Andrade, Marlene Rios">
     <title>Editar Publicación</title>
     <link rel="icon" type="image/x-icon" href="assets/brand/B&E-logo.svg" />
+    <script src="assets/dist/js/jquery-3.6.3.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        let cat="<?php echo $row['categoria'];  ?>";
+        let desc="<?php echo $row['descripcion'];  ?>";
+        let estado=<?php echo $row['estado'];  ?>;
+        let recompensa=<?php echo $row['recompensa'];  ?>;
+        $("#Categorias > [value="+cat+"]").attr("selected",true);
+        $('#Descripcion').html(desc);
+        if(estado==0)
+        {
+          $('#Motivo_Bus').prop("checked", true);
+        }
+        else
+        {
+          $('#Motivo_Enc').prop("cheked",true);
+        }
+        if(recompensa==0)
+        {
+          $('#Recompensa_no').prop("checked", true);
+        }
+        else
+        {
+          $('#Recompensa_si').prop("cheked",true);
+        }
+        
+        
+      
+      });
+    </script>
 
     
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -85,7 +117,7 @@ echo $identificador;
 
   </head>
 <body>
-    
+    <h1></h1>
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="logo" viewBox="0 0 118 94">
         <title>Busca&Encuentra</title>
@@ -211,7 +243,7 @@ echo $identificador;
                       </div>
                       <div class="col-md-8">
                         <label for="Titulo" class="form-label">Título</label>
-                        <input type="text" class="form-control" id="Titulo" placeholder="Agrega un título a la publicación" name="txt_titulo" maxlength="100" required/>
+                        <input type="text"  value="<?php echo $row['titulo']; ?>"  class="form-control" id="Titulo" placeholder="Agrega un título a la publicación" name="txt_titulo" maxlength="100" required/>
                         <div class="invalid-feedback">
                             Por favor escriba un título para la publicación.
                         </div>
@@ -219,7 +251,7 @@ echo $identificador;
                     </div>
                     <div class="mb-3">
                       <label for="validationTextarea" class="form-label">Inserta una descripcion</label>
-                      <textarea class="form-control" id="Descripcion" placeholder="¿Dónde, cómo y cuándo encontraste/perdiste el objeto?" name="txt_descripcion" required></textarea>
+                      <textarea class="form-control"  id="Descripcion" placeholder="¿Dónde, cómo y cuándo encontraste/perdiste el objeto?" name="txt_descripcion" required></textarea>
                       <div class="invalid-feedback">
                         Por favor ingrese una descripción.
                       </div>
