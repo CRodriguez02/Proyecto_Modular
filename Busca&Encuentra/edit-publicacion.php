@@ -26,10 +26,14 @@ echo $row['estado'];
     <script src="assets/dist/js/jquery-3.6.3.min.js"></script>
     <script>
       $(document).ready(function () {
+       
         let cat="<?php echo $row['categoria'];  ?>";
         let desc="<?php echo $row['descripcion'];  ?>";
         let estado=<?php echo $row['estado'];  ?>;
         let recompensa=<?php echo $row['recompensa'];  ?>;
+
+       
+
         $("#Categorias > [value="+cat+"]").attr("selected",true);
         $('#Descripcion').html(desc);
         if(estado==0)
@@ -38,7 +42,7 @@ echo $row['estado'];
         }
         else
         {
-          $('#Motivo_Enc').prop("cheked",true);
+          $('#Motivo_Enc').prop("checked",true);
         }
         if(recompensa==0)
         {
@@ -46,7 +50,7 @@ echo $row['estado'];
         }
         else
         {
-          $('#Recompensa_si').prop("cheked",true);
+          $('#Recompensa_si').prop("checked",true);
         }
         
         
@@ -214,7 +218,7 @@ echo $row['estado'];
                   <!--Para seleccionar las categorias-->
                   <form class="row g-3 needs-validation" method="post"  enctype="multipart/form-data"  action="scripts_php/update_objeto.php?id= <?php echo $identificador; ?>" novalidate>
                     <div class="mb-3">                     
-                      <input name="imagen"  type="file" class="form-control" aria-label="file example" accept="image/png, image/jpeg" required>
+                      <input name="imagen" id="imagen"  type="file" class="form-control" aria-label="file example" accept="image/png, image/jpeg" required>
                       <div class="invalid-feedback">Falta de imagen o formato no aceptado (solo se aceptan .png, .jpg)</div>
                     </div>
                     <div class="row">

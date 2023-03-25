@@ -1,7 +1,12 @@
 <?php
 //pasas variable a update_mascota.php que esta en carpeta de scripst y se hizo en el form con get en el action
+require("scripts_php/conectar.php");
 $editar=$_GET['edita'];
 echo $editar;
+$consulta="SELECT * FROM mascotas WHERE ID=$editar";
+$ejecuta=mysqli_query($db,$consulta);
+$row=mysqli_fetch_assoc($ejecuta);
+echo $row['estado'];
 
 ?>
 
@@ -17,9 +22,40 @@ echo $editar;
     <meta name="author" content="Carlos Rodriguez, Ozmar Andrade, Marlene Rios">
     <title>Editar Publicación</title>
     <link rel="icon" type="image/x-icon" href="assets/brand/B&E-logo.svg" />
-
-    
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="assets/dist/js/jquery-3.6.3.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        let especie="<?php echo $row['especie'];  ?>";
+        let raza="<?php echo $row['raza'];  ?>";
+        let desc="<?php echo $row['descripcion'];  ?>";
+        let estado=<?php echo $row['estado'];  ?>;
+        let recompensa=<?php echo $row['recompensa'];  ?>;
+
+        $("#Especie_mascota > [value="+especie+"]").attr("selected",true);
+        $("#Raza_mascota > [value="+raza+"]").attr("selected",true);
+        $('#Descripcion').html(desc);
+        if(estado==0)
+        {
+          $('#Motivo_Bus').prop("checked", true);
+        }
+        else
+        {
+          $('#Motivo_Enc').prop("checked",true);
+        }
+        if(recompensa==0)
+        {
+          $('#Recompensa_no').prop("checked", true);
+        }
+        else
+        {
+          $('#Recompensa_si').prop("checked",true);
+        }
+        
+        
+      
+      });
+    </script>
 
     <style>
       .bd-placeholder-img {
@@ -81,7 +117,7 @@ echo $editar;
 
   </head>
 <body>
-    
+    <h1></h1>
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="logo" viewBox="0 0 118 94">
         <title>Busca&Encuentra</title>
@@ -175,7 +211,7 @@ echo $editar;
                   <!--Formulario para mascotas-->                                         <!---aqui se la mandamos a update-mascota y la amndamos por url-->
                   <form class="row g-3 needs-validation"  enctype="multipart/form-data"  action="scripts_php/update_mascota.php?id=<?php echo $editar;  ?>" method="post" novalidate>
                     <div class="mb-3">
-                      <input name="imagen" type="file" class="form-control" aria-label="file example" accept="image/png, image/jpeg" required>
+                      <input id="sube_imagen" name="imagen" type="file" class="form-control" aria-label="file example" accept="image/png, image/jpeg" required>
                       <div class="invalid-feedback">Falta de imagen o formato no aceptado (solo se aceptan .png, .jpg)</div>
                     </div>
                     <div class="row">
@@ -250,7 +286,7 @@ echo $editar;
                       </div>
                       <div class="col-md-8">
                         <label for="Titulo" class="form-label">Título</label>
-                        <input type="text" class="form-control" id="Titulo" placeholder="Agrega un título a la publicación" name="txt_titulo" maxlength="100" required/>
+                        <input type="text"  value="<?php echo $row['titulo']; ?>" class="form-control" id="Titulo" placeholder="Agrega un título a la publicación" name="txt_titulo" maxlength="100" required/>
                         <div class="invalid-feedback">
                             Por favor escriba un título para la publicación.
                         </div>
