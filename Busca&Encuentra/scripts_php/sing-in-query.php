@@ -20,8 +20,23 @@
 	}
 	else
 	{
+		$iniciar_sesion="SELECT * FROM administradores WHERE correo='$correo_elec' or username='$correo_elec' and contrasena='$password'";
+		$valida_sesion=$db->query($iniciar_sesion);
+		$usuario=mysqli_fetch_assoc($valida_sesion);
+		if($valida_sesion->num_rows>0)
+		{
+			//el ususario esta autenticado
+			session_start();
+			$_SESSION['usuario']=$usuario['username']; 
+			$_SESSION['login']=true;
+
+			header('Location: http://localhost/Proyecto_Modular/Busca&Encuentra/admin.php');
+		}
+		else
+		{
+			header('Location: ../alerta-inicio_de_sesion.html');
+		}
 		
-		header('Location: ../alerta-inicio_de_sesion.html');
 	}
 
 
