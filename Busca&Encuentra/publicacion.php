@@ -182,6 +182,7 @@ if(!$entrar)
                   <form method="POST" action="scripts_php/insert_objeto.php" enctype="multipart/form-data"  class="row g-3 needs-validation" novalidate> <!------Aqui valiar form--->
                     <div class="mb-3"><!---imagen-->
                       <input name="imagen" type="file" class="form-control" aria-label="file example" accept="image/png, image/jpeg, image/jpg" required>
+                      <br><h6>(Imagenes con un peso menor a 40MB)</h6>
                       <div class="invalid-feedback">Falta de imagen o formato no aceptado (solo se aceptan .png, .jpg)</div>
                     </div>
                     <div class="row">
@@ -263,6 +264,7 @@ if(!$entrar)
                   <form class="row g-3 needs-validation" enctype="multipart/form-data" action="scripts_php/insert_mascota.php" method="POST" novalidate>
                     <div class="mb-3">
                       <input name="imagen" type="file" class="form-control" aria-label="file example" accept="image/png, image/jpeg, image/jpg" required>
+                      <br><h6>(Imagenes con un peso menor a 40MB)</h6>
                       <div class="invalid-feedback">Falta de imagen o formato no aceptado (solo se aceptan .png, .jpg)</div>
                     </div>
                     <div class="row">
