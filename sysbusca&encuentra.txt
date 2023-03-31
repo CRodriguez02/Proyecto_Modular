@@ -54,8 +54,8 @@ id_objeto int,
 id_mascota int,
 fk_username varchar(50),
 foreign key (fk_username) references usuarios(username),
-foreign key (id_objeto) references objeto(ID),
-foreign key (id_mascota) references mascotas(ID)
+foreign key (id_objeto) references objeto(ID) ON DELETE CASCADE,
+foreign key (id_mascota) references mascotas(ID) ON DELETE CASCADE
 );
 
 
