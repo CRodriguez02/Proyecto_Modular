@@ -14,8 +14,7 @@ correo varchar (255) NOT NULL,
 nombre varchar (100) NOT NULL,
 apellido_paterno varchar (100) NOT NULL,
 apellido_materno varchar (100),
-contrasena varchar (50) NOT NULL,
-imagen mediumblob
+contrasena varchar (50) NOT NULL
 );
 
 
@@ -24,7 +23,7 @@ fk_username_Mascota varchar(50) NOT NULL,
 ID int auto_increment PRIMARY KEY,
 titulo varchar (100) NOT NULL,
 descripcion text,
-imagen mediumblob,
+imagen longblob,
 estado bool NOT NULL,
 especie varchar (100) NOT NULL,
 raza varchar (100) NOT NULL,
@@ -38,7 +37,7 @@ fk_username_Objeto varchar(50) NOT NULL,
 ID int auto_increment PRIMARY KEY,
 titulo varchar (100) NOT NULL,
 descripcion text,
-imagen mediumblob,
+imagen longblob,
 estado bool NOT NULL,
 categoria varchar (100) NOT NULL,
 FOREIGN KEY (fk_username_Objeto) REFERENCES usuarios (username),
