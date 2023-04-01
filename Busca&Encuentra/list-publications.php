@@ -357,9 +357,13 @@ $row_2=mysqli_fetch_assoc($ejecutar_mascota);
             <!--Elemento de la lista-->
         </div>
         <?php }?>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <a class="btn btn-primary btn-sm" href="publicacion.php"><h6>¡Presiona aquí para hacer una publicación!</h6></a>
+        </div>
     </section>
     
     <!--Buttom-->
+    <div><br></div>
     <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand">Busca&Encuentra</a>
