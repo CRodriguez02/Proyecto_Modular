@@ -5,22 +5,45 @@ session_start();
 error_reporting(0);
 
 $busqueda=$_GET['busqueda'];
-$consulta_busqueda="SELECT * FROM mascotas where titulo LIKE '%$busqueda%'or especie LIKE '%$busqueda%'";
-$ejecutar_busqueda=$db->query($consulta_busqueda);
-if(!$ejecutar_busqueda)
+$cat=$_GET['categoria'];
+if($busqueda!=null)
 {
-    header('Location: error-404.html');
-}
-$row=mysqli_fetch_assoc($ejecutar_busqueda);
+  $consulta_busqueda="SELECT * FROM mascotas where titulo LIKE '%$busqueda%' or especie LIKE '%$busqueda%' ";
+  $ejecutar_busqueda=$db->query($consulta_busqueda);
+  if(!$ejecutar_busqueda)
+  {
+      header('Location: error-404.html');
+  }
+  $row=mysqli_fetch_assoc($ejecutar_busqueda);
 
 
-$consulta_busqueda_ob="SELECT * FROM objeto where titulo LIKE '%$busqueda%'or categoria LIKE '%$busqueda%'";
-$ejecutar_busqueda_ob=$db->query($consulta_busqueda_ob);
-if(!$ejecutar_busqueda_ob)
-{
-    header('Location: error-404.html');
+  $consulta_busqueda_ob="SELECT * FROM objeto where titulo LIKE '%$busqueda%' or categoria LIKE '%$busqueda%'";
+  $ejecutar_busqueda_ob=$db->query($consulta_busqueda_ob);
+  if(!$ejecutar_busqueda_ob)
+  {
+      header('Location: error-404.html');
+  }
+  $row_2=mysqli_fetch_assoc($ejecutar_busqueda_ob);
 }
-$row_2=mysqli_fetch_assoc($ejecutar_busqueda_ob);
+else
+{
+  $consulta_busqueda="SELECT * FROM mascotas where especie = '$cat' ";
+  $ejecutar_busqueda=$db->query($consulta_busqueda);
+  if(!$ejecutar_busqueda)
+  {
+      header('Location: error-404.html');
+  }
+  $row=mysqli_fetch_assoc($ejecutar_busqueda);
+
+
+  $consulta_busqueda_ob="SELECT * FROM objeto where categoria = '$cat'";
+  $ejecutar_busqueda_ob=$db->query($consulta_busqueda_ob);
+  if(!$ejecutar_busqueda_ob)
+  {
+      header('Location: error-404.html');
+  }
+  $row_2=mysqli_fetch_assoc($ejecutar_busqueda_ob);
+}
 
 
 ?>
@@ -31,7 +54,7 @@ $row_2=mysqli_fetch_assoc($ejecutar_busqueda_ob);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Carlos Rodriguez, Ozmar Andrade, Marlene Rios">
-    <title>Buscar - Objetos </title>
+    <title>Buscar - <?php echo($busqueda); echo($cat);?> </title>
     <link rel="icon" type="image/x-icon" href="assets/brand/B&E-logo.svg" />
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
     
@@ -222,9 +245,9 @@ $row_2=mysqli_fetch_assoc($ejecutar_busqueda_ob);
         </div>
         <div class="px-3 py-2 border-bottom mb-3">
         <div class="container d-flex flex-wrap justify-content-center">
-        <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search" action="search.php" method="GET" >
-                <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search" name="busqueda">
-              </form>
+          <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search" action="search.php" method="GET" >
+              <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search" name="busqueda">
+          </form>
         </div>
         </div>
     </header>
@@ -239,19 +262,19 @@ $row_2=mysqli_fetch_assoc($ejecutar_busqueda_ob);
                         <div class="card" style="width: 18rem;">
                             <div class="card-header"> Categorias </div>
                             <ul class="list-group list-group-flush">
-                              <li class="list-group-item"><a href="#">Accesorios</a></li>
-                              <li class="list-group-item"><a href="#">Bicicletas</a></li>
-                              <li class="list-group-item"><a href="#">Bolsos</a></li>
-                              <li class="list-group-item"><a href="#">Celulares</a></li>
-                              <li class="list-group-item"><a href="#">Computadoras</a></li>
-                              <li class="list-group-item"><a href="#">Documentos escolares</a></li>
-                              <li class="list-group-item"><a href="#">Documentos personales</a></li>
-                              <li class="list-group-item"><a href="#">Motocicletas</a></li>
-                              <li class="list-group-item"><a href="#">Vehiculos</a></li>
-                              <li class="list-group-item"><a href="#">Perros</a></li>
-                              <li class="list-group-item"><a href="#">Gatos</a></li>
-                              <li class="list-group-item"><a href="#">Otros</a></li>
-                              
+                              <li class="list-group-item"><a href="search.php?categoria=Accesorios">Accesorios</a> </li>
+                              <li class="list-group-item"><a href="search.php?categoria=Bicicletas">Bicicletas</a></li>
+                              <li class="list-group-item"><a href="search.php?categoria=Bolsos">Bolsos</a></li>
+                              <li class="list-group-item"><a href="search.php?categoria=Celulares">Celulares</a></li>
+                              <li class="list-group-item"><a href="search.php?categoria=Computadoras">Computadoras</a></li>
+                              <li class="list-group-item"><a href="search.php?categoria=Documentos escolares">Documentos escolares</a></li>
+                              <li class="list-group-item"><a href="search.php?categoria=Documentos personales">Documentos personales</a></li>
+                              <li class="list-group-item"><a href="search.php?categoria=Motocicletas">Motocicletas</a></li>
+                              <li class="list-group-item"><a href="search.php?categoria=Vehiculos">Vehiculos</a></li>
+                              <li class="list-group-item"><a href="search.php?categoria=Perro">Perros</a></li>
+                              <li class="list-group-item"><a href="search.php?categoria=Gato">Gatos</a></li>
+                              <li class="list-group-item"><a href="search.php?categoria=Ave">Aves</a></li>
+                              <li class="list-group-item"><a href="search.php?categoria=Otros">Otros</a></li>
                             </ul>
                           </div>
                     </div>
@@ -262,7 +285,7 @@ $row_2=mysqli_fetch_assoc($ejecutar_busqueda_ob);
                         <!--Titulo de la seccion-->
                         <div class="card mb-4 bg-light border-0">
                         <div class="card-body p-9">
-                            <h2 class="mb-0 fs-1"> Usted buscó: <?php echo($busqueda); ?></h2>
+                            <h2 class="mb-0 fs-1"> Usted buscó: <?php echo($busqueda); echo($cat);?> </h2>
                         </div>
                       </div>
                        <!--Titulo de la seccion-->
@@ -292,7 +315,7 @@ $row_2=mysqli_fetch_assoc($ejecutar_busqueda_ob);
                       <?php foreach($ejecutar_busqueda as $row)
                       { ?>
                         <div class="col">
-                            <div class="card card-product"  >
+                            <div class="card card-product" style="width: 170px; height: 250px;">
                                 <div class="card-body">
                                     <div class="text-center position-relative">
                                         <!--Etiqueta-->
@@ -339,7 +362,7 @@ $row_2=mysqli_fetch_assoc($ejecutar_busqueda_ob);
                       <?php foreach($ejecutar_busqueda_ob as $row_2)
                       { ?>
                         <div class="col">
-                            <div class="card card-product">
+                            <div class="card card-product" style="width: 170px; height: 250px;">
                                 <div class="card-body">
                                     <div class="text-center position-relative">
                                         <!--Etiqueta-->
@@ -396,17 +419,7 @@ $row_2=mysqli_fetch_assoc($ejecutar_busqueda_ob);
                     </nav>
                     ***********************coment:Pendienete de poner o tal vez no se use
                     Paginación de la web-->
-                    <br>
-                    <nav aria-label="...">
-                        <ul class="">
-                            <li class="" aria-current="page">
-                            <span class="page-link"></span>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#"></a></li>
-                            <li class="page-item"><a class="page-link" href="#"></a></li>
-                        </ul>
-                    </nav>
-                    
+                    <br><br><br><br>
             </div>
         </div>
         </section>

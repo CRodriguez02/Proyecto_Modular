@@ -192,8 +192,8 @@ $row_2=mysqli_fetch_assoc($ejecutar_mascota);
         </div>
         <div class="px-3 py-2 border-bottom mb-3">
         <div class="container d-flex flex-wrap justify-content-center">
-            <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
-            <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
+            <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search" action="search.php" method="GET" >
+               <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search" name="busqueda">
             </form>
         </div>
         </div>

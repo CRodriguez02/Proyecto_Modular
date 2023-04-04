@@ -296,7 +296,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                           foreach($ejecuta_1 as $row_1)
                           {  $contador++;?>
                         <div class="card text-center" style="width: 18rem;">
-                          <img src="data:image/jpg;base64,<?php echo base64_encode($row_1['imagen']);?>" class="card-img-top" alt="..."><!---poner foto--->
+                          <img src="data:image/jpg;base64,<?php echo base64_encode($row_1['imagen']);?>" class="card-img-top" alt="..." style="width: 288px; height: 250px"><!---poner foto--->
                           <?php
                            
                           if($row_1['recompensa']==1)
@@ -329,7 +329,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                               {
                             ?>                      
                         <div class="card text-center" style="width: 18rem;">
-                          <img src="data:image/jpg;base64,<?php echo base64_encode($fila['imagen']);?>" class="card-img-top" alt="...">
+                          <img src="data:image/jpg;base64,<?php echo base64_encode($fila['imagen']);?>" class="card-img-top" alt="..." style="width: 288px; height: 250px">
                           <?php
                           if($fila['recompensa']==1)
                           {
@@ -361,7 +361,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                               {
                             ?>    
                         <div class="card text-center" style="width: 18rem;">
-                          <img src="data:image/jpg;base64,<?php echo base64_encode($fila2['imagen']);?>" class="card-img-top" alt="...">
+                          <img src="data:image/jpg;base64,<?php echo base64_encode($fila2['imagen']);?>" class="card-img-top" alt="..." style="width: 288px; height: 250px">
                           <?php
                           if($fil2['estado']==1)
                           {
@@ -410,7 +410,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                           foreach($ejecuta_1n as $row_1)
                           {  $contador_n++;?>
                         <div class="card text-center" style="width: 18rem;">
-                          <img src="data:image/jpg;base64,<?php echo base64_encode($row_1['imagen']);?>" class="card-img-top" alt="..."><!---poner foto--->
+                          <img src="data:image/jpg;base64,<?php echo base64_encode($row_1['imagen']);?>" class="card-img-top" alt="..." style="width: 288px; height: 250px"><!---poner foto--->
                           <?php
                           if($row_1['recompensa']==1)
                           {
@@ -441,7 +441,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                               {
                             ?>                      
                         <div class="card text-center" style="width: 18rem;">
-                          <img src="data:image/jpg;base64,<?php echo base64_encode($fila['imagen']);?>" class="card-img-top" alt="...">
+                          <img src="data:image/jpg;base64,<?php echo base64_encode($fila['imagen']);?>" class="card-img-top" alt="..." style="width: 288px; height: 250px">
                           <?php
                           if($fila['estado']==1)
                           {
@@ -472,7 +472,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                               {
                             ?>    
                         <div class="card text-center" style="width: 18rem;">
-                          <img src="data:image/jpg;base64,<?php echo base64_encode($fila2['imagen']);?>" class="card-img-top" alt="...">
+                          <img src="data:image/jpg;base64,<?php echo base64_encode($fila2['imagen']);?>" class="card-img-top" alt="..." style="width: 288px; height: 250px">
                           <?php
                           if($fila2['estado']==1)
                           {
@@ -529,7 +529,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                           foreach($ejecuta_1m as $row_1)
                           {  $contador_m++;?>
                         <div class="card text-center" style="width: 18rem;">
-                          <img src="data:image/jpg;base64,<?php echo base64_encode($row_1['imagen']);?>" class="card-img-top" alt="..."><!---poner foto--->
+                          <img src="data:image/jpg;base64,<?php echo base64_encode($row_1['imagen']);?>" class="card-img-top" alt="..." style="width: 288px; height: 250px"><!---poner foto--->
                           <?php
                           if($row_1['recompensa']==1)
                           {
@@ -560,7 +560,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                               {
                             ?>                      
                         <div class="card text-center" style="width: 18rem;">
-                          <img src="data:image/jpg;base64,<?php echo base64_encode($fila['imagen']);?>" class="card-img-top" alt="...">
+                          <img src="data:image/jpg;base64,<?php echo base64_encode($fila['imagen']);?>" class="card-img-top" alt="..." style="width: 288px; height: 250px">
                           <?php
                           if($fila['recompensa']==1)
                           {
@@ -591,7 +591,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                               {
                             ?>    
                         <div class="card text-center" style="width: 18rem;">
-                          <img src="data:image/jpg;base64,<?php echo base64_encode($fila2['imagen']);?>" class="card-img-top" alt="...">
+                          <img src="data:image/jpg;base64,<?php echo base64_encode($fila2['imagen']);?>" class="card-img-top" alt="..." style="width: 288px; height: 250px">
                           <?php
                           if($fila2['recompensa']==1)
                           {
@@ -641,7 +641,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                           foreach($ejecuta_nm1 as $row_1)
                           {  $contador_nm++;?>
                         <div class="card text-center" style="width: 18rem;">
-                          <img src="data:image/jpg;base64,<?php echo base64_encode($row_1['imagen']);?>" class="card-img-top" alt="..."><!---poner foto--->
+                          <img src="data:image/jpg;base64,<?php echo base64_encode($row_1['imagen']);?>" class="card-img-top" alt="..." style="width: 288px; height: 250px"><!---poner foto--->
                           <?php
                           if($row_1['recompensa']==1)
                           {
@@ -673,7 +673,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                               {
                             ?>                      
                         <div class="card text-center" style="width: 18rem;">
-                          <img src="data:image/jpg;base64,<?php echo base64_encode($fila['imagen']);?>" class="card-img-top" alt="...">
+                          <img src="data:image/jpg;base64,<?php echo base64_encode($fila['imagen']);?>" class="card-img-top" alt="..." style="width: 288px; height: 250px">
                           <?php
                           if($fila['recompensa']==1)
                           {
@@ -704,7 +704,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                               {
                             ?>    
                         <div class="card text-center" style="width: 18rem;">
-                          <img src="data:image/jpg;base64,<?php echo base64_encode($fila2['imagen']);?>" class="card-img-top" alt="...">
+                          <img src="data:image/jpg;base64,<?php echo base64_encode($fila2['imagen']);?>" class="card-img-top" alt="..." style="width: 288px; height: 250px">
                           <?php
                           if($fila2['recompensa']==1)
                           {
