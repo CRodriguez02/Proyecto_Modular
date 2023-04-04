@@ -1,3 +1,29 @@
+<?php
+require "scripts_php/conectar.php";
+require "scripts_php/funciones.php";
+session_start();
+error_reporting(0);
+
+$busqueda=$_GET['busqueda'];
+$consulta_busqueda="SELECT * FROM mascotas where titulo LIKE '%$busqueda%'or especie LIKE '%$busqueda%'";
+$ejecutar_busqueda=$db->query($consulta_busqueda);
+if(!$ejecutar_busqueda)
+{
+    header('Location: error-404.html');
+}
+$row=mysqli_fetch_assoc($ejecutar_busqueda);
+
+
+$consulta_busqueda_ob="SELECT * FROM objeto where titulo LIKE '%$busqueda%'or categoria LIKE '%$busqueda%'";
+$ejecutar_busqueda_ob=$db->query($consulta_busqueda_ob);
+if(!$ejecutar_busqueda_ob)
+{
+    header('Location: error-404.html');
+}
+$row_2=mysqli_fetch_assoc($ejecutar_busqueda_ob);
+
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -95,52 +121,110 @@
     <!--HEADER-->
     <header>
         <div class="px-3 py-2 text-bg-dark">
-        <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="index.php" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                <img class="bi me-2" width="100" height="90" role="img" aria-label="" src="assets/brand/logo-02.png" title="Busca&Encuentra">
-            </a>
-
-            <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-                <li>
-                <a href="index.php" class="nav-link text-white">
-                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
-                    Inicio
+        <div class="container"> <!----estebes el div chido-->
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="index.php" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                    <img class="bi me-2" width="100" height="90" role="img" aria-label="" src="assets/brand/logo-02.png" title="Busca&Encuentra">
                 </a>
-                </li>
-                <li>
-                <a href="system-chat.php" class="nav-link text-white">
-                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#chat"/></svg>
-                    Mensajes
-                </a>
-                </li>
-                <li>
-                <a href="list-publications.php" class="nav-link text-white">
-                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
-                    Publicaciones
-                </a>
-                </li>
-                <li>
-                <a href="publicacion.php" class="nav-link text-white">
-                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
-                    Nuevas Publicaciones
-                </a>
-                </li>
-                <li>
-                <a href="my-account.php" class="nav-link text-white">
-                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
-                    Cuenta
-                </a>
-                </li>
-            </ul>
-            </div>
-        </div>
+                <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                    <li>
+                    <a href="index.php" class="nav-link text-white">
+                        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
+                        Inicio
+                    </a>
+                    </li>
+                    <li>
+                    <?php
+                    $autentidicacion_1=autenticado();
+                    if(!$autentidicacion_1)
+                    {
+                      echo (' <a href="sing-in.php" class="nav-link text-white">
+                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#chat"/></svg>
+                      Mensajes<!----aqio poner identificador para si no ha iniciado sesion se vaya a sing-in--->
+                  </a>');
+                    } 
+                    else
+                    {
+                      echo (' <a href="system-chat.php" class="nav-link text-white">
+                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#chat"/></svg>
+                      Mensajes<!----aqio poner identificador para si no ha iniciado sesion se vaya a sing-in--->
+                  </a>');
+                      
+                    }
+                    ?>
+                      
+                    
+                    </li>
+                    <li>
+                    <?php
+                    $autentidicacion_2=autenticado();
+                    if(!$autentidicacion_2)
+                    {
+                      echo (' <a href="sing-in.php" class="nav-link text-white">
+                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
+                      Publicaciones<!----aqio poner identificador para si no ha iniciado sesion se vaya a sing-in--->
+                  </a>');
+                    } 
+                    else
+                    {
+                      echo (' <a href="list-publications.php" class="nav-link text-white">
+                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
+                      Publicaciones<!----aqio poner identificador para si no ha iniciado sesion se vaya a sing-in--->
+                  </a>');
+                      
+                    }
+                    ?>
+                    </li>
+                    <li>
+                    <?php
+                    $autentidicacion_1=autenticado();
+                    if(!$autentidicacion_1)
+                    {
+                      echo (' <a href="sing-in.php" class="nav-link text-white">
+                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
+                      Nuevas publicaciones<!----aqio poner identificador para si no ha iniciado sesion se vaya a sing-in--->
+                  </a>');
+                    } 
+                    else
+                    {
+                      echo (' <a href="publicacion.php" class="nav-link text-white">
+                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
+                      Nuevas publicaciones<!----aqio poner identificador para si no ha iniciado sesion se vaya a sing-in--->
+                  </a>');
+                      
+                    }
+                    ?>
+                    </li>
+                    <li>
+                    <?php
+                    $autentidicacion_1=autenticado();
+                    if(!$autentidicacion_1)
+                    {
+                      echo (' <a href="sing-in.php" class="nav-link text-white">
+                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
+                      Cuenta<!----aqio poner identificador para si no ha iniciado sesion se vaya a sing-in--->
+                  </a>');
+                    } 
+                    else
+                    {
+                      echo (' <a href="my-account.php" class="nav-link text-white">
+                      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
+                      Cuenta<!----aqio poner identificador para si no ha iniciado sesion se vaya a sing-in--->
+                  </a>');
+                      
+                    }
+                    ?>
+                    
+                    </li>
+                </ul>
+                </div>
+            </div><!------aqui acaba el div chido-->
         </div>
         <div class="px-3 py-2 border-bottom mb-3">
         <div class="container d-flex flex-wrap justify-content-center">
-            <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
-            <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
-            </form>
+        <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search" action="search.php" method="GET" >
+                <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search" name="busqueda">
+              </form>
         </div>
         </div>
     </header>
@@ -150,7 +234,6 @@
         <section class="py-5">
         <div class="container">
             <div class="row gx-10">
-    
                     <!--Columna de las categorias-->
                     <div class="col-md-4">
                         <div class="card" style="width: 18rem;">
@@ -179,71 +262,129 @@
                         <!--Titulo de la seccion-->
                         <div class="card mb-4 bg-light border-0">
                         <div class="card-body p-9">
-                            <h2 class="mb-0 fs-1">"Categoria o titulo de los productos que ponga el user"</h2>
+                            <h2 class="mb-0 fs-1"> Usted buscó: <?php echo($busqueda); ?></h2>
                         </div>
                       </div>
                        <!--Titulo de la seccion-->
                       <!--Elementos encontrados-->
+                      
                     <div class="d-lg-flex justify-content-between align-items-center">
                         <div class="mb-3 mb-lg-0">
-                            <span class="text-dark">#</span>
-                            Objetos encontrados
+                            <span class="text-dark">Resultados encontrados:</span>
+                            <?php echo ($ejecutar_busqueda->num_rows + $ejecutar_busqueda_ob->num_rows);?>
                         </div>
                     </div>
                     <!--Si no se encontaron elementos-->
+                    <?php 
+                    if($ejecutar_busqueda->num_rows==0 && $ejecutar_busqueda_ob->num_rows==0)
+                    { ?>  
                     <div class="alert alert-danger text-center" role="alert">
                             No se encontraron resultados.
                     </div>
+                    <?php }
+                    else { 
+                      ?>
                     <!--Elementos encontrados-->
-                    <!--Objetos mostrados-->
+                    <!--Mascotas mostradas-->
+                    
+                    <div class="row g-4 row-cols-xl-4 row-cols-lg-3 row-cols-2 row-cols-md-2 mt-2" >
+                        <!--Mascotas-->
+                      <?php foreach($ejecutar_busqueda as $row)
+                      { ?>
+                        <div class="col">
+                            <div class="card card-product"  >
+                                <div class="card-body">
+                                    <div class="text-center position-relative">
+                                        <!--Etiqueta-->
+                                        <div class="position-absolute top-0 start-0">
+                                        <?php
+                           
+                                          if($row['recompensa']==1)
+                                          {
+                                            echo ('<span class="badge bg-success">Recompensa</span>');
+                                          }
+                          
+                                          ?>
+                                        </div>
+                                        <!--Etiqueta-->
+                                        <!--Imagen-->
+                                        <a href="object.php" >
+                                            <img src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']);?>" class="card-img-top" alt="" style="width: 132px; height: 132px">
+                                        </a>
+                                        <!--Imagen-->
+                                        <!--Categoria-->
+                                        <div class="text-small mb-1">
+                                            <a class="text-decoration-none text-muted">
+                                                <small><?php echo($row['especie']);  ?></small>
+                                            </a>
+                                        </div>
+                                        <!--Categoria-->
+                                        <!--Titulo-->
+                                        <h2 class="fs-6">
+                                            <a class="text-inherit text-decoration-none" href="object.php"><?php echo($row['titulo']);  ?></a>
+                                        </h2>
+                                        <!--Titulo-->
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                      <?php }?>
+                      <!--Mascotas-->
+                    </div>
+
+                    <!--Objetos-->
                     <div class="row g-4 row-cols-xl-4 row-cols-lg-3 row-cols-2 row-cols-md-2 mt-2">
-                        <!--Objeto-->
-                        
+                        <!--Objetos-->
+                      <?php foreach($ejecutar_busqueda_ob as $row_2)
+                      { ?>
                         <div class="col">
                             <div class="card card-product">
                                 <div class="card-body">
                                     <div class="text-center position-relative">
                                         <!--Etiqueta-->
                                         <div class="position-absolute top-0 start-0">
-                                            <span class="badge bg-success">Recompensa</span>
+                                        <?php
+                           
+                                          if($row_2['recompensa']==1)
+                                          {
+                                            echo ('<span class="badge bg-success">Recompensa</span>');
+                                          }
+                          
+                                          ?>
                                         </div>
                                         <!--Etiqueta-->
                                         <!--Imagen-->
-                                        <a href="object.php">
-                                            <img class="card-img-top" src="https://dummyimage.com/160x160/dee2e6/6c757d.jpg" alt="">
+                                        <a href="object.php" >
+                                            <img src="data:image/jpg;base64,<?php echo base64_encode($row_2['imagen']);?>" class="card-img-top" alt="" style="width: 132px; height: 132px">
                                         </a>
                                         <!--Imagen-->
                                         <!--Categoria-->
                                         <div class="text-small mb-1">
-                                            <a class="text-decoration-none text-muted" href="#">
-                                                <small>Categoria x</small>
+                                            <a class="text-decoration-none text-muted">
+                                                <small><?php echo($row_2['especie']);  ?></small>
                                             </a>
                                         </div>
                                         <!--Categoria-->
                                         <!--Titulo-->
                                         <h2 class="fs-6">
-                                            <a class="text-inherit text-decoration-none" href="object.php">Titulo</a>
+                                            <a class="text-inherit text-decoration-none" href="object.php"><?php echo($row_2['titulo']);  ?></a>
                                         </h2>
                                         <!--Titulo-->
                                     </div>
-                                    <!--Boton-->
-                                    <div class="d-flex justify-content-between align-items-center mt-3">
-                                        <a class="btn btn-primary btn-sm" href="#">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat" viewBox="0 0 16 16">
-                                                <path d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"/>
-                                            </svg>
-                                        Contactar  
-                                        </a>
-                                    </div>
-                                    <!--Boton-->
+                                    
                                 </div>
                             </div>
                         </div>
-                       
+                      <?php }?>
                     </div>
+                      <!--Objetos-->
+                    
+                    <?php }?>
+
+
+                    <!--Paginación de la web
                     <br>
-                    <!--Objetos mostrados-->
-                    <!--Paginación de la web-->
                     <nav aria-label="...">
                         <ul class="pagination pagination-sm">
                             <li class="page-item active" aria-current="page">
@@ -253,7 +394,18 @@
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                         </ul>
                     </nav>
-                    <!--Paginación de la web-->
+                    ***********************coment:Pendienete de poner o tal vez no se use
+                    Paginación de la web-->
+                    <br>
+                    <nav aria-label="...">
+                        <ul class="">
+                            <li class="" aria-current="page">
+                            <span class="page-link"></span>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#"></a></li>
+                            <li class="page-item"><a class="page-link" href="#"></a></li>
+                        </ul>
+                    </nav>
                     
             </div>
         </div>
