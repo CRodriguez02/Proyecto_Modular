@@ -35,7 +35,7 @@ $row_sec=mysqli_fetch_assoc($consulta_db_sec);
 /******************** USUARIO SECUNDARIO **************************/
 
 /* Query salas */
-$Consulta_salas= "SELECT incoming_msg_id from mensajes WHERE outgoing_msg_id='$usuario_primario'";
+$Consulta_salas= "SELECT DISTINCT incoming_msg_id from mensajes WHERE outgoing_msg_id='$usuario_primario'";
 $consulta_db2=$db_chat->query($Consulta_salas);//ejecutar quiery
 $sala=mysqli_fetch_assoc($consulta_db2);
 /* Query salas */
@@ -45,8 +45,6 @@ $consulta_mensajes="SELECT * FROM mensajes where (outgoing_msg_id = '$usuario_pr
 $consulta_db3=$db_chat->query($consulta_mensajes);
 /* Mensajes */
 $mensajes=mysqli_fetch_assoc($consulta_db3);
-
-echo "secundario: ".$usuario_secundario;
 
 ?>
 
