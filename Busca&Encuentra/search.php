@@ -1,4 +1,4 @@
-<?php
+<?php // mandarle el id al objeto como se hizo en el index
 require "scripts_php/conectar.php";
 require "scripts_php/funciones.php";
 session_start();
