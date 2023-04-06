@@ -1,5 +1,5 @@
 CREATE TABLE administradores (
-username varchar (50) PRIMARY KEY,
+username varchar (50) NOT NULL PRIMARY KEY,
 correo varchar (255) NOT NULL,
 nombre varchar (100) NOT NULL,
 apellido_paterno varchar (100) NOT NULL,

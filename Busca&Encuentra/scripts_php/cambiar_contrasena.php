@@ -14,7 +14,7 @@ if($pas1==$pas2)
 }
 else
 {
-    echo("contraseña no es parecida");
+    header('Location: ../alerta-contra.html');
 }
 
 ?>

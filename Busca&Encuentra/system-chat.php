@@ -1,3 +1,55 @@
+<?php
+require("scripts_php/conectar-chat.php");
+session_start();
+
+
+$usuario_primario=$_SESSION['usuario'];//usuario principal
+
+if(!empty($_GET['secundario']))
+{
+  $usuario_secundario=$_GET['secundario'];//usuario secundario
+}
+else
+{
+    $usuario_secundario=null;
+}
+
+
+/******************** USUARIO PRIMARIO **************************/
+$Consulta_datos="SELECT * from usuarios WHERE unique_id='$usuario_primario'";
+$consulta_db=$db_chat->query($Consulta_datos);//ejecutar quiery
+
+if(!$consulta_db->num_rows>0)
+{
+  header('Location: error-404.html');
+  //echo("No agarra datos");//mejor poner la página de error 404
+}
+$row=mysqli_fetch_assoc($consulta_db);
+/******************** USUARIO PRIMARIO **************************/
+
+/******************** USUARIO SECUNDARIO **************************/
+$Consulta_secundario="SELECT * from usuarios WHERE unique_id='$usuario_secundario'";
+$consulta_db_sec=$db_chat->query($Consulta_secundario);//ejecutar quiery
+
+$row_sec=mysqli_fetch_assoc($consulta_db_sec);
+/******************** USUARIO SECUNDARIO **************************/
+
+/* Query salas */
+$Consulta_salas= "SELECT incoming_msg_id from mensajes WHERE outgoing_msg_id='$usuario_primario'";
+$consulta_db2=$db_chat->query($Consulta_salas);//ejecutar quiery
+$sala=mysqli_fetch_assoc($consulta_db2);
+/* Query salas */
+
+/* Mensajes */
+$consulta_mensajes="SELECT * FROM mensajes where (outgoing_msg_id = '$usuario_primario' or incoming_msg_id = '$usuario_primario') and (outgoing_msg_id = '$usuario_secundario' or incoming_msg_id = '$usuario_secundario')";
+$consulta_db3=$db_chat->query($consulta_mensajes);
+/* Mensajes */
+$mensajes=mysqli_fetch_assoc($consulta_db3);
+
+echo "secundario: ".$usuario_secundario;
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -139,7 +191,7 @@
     </header>
     <!--HEADER-->
 
-    <div class="b-example-divider"></div>
+    <!--<div class="b-example-divider"></div>-->
    <!--Sistema de chat-->
     <section class="py-5" style="background-color: #eee;">
       <div class="container py-5">
@@ -148,186 +200,101 @@
     
           <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0">
     
-            <h5 class="font-weight-bold mb-3 text-center text-lg-start">Member</h5>
+            <h5 class="font-weight-bold mb-3 text-center text-lg-start">Conversaciones con los usuarios: </h5>
     
             <div class="card">
               <div class="card-body">
-    
+                <!--Lista de salas-->
                 <ul class="list-unstyled mb-0">
-                  <li class="p-2 border-bottom" style="background-color: #eee;">
-                    <a href="#!" class="d-flex justify-content-between">
-                      <div class="d-flex flex-row">
-                        <img src="assets/img/user-icon.png" alt="avatar"
-                          class="rounded-circle d-flex align-self-center me-3 shadow-1-strong" width="60">
-                        <div class="pt-1">
-                          <p class="fw-bold mb-0">John Doe</p>
-                          <p class="small text-muted">Hello, Are you there?</p>
+                  <?php foreach($consulta_db2 as $sala)
+                  {?>
+                    <li class="p-2">
+                      <a href="system-chat.php?secundario=<?php echo $sala['incoming_msg_id'];?>" class="d-flex justify-content-between">
+                        <div class="d-flex flex-row">
+                          <img src="assets/img/user-icon.png" alt="avatar"
+                            class="rounded-circle d-flex align-self-center me-3 shadow-1-strong" width="60">
+                          <div class="pt-1">
+                            <p class="fw-bold mb-0">  <?php echo $sala['incoming_msg_id'];?> </p>
+                          </div>
                         </div>
-                      </div>
-                      <div class="pt-1">
-                        <p class="small text-muted mb-1">Just now</p>
-                        <span class="badge bg-danger float-end">1</span>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="p-2 border-bottom">
-                    <a href="#!" class="d-flex justify-content-between">
-                      <div class="d-flex flex-row">
-                        <img src="assets/img/user-icon.png" alt="avatar"
-                          class="rounded-circle d-flex align-self-center me-3 shadow-1-strong" width="60">
-                        <div class="pt-1">
-                          <p class="fw-bold mb-0">Danny Smith</p>
-                          <p class="small text-muted">Lorem ipsum dolor sit.</p>
-                        </div>
-                      </div>
-                      <div class="pt-1">
-                        <p class="small text-muted mb-1">5 mins ago</p>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="p-2 border-bottom">
-                    <a href="#!" class="d-flex justify-content-between">
-                      <div class="d-flex flex-row">
-                        <img src="assets/img/user-icon.png" alt="avatar"
-                          class="rounded-circle d-flex align-self-center me-3 shadow-1-strong" width="60">
-                        <div class="pt-1">
-                          <p class="fw-bold mb-0">Alex Steward</p>
-                          <p class="small text-muted">Lorem ipsum dolor sit.</p>
-                        </div>
-                      </div>
-                      <div class="pt-1">
-                        <p class="small text-muted mb-1">Yesterday</p>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="p-2 border-bottom">
-                    <a href="#!" class="d-flex justify-content-between">
-                      <div class="d-flex flex-row">
-                        <img src="assets/img/user-icon.png" alt="avatar"
-                          class="rounded-circle d-flex align-self-center me-3 shadow-1-strong" width="60">
-                        <div class="pt-1">
-                          <p class="fw-bold mb-0">Ashley Olsen</p>
-                          <p class="small text-muted">Lorem ipsum dolor sit.</p>
-                        </div>
-                      </div>
-                      <div class="pt-1">
-                        <p class="small text-muted mb-1">Yesterday</p>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="p-2 border-bottom">
-                    <a href="#!" class="d-flex justify-content-between">
-                      <div class="d-flex flex-row">
-                        <img src="assets/img/user-icon.png" alt="avatar"
-                          class="rounded-circle d-flex align-self-center me-3 shadow-1-strong" width="60">
-                        <div class="pt-1">
-                          <p class="fw-bold mb-0">Kate Moss</p>
-                          <p class="small text-muted">Lorem ipsum dolor sit.</p>
-                        </div>
-                      </div>
-                      <div class="pt-1">
-                        <p class="small text-muted mb-1">Yesterday</p>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="p-2 border-bottom">
-                    <a href="#!" class="d-flex justify-content-between">
-                      <div class="d-flex flex-row">
-                        <img src="assets/img/user-icon.png" alt="avatar"
-                          class="rounded-circle d-flex align-self-center me-3 shadow-1-strong" width="60">
-                        <div class="pt-1">
-                          <p class="fw-bold mb-0">Lara Croft</p>
-                          <p class="small text-muted">Lorem ipsum dolor sit.</p>
-                        </div>
-                      </div>
-                      <div class="pt-1">
-                        <p class="small text-muted mb-1">Yesterday</p>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="p-2">
-                    <a href="#!" class="d-flex justify-content-between">
-                      <div class="d-flex flex-row">
-                        <img src="assets/img/user-icon.png" alt="avatar"
-                          class="rounded-circle d-flex align-self-center me-3 shadow-1-strong" width="60">
-                        <div class="pt-1">
-                          <p class="fw-bold mb-0">Brad Pitt</p>
-                          <p class="small text-muted">Lorem ipsum dolor sit.</p>
-                        </div>
-                      </div>
-                      <div class="pt-1">
-                        <p class="small text-muted mb-1">5 mins ago</p>
-                        <span class="text-muted float-end"><i class="fas fa-check" aria-hidden="true"></i></span>
-                      </div>
-                    </a>
-                  </li>
+                      </a>
+                    </li>
+                  <?php }?>
+
                 </ul>
-    
+                <!--Lista de salas-->
               </div>
             </div>
     
           </div>
     
           <div class="col-md-6 col-lg-7 col-xl-8">
-    
+            <?php if($usuario_secundario==null || $usuario_secundario==$usuario_primario){
+              echo('<div class="alert alert-primary" role="alert">
+              Aquí aparecerán tus conversaciones cuando hagas clic en alguna </div>');
+            }
+            else{ 
+              foreach($consulta_db3 as $mensajes) 
+              {
+              ?>
             <ul class="list-unstyled">
-              <li class="d-flex justify-content-between mb-4">
-                <img src="assets/img/user-icon.png" alt="avatar"
-                  class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
-                <div class="card">
-                  <div class="card-header d-flex justify-content-between p-3">
-                    <p class="fw-bold mb-0">Brad Pitt</p>
-                    <p class="text-muted small mb-0"><i class="far fa-clock"></i> 12 mins ago</p>
-                  </div>
-                  <div class="card-body">
-                    <p class="mb-0">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                      labore et dolore magna aliqua.
-                    </p>
-                  </div>
-                </div>
-              </li>
+              <?php if($mensajes['incoming_msg_id']==$usuario_primario) {?>
+              
+              <!--Mensajes enviados-->
               <li class="d-flex justify-content-between mb-4">
                 <div class="card w-100">
                   <div class="card-header d-flex justify-content-between p-3">
-                    <p class="fw-bold mb-0">Lara Croft</p>
-                    <p class="text-muted small mb-0"><i class="far fa-clock"></i> 13 mins ago</p>
+                    <p class="fw-bold mb-0"> <?php echo $row['nombre']." ". $row['apellido_paterno'];?></p>
+            
                   </div>
                   <div class="card-body">
                     <p class="mb-0">
-                      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                      laudantium.
+                    <?php echo $mensajes['msg'];?>
                     </p>
                   </div>
                 </div>
                 <img src="assets/img/user-icon.png" alt="avatar"
                   class="rounded-circle d-flex align-self-start ms-3 shadow-1-strong" width="60">
               </li>
+              <?php }
+              else {?>
+              <!--Mensajes  enviados-->
+
+
+              
+              <!--Mensajes recibidos-->
               <li class="d-flex justify-content-between mb-4">
                 <img src="assets/img/user-icon.png" alt="avatar"
                   class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
-                <div class="card">
+                <div class="card w-100">
                   <div class="card-header d-flex justify-content-between p-3">
-                    <p class="fw-bold mb-0">Brad Pitt</p>
-                    <p class="text-muted small mb-0"><i class="far fa-clock"></i> 10 mins ago</p>
+                    <p class="fw-bold mb-0"><?php echo $row_sec['nombre']." ". $row_sec['apellido_paterno'];?></p>
+                    
                   </div>
                   <div class="card-body">
                     <p class="mb-0">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                      labore et dolore magna aliqua.
+                    <?php echo $mensajes['msg'];?>
                     </p>
                   </div>
                 </div>
               </li>
+              <?php }?>
+              <!--Mensajes recibidos-->
+
+              <?php } ?>
+              <!--Caja de mensajes-->
               <li class="bg-white mb-3">
+              <form action="scripts_php/enviar_msg.php?usuario=<?php echo $usuario_primario; ?>&secundario=<?php echo $usuario_secundario; ?>" method="post">
                 <div class="form-outline">
-                  <textarea class="form-control" id="textAreaExample2" rows="4"></textarea>
-                  <label class="form-label" for="textAreaExample2">Mensaje</label>
+                  <textarea class="form-control" name="mensaje_enviado" rows="2" placeholder="Escribe tu mensaje aquí..."></textarea>
+                  <input class="btn btn-info btn-rounded float-end" type="submit" value="Enviar">
                 </div>
+              </form>
               </li>
-              <button type="button" class="btn btn-info btn-rounded float-end">Send</button>
+              <!--Caja de mensajes-->
+             
             </ul>
-    
+            <?php }?>
           </div>
     
         </div>
@@ -368,7 +335,7 @@
     <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
 
       <script src="sidebars.js"></script>
-    
+      <script src="assets/dist/js/chat.js"></script>
       
 </body>
 </html>
