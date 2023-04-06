@@ -312,7 +312,7 @@ else
                     
                     <div class="row g-4 row-cols-xl-4 row-cols-lg-3 row-cols-2 row-cols-md-2 mt-2" >
                         <!--Mascotas-->
-                      <?php foreach($ejecutar_busqueda as $row)
+                      <?php foreach($ejecutar_busqueda as $row)//pasar las variables que encuentre en mascota
                       { ?>
                         <div class="col">
                             <div class="card card-product" style="width: 170px; height: 250px;">
@@ -331,7 +331,7 @@ else
                                         </div>
                                         <!--Etiqueta-->
                                         <!--Imagen-->
-                                        <a href="object.php" >
+                                        <a href="object.php" ><!----aqui poner lo mismo que en el index----->
                                             <img src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']);?>" class="card-img-top" alt="" style="width: 132px; height: 132px">
                                         </a>
                                         <!--Imagen-->
@@ -359,7 +359,7 @@ else
                     <!--Objetos-->
                     <div class="row g-4 row-cols-xl-4 row-cols-lg-3 row-cols-2 row-cols-md-2 mt-2">
                         <!--Objetos-->
-                      <?php foreach($ejecutar_busqueda_ob as $row_2)
+                      <?php foreach($ejecutar_busqueda_ob as $row_2)//pasar las variables que encuentre en objeto
                       { ?>
                         <div class="col">
                             <div class="card card-product" style="width: 170px; height: 250px;">
@@ -385,7 +385,7 @@ else
                                         <!--Categoria-->
                                         <div class="text-small mb-1">
                                             <a class="text-decoration-none text-muted">
-                                                <small><?php echo($row_2['especie']);  ?></small>
+                                                <small><?php echo($row_2['categoria']);  ?></small>
                                             </a>
                                         </div>
                                         <!--Categoria-->

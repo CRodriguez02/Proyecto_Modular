@@ -5,7 +5,6 @@ $identificador=$_GET['edita'];
 $consulta="SELECT * FROM objeto WHERE ID=$identificador";
 $ejecuta=mysqli_query($db,$consulta);
 $row=mysqli_fetch_assoc($ejecuta);
-echo $row['estado'];
  
  ?>
 
