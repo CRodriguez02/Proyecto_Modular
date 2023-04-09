@@ -8,6 +8,7 @@ if(!$entrar)
 }
 $identificador=$_GET['id'];
 $base_datos=$_GET['bd'];
+
 //$estado=$_GET['estado'];
 //$usuario_obj=$_GET['fk_username_Objeto'];
 //$usuario_mas=$_GET['fk_username_Mascota'];
@@ -22,8 +23,6 @@ if($base_datos=="mascotas")
   $tipo_db=false;
   
 }
-
-
 else
 {
   $query="SELECT * FROM objeto WHERE id='$identificador'";

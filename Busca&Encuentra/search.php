@@ -45,8 +45,8 @@ else
   $row_2=mysqli_fetch_assoc($ejecutar_busqueda_ob);
 }
 
-
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -320,6 +320,7 @@ else
                                     <div class="text-center position-relative">
                                         <!--Etiqueta-->
                                         <div class="position-absolute top-0 start-0">
+                                          
                                         <?php
                            
                                           if($row['recompensa']==1)
@@ -330,8 +331,8 @@ else
                                           ?>
                                         </div>
                                         <!--Etiqueta-->
-                                        <!--Imagen-->
-                                        <a href="object.php" ><!----aqui poner lo mismo que en el index----->
+                                        <!--Imagen--> 
+                                        <a href="object.php?id=<?php echo $row['ID'];?>&bd=mascotas" ><!----aqui poner lo mismo que en el index----->
                                             <img src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']);?>" class="card-img-top" alt="" style="width: 132px; height: 132px">
                                         </a>
                                         <!--Imagen-->
@@ -378,7 +379,7 @@ else
                                         </div>
                                         <!--Etiqueta-->
                                         <!--Imagen-->
-                                        <a href="object.php" >
+                                        <a href="object.php?id=<?php echo $row_2['ID'];?>&bd=objeto">
                                             <img src="data:image/jpg;base64,<?php echo base64_encode($row_2['imagen']);?>" class="card-img-top" alt="" style="width: 132px; height: 132px">
                                         </a>
                                         <!--Imagen-->

@@ -218,8 +218,10 @@ $row_2=mysqli_fetch_assoc($ejecutar_mascota);
             <div class="card"><!---todo el rectangulo--->                  
                 <div class="row g-0"><!---inicio php--->                      
                     <div class="col-md-2"><!---para poner la imagen-->
-
+                    <a href="object.php?id=<?php echo $row['id'];?>&bd=objeto">
                     <img src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']);?>"class="img-fluid rounded-start" height="50">
+                    </a>
+                   
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -297,8 +299,9 @@ $row_2=mysqli_fetch_assoc($ejecutar_mascota);
             <div class="card"><!---todo el rectangulo--->                  
                 <div class="row g-0"><!---inicio php--->                      
                     <div class="col-md-2"><!---para poner la imagen-->
-
-                    <img src="data:image/jpg;base64,<?php echo base64_encode($row_2['imagen']);?>"class="img-fluid rounded-start" height="50">
+                    <a href="object.php?id=<?php echo $row_2['id'];?>&bd=mascotas">
+                    <img src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']);?>"class="img-fluid rounded-start" height="50">
+                    </a>
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
