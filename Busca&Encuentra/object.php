@@ -184,7 +184,7 @@ else
                 <div class="row gx-4 gx-lg-5 align-items-center">
                     <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']);?>" alt="..." /></div>
                     <div class="col-md-6">
-                        <div class="small mb-1">ID:<?php echo($row["ID"]); ?></div>
+                        <!--<div class="small mb-1">ID:<?php //echo($row["ID"]); ?></div>***ID del objeto***-->
                         <h1 class="display-5 fw-bolder"><?php echo($row["titulo"]); ?></h1>
                         <div class="fs-5 mb-5">
                         
@@ -220,7 +220,7 @@ else
                         </div>
                         <p class="lead"> <?php echo($row["descripcion"]); ?></p>
                         <div class="d-flex">
-                            <a class="btn btn-primary" type="button">
+                            <a class="btn btn-primary" type="button" href="system-chat.php?secundario=">
                                 <i class="bi-cart-fill me-1"></i>
                                 Ponte en contacto con el propietario de la publicación 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat" viewBox="0 0 16 16">

@@ -242,12 +242,12 @@ $row=mysqli_fetch_assoc($consulta_db);
             <form class="row" method="post" action="scripts_php/cambiar_contrasena.php" ><!--actualiza contraseña-->
                 <div class="col-md-6">
                     <label class="form-label">Contraseña nueva</label>
-                    <input type="text" class="form-control" name="contraseña-nueva1" placeholder="*********">
+                    <input type="password" class="form-control" name="contraseña-nueva1" placeholder="*********">
                 </div>
 
                 <div class="col-md-6">
                     <label class="form-label">Confirmar contraseña nueva</label>
-                    <input type="text" class="form-control" name="contraseña-nueva2" placeholder="*********">
+                    <input type="password" class="form-control" name="contraseña-nueva2" placeholder="*********">
                 </div>
 
                 <div class="col-md-12">
