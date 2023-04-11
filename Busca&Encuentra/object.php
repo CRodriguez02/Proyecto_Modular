@@ -197,10 +197,10 @@ else
                             }
                             ?>
                            
-                            <span>-</span>
+                            
                             <?php     
                             if($base_datos=="mascotas")                            
-                            echo "<span>".$row["raza"]."</span>";
+                            echo "<span>- </span><span>".$row["raza"]."</span>";
                             ?>
                             <br>
                             <?php
@@ -214,13 +214,15 @@ else
                             }
                             $recompensa=($row['recompensa']==1 ? "Recompensa":"Sin recompensa");
 
-                            echo '<span class="badge text-bg-success">'.$recompensa.'</span>';
+                            echo '<span class="badge text-bg-warning">'.$recompensa.'</span>';
                             ?>
                             
                         </div>
                         <p class="lead"> <?php echo($row["descripcion"]); ?></p>
+                        <?php $user=($base_datos=="mascotas")? $row['fk_username_Mascota']:$row['fk_username_Objeto']; 
+                        ?>
                         <div class="d-flex">
-                            <a class="btn btn-primary" type="button" href="system-chat.php?secundario=">
+                            <a class="btn btn-primary" type="button" href="system-chat.php?secundario=<?php echo($user);?>">
                                 <i class="bi-cart-fill me-1"></i>
                                 Ponte en contacto con el propietario de la publicación 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat" viewBox="0 0 16 16">
@@ -229,8 +231,6 @@ else
                                 </a>
                         </div>
                         <br>
-                        <?php $user=($base_datos=="mascotas")? $row['fk_username_Mascota']:$row['fk_username_Objeto']; 
-                        ?>
                         <a class="btn btn-outline-dark flex-shrink-0" type="button" href="report.php?id=<?php echo($identificador);?>&usuario=<?php echo($user);?>&base_datos=<?php echo($base_datos);?>">
                             Levantar reporte
                         </a>
