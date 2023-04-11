@@ -36,7 +36,7 @@ $row_sec=mysqli_fetch_assoc($consulta_db_sec);
 
 /* Query salas */
 $Consulta_salas= "SELECT DISTINCT incoming_msg_id from mensajes WHERE outgoing_msg_id='$usuario_primario'";
-$consulta_db2=$db_chat->query($Consulta_salas);//ejecutar quiery
+$consulta_db2=$db_chat->query($Consulta_salas);//ejecutar query
 $sala=mysqli_fetch_assoc($consulta_db2);
 /* Query salas */
 
@@ -232,8 +232,15 @@ $mensajes=mysqli_fetch_assoc($consulta_db3);
               Aquí aparecerán tus conversaciones cuando hagas clic en alguna </div>');
             }
             else{ 
+              if(empty($mensajes))
+              {
+                echo "<h3>Inicia una conversación con ".$row_sec['nombre']." ". $row_sec['apellido_paterno']. "</h3>"; 
+              }
+              else{
               foreach($consulta_db3 as $mensajes) 
               {
+
+               
               ?>
             <ul class="list-unstyled">
               <?php if($mensajes['incoming_msg_id']==$usuario_primario) {?>
@@ -279,7 +286,7 @@ $mensajes=mysqli_fetch_assoc($consulta_db3);
               <?php }?>
               <!--Mensajes recibidos-->
 
-              <?php } ?>
+              <?php }/*else*/ }//foreach ?>
               <!--Caja de mensajes-->
               <li class="bg-white mb-3">
               <form action="scripts_php/enviar_msg.php?usuario=<?php echo $usuario_primario; ?>&secundario=<?php echo $usuario_secundario; ?>" method="post">
