@@ -11,6 +11,7 @@ $apellido_ma=$_POST["apellido_materno"];
 $correo_electronico=$_POST["correo_electronico"];
 
 
+
 $consulta= "UPDATE usuarios SET nombre='$nombres',apellido_paterno='$apellido_pa',apellido_materno='$apellido_ma', correo='$correo_electronico' WHERE username='$sesion_iniciada'" ;
 $valida_consulta=$db->query($consulta);
 

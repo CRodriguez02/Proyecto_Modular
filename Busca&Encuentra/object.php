@@ -9,6 +9,8 @@ if(!$entrar)
 $identificador=$_GET['id'];
 $base_datos=$_GET['bd'];
 
+
+
 //$estado=$_GET['estado'];
 //$usuario_obj=$_GET['fk_username_Objeto'];
 //$usuario_mas=$_GET['fk_username_Mascota'];
