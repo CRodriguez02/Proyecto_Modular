@@ -1,7 +1,7 @@
 <?php
     //error_reporting(0);
     require "conectar.php"; 
-    //require "conectar-chat.php";  
+    require "conectar-chat.php";  
     $nombres=$_POST["nombre"];
     $apellido_pa=$_POST["apellido_Pa"];
     $apellido_ma=$_POST["apellido_Ma"];
@@ -36,9 +36,9 @@
             VALUES ('$usuario','$correo_electronico','$nombres','$apellido_pa','$apellido_ma','$nueva_contraseña')";
             $consulta=mysqli_query($db,$insert_sql);
 
-            /*$insert_sql2="INSERT INTO usuarios (unique_id,nombre,apellido_paterno,apellido_materno)  
+            $insert_sql2="INSERT INTO usuarios (unique_id,nombre,apellido_paterno,apellido_materno)  
             VALUES ('$usuario','$nombres','$apellido_pa','$apellido_ma')";
-            $consulta2=mysqli_query($db_chat,$insert_sql2);*/
+            $consulta2=mysqli_query($db_chat,$insert_sql2);
 
 
         if($consulta)
