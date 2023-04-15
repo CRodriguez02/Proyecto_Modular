@@ -24,11 +24,11 @@ ID int auto_increment PRIMARY KEY,
 titulo varchar (100) NOT NULL,
 descripcion text,
 imagen longblob,
-estado bool NOT NULL,
+estado tinyint NOT NULL,
 especie varchar (100) NOT NULL,
 raza varchar (100) NOT NULL,
 FOREIGN KEY (fk_username_Mascota ) REFERENCES usuarios (username),
-recompensa bool NOT NULL
+recompensa tinyint NOT NULL
 );
 
 
@@ -38,10 +38,10 @@ ID int auto_increment PRIMARY KEY,
 titulo varchar (100) NOT NULL,
 descripcion text,
 imagen longblob,
-estado bool NOT NULL,
+estado tinyint NOT NULL,
 categoria varchar (100) NOT NULL,
 FOREIGN KEY (fk_username_Objeto) REFERENCES usuarios (username),
-recompensa bool NOT NULL
+recompensa tinyint NOT NULL
 );
 
 
@@ -58,7 +58,7 @@ foreign key (id_mascota) references mascotas(ID) ON DELETE CASCADE
 );
 
 
-Borrar y alterar la tabla objeto para que se incremente de uno en uno
+//Borrar y alterar la tabla objeto para que se incremente de uno en uno
 
 ALTER TABLE objeto DROP COLUMN ID;
 ALTER TABLE objeto ADD ID int auto_increment primary key FIRST;
