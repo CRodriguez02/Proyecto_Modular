@@ -2,7 +2,7 @@
 require "scripts_php/conectar.php";
 require "scripts_php/funciones.php";
 session_start();
-error_reporting(0);
+//error_reporting(0);
 
 
 //estan al reves
@@ -240,9 +240,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
               <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search" action="search.php" method="GET" >
                 <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search" name="busqueda">
               </form>
-                
-
-
+              
               <?php
             //autenticar
             $autentidicacion=autenticado();
@@ -497,7 +495,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                   </button>
                   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsSmallScreen2" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden>Next</span>
+                    <span class="visually-hidden">Next</span>
                   </button>
                 </div>
                 <!--carousel-->
