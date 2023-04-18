@@ -335,7 +335,6 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                           {
                             echo (' <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>');
                           }
-                          
                           ?>
                           <div class="card-body">
                             <h5 class="card-title"> <?php echo( $fila['titulo']);  ?> </h5>
@@ -353,11 +352,11 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                       <div class="cards-wrapper">
                         <!--Carta-->
                         <?php  
-                            $n=0;//variable de control para saver en que punto va a tratat de poner las imagenes
+                            $n=0;//variable de control para saber en que punto va a tratat de poner las imagenes
                             while($fila2=$ejecuta_3->fetch_array())
                             { 
                               $n++;
-                              if($n>=11 && $n>21)
+                              if($n>=11 && $n<16)
                               {
                             ?>    
                         <div class="card text-center" style="width: 18rem;">
@@ -437,7 +436,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                             while($fila=$ejecuta_n2->fetch_array())
                             { $num_n++;
                               
-                              if($num_n>=6 && $num_n<9)
+                              if($num_n>=6 && $num_n<11)
                               {
                             ?>                      
                         <div class="card text-center" style="width: 18rem;">
@@ -468,7 +467,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                             while($fila2=$ejecuta_n3->fetch_array())
                             { 
                               $n_n++;
-                              if($n_n>=11 && $n_n>21)
+                              if($n_n>=11 && $n_n<16)
                               {
                             ?>    
                         <div class="card text-center" style="width: 18rem;">
@@ -498,7 +497,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                   </button>
                   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsSmallScreen2" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
+                    <span class="visually-hidden>Next</span>
                   </button>
                 </div>
                 <!--carousel-->
