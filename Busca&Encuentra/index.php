@@ -2,7 +2,7 @@
 require "scripts_php/conectar.php";
 require "scripts_php/funciones.php";
 session_start();
-//error_reporting(0);
+error_reporting(0);
 
 
 //estan al reves
@@ -240,7 +240,9 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
               <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search" action="search.php" method="GET" >
                 <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search" name="busqueda">
               </form>
-              
+                
+
+
               <?php
             //autenticar
             $autentidicacion=autenticado();
@@ -333,6 +335,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                           {
                             echo (' <div class="badge bg-success text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Recompensa</div>');
                           }
+                          
                           ?>
                           <div class="card-body">
                             <h5 class="card-title"> <?php echo( $fila['titulo']);  ?> </h5>
@@ -350,11 +353,11 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                       <div class="cards-wrapper">
                         <!--Carta-->
                         <?php  
-                            $n=0;//variable de control para saber en que punto va a tratat de poner las imagenes
+                            $n=0;//variable de control para saver en que punto va a tratat de poner las imagenes
                             while($fila2=$ejecuta_3->fetch_array())
                             { 
                               $n++;
-                              if($n>=11 && $n<16)
+                              if($n>=11 && $n>21)
                               {
                             ?>    
                         <div class="card text-center" style="width: 18rem;">
@@ -434,7 +437,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                             while($fila=$ejecuta_n2->fetch_array())
                             { $num_n++;
                               
-                              if($num_n>=6 && $num_n<11)
+                              if($num_n>=6 && $num_n<9)
                               {
                             ?>                      
                         <div class="card text-center" style="width: 18rem;">
@@ -465,7 +468,7 @@ $ejecuta_nm3=mysqli_query($db,$select_nm3);
                             while($fila2=$ejecuta_n3->fetch_array())
                             { 
                               $n_n++;
-                              if($n_n>=11 && $n_n<16)
+                              if($n_n>=11 && $n_n>21)
                               {
                             ?>    
                         <div class="card text-center" style="width: 18rem;">
