@@ -3,7 +3,7 @@ require "scripts_php/funciones.php";
 $entrar=autenticado();
 if(!$entrar)
 {
-  header("Location: http://localhost/Proyecto_Modular/Busca&Encuentra/sing-in.php");
+  header("Location: ../sing-in.php");
 }
 
 

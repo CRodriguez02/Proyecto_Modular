@@ -17,7 +17,7 @@
 		$_SESSION['usuario']=$usuario['username']; 
 		$_SESSION['login']=true;
 
-		header('Location: ../Busca&Encuentra/index.php');
+		header('Location: ../index.php');
 	}
 	else
 	{

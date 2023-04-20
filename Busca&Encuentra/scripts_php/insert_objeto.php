@@ -21,5 +21,9 @@ if($valida_consulta)
 {
    header("Location: ../list-publications.php");
 }
+else
+{
+   header('Location: ../error-404.html');
+}
 
 ?>

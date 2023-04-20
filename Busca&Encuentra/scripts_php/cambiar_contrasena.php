@@ -15,12 +15,12 @@ if($pas1==$pas2)
     $contraseña_nueva=(empty($pas1) && empty($pas2)) ? $row['contrasena']: md5($pas1);
     $sql="UPDATE usuarios set contrasena='$contraseña_nueva' where username='$usuario';";
     $ejecuta=$db->query($sql);
-    header("Location: ../my-account.php");
+    header("Location: my-account.php");
 
 }
 else
 {
-    header('Location: ../alerta-contra.html');
+    header('Location: alerta-contra.html');
 }
 
 ?>
