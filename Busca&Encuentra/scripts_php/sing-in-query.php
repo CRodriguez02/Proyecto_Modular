@@ -20,7 +20,8 @@
 	}
 	else
 	{
-		$iniciar_sesion="SELECT * FROM administradores WHERE correo='$correo_elec' or username='$correo_elec' and contrasena='$password'";
+		$nueva_contraseña= md5($password);//encriptamos
+		$iniciar_sesion="SELECT * FROM administradores WHERE correo='$correo_elec' or username='$correo_elec' and contrasena='$nueva_contraseña'";
 		$valida_sesion=$db->query($iniciar_sesion);
 		$usuario=mysqli_fetch_assoc($valida_sesion);
 		if($valida_sesion->num_rows>0)
