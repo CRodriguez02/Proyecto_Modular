@@ -4,7 +4,8 @@
 	$correo_elec=$_POST["correo_elec"];
 	$password=$_POST["password"];
 
-	$iniciar_sesion="SELECT * FROM usuarios WHERE correo='$correo_elec' or username='$correo_elec' and contrasena='$password'";
+	$nueva_contraseña= md5($password);//encriptamos
+	$iniciar_sesion="SELECT * FROM usuarios WHERE correo='$correo_elec' or username='$correo_elec' and contrasena='$nueva_contraseña'";
 
 	$valida_sesion=$db->query($iniciar_sesion);
 	$usuario=mysqli_fetch_assoc($valida_sesion);// traigo los valores de a tabla como arreglo / esta es la tabla
@@ -16,7 +17,7 @@
 		$_SESSION['usuario']=$usuario['username']; 
 		$_SESSION['login']=true;
 
-		header('Location: http://localhost/Proyecto_Modular/Busca&Encuentra/index.php');
+		header('Location: ../Busca&Encuentra/index.php');
 	}
 	else
 	{
@@ -31,7 +32,7 @@
 			$_SESSION['usuario']=$usuario['username']; 
 			$_SESSION['login']=true;
 
-			header('Location: http://localhost/Proyecto_Modular/Busca&Encuentra/admin.php');
+			header('Location: ../admin.php');
 		}
 		else
 		{

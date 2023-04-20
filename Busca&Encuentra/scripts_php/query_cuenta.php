@@ -20,7 +20,7 @@ $valida_consulta2=$db_chat->query($consulta2);
 
 if($valida_consulta)
 {
-    header('Location: http://localhost/Proyecto_Modular/Busca&Encuentra/my-account.php');
+    header('Location: ../my-account.php');
 }
 
 ?>
