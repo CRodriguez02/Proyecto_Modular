@@ -188,7 +188,7 @@ $base_datos=$_GET['base_datos'];
                     <textarea class="form-control" id="Descripcion" name="txt_descripcion" rows="3" placeholder="Agrega una descripción del porqué reportas la publicación"></textarea>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-primary" >Enviar</button>
+                <button type="submit" class="btn btn-primary" onclick="alert('Gracias por tus comentarios. Atenderemos tu reporte a la brevedad.')">Enviar</button>
                 </div>
             </form>
 </section>
